@@ -1,0 +1,245 @@
+﻿<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <title>My App</title>
+    <meta name="description" content="My App description">
+    <link rel="icon" href="/images/favicon.ico">
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#3f51b5">
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="My App">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="My App">
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="/images/manifest/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/manifest/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="/images/manifest/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/manifest/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/manifest/icon-192x192.png">
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/manifest/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+    <script>
+        // Setup Polymer options
+        window.Polymer = {
+            dom: 'shadow',
+            lazyRegister: true
+        };
+
+        // Load webcomponentsjs polyfill if browser does not support native Web Components
+        (function () {
+            'use strict';
+
+            var onload = function () {
+                // For native Imports, manually fire WebComponentsReady so user code
+                // can use the same code path for native and polyfill'd imports.
+                if (!window.HTMLImports) {
+                    document.dispatchEvent(
+                      new CustomEvent('WebComponentsReady', { bubbles: true })
+                    );
+                }
+            };
+
+            var webComponentsSupported = (
+              'registerElement' in document
+              && 'import' in document.createElement('link')
+              && 'content' in document.createElement('template')
+            );
+
+            if (!webComponentsSupported) {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
+                script.onload = onload;
+                document.head.appendChild(script);
+            } else {
+                onload();
+            }
+        })();
+
+        // Load pre-caching Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+    <link rel="import" href="/src/my-app.html">
+    <link rel="import" href="/bower_components/platinum-sw/platinum-sw-cache.html" />
+    <link rel="import" href="/bower_components/platinum-sw/platinum-sw-register.html" />
+    <link rel="import" href="/bower_components/polymerfire/firebase-app.html" />
+    <style is="custom-style">
+        @import url("https://fonts.googleapis.com/css?family=Oxygen:700|Open+Sans");
+
+        html {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            font-size: 16px;
+        }
+
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            min-height: 100%;
+            color: #020429;
+            background-color: #dce9e9;
+            font-family: 'Oxygen', sans-serif;
+            font-weight: 400;
+        }
+
+        body {
+            --default-primary-color: hsl(182, 100%, 22%);
+            --dark-primary-color: hsl(182, 100%, 22%);
+            --light-primary-color: #c5cae9;
+            --text-primary-color: #ffffff;
+            --accent-color: #ff4081;
+            --primary-background-color: #ffffff;
+            --primary-text-color: #414b58;
+            --secondary-text-color: #3f8d8d;
+            --disabled-text-color: #274c4c;
+            --divider-color: #e0e0e0;
+            --paper-checkbox-checked-color: #1f78ff;
+            --paper-checkbox-checked-ink-color: hsl(182, 100%, 22%);
+            --paper-checkbox-unchecked-color: hsl(182, 100%, 22%);
+            --paper-checkbox-unchecked-ink-color: #585e62;
+            --paper-checkbox-label-color: #414b58;
+            --paper-fab-background: hsl(182, 100%, 22%);
+            --paper-fab-disabled-background: #aca0a8;
+            --paper-fab-disabled-text: #274c4c;
+            --paper-icon-button-disabled-text: #aca0a8;
+            --paper-input-container-color: #585e62;
+            --paper-input-container-focus-color: hsl(182, 100%, 22%);
+            --paper-input-container-invalid-color: #ff7043;
+            --paper-input-container-input-color: #585e62;
+            --paper-menu-background-color: #eceff1;
+            --paper-menu-color: #414b58;
+            --paper-menu-disabled-color: #aca0a8;
+            --paper-progress-active-color: hsl(182, 100%, 22%);
+            --paper-progress-secondary-color: #1f78ff;
+            --paper-radio-button-checked-color: #1f78ff;
+            --paper-radio-button-checked-ink-color: #e6f1f1;
+            --paper-radio-button-unchecked-color: #414b58;
+            --paper-radio-button-unchecked-ink-color: #585e62;
+            --paper-radio-button-label-color: #414b58;
+            --paper-slider-knob-color: #1f78ff;
+            --paper-slider-active-color: hsl(182, 100%, 22%);
+            --paper-slider-pin-color: #1f78ff;
+            --paper-spinner-layer-1-color: hsl(182, 100%, 22%);
+            --paper-spinner-layer-2-color: hsl(182, 100%, 22%);
+            --paper-spinner-layer-3-color: hsl(182, 100%, 22%);
+            --paper-spinner-layer-4-color: hsl(182, 100%, 22%);
+            --paper-tabs-selection-bar-color: #1f78ff;
+            --paper-tab-ink: #073883;
+            --paper-toggle-button-checked-bar-color: hsl(182, 100%, 22%);
+            --paper-toggle-button-checked-button-color: #1f78ff;
+            --paper-toggle-button-checked-ink-color: #1f78ff;
+            --paper-toggle-button-unchecked-bar-color: #414b58;
+            --paper-toggle-button-unchecked-button-color: white;
+            --paper-toggle-button-unchecked-ink-color: white;
+            --paper-toolbar-background: hsl(182, 100%, 22%);
+            --paper-toolbar-color: #ffffff;
+            margin: 0;
+            font-family: 'Roboto', 'Noto', sans-serif;
+            line-height: 1.5;
+            min-height: 100vh;
+            /*background: linear-gradient(254deg,hsl(183, 95%, 88%), hsl(194, 91%, 92%), hsl(197, 100%, 86%), hsl(236, 99%, 80%), hsl(209, 54%, 85%));
+            background-size: 1000% 1000%;
+            -webkit-animation: fondo 49s ease infinite;
+            -moz-animation: fondo 49s ease infinite;
+            -o-animation: fondo 49s ease infinite;
+            animation: fondo 49s ease infinite;*/
+        }
+
+        @-webkit-keyframes fondo {
+            0% {
+                background-position: 9% 0%;
+            }
+
+            50% {
+                background-position: 92% 100%;
+            }
+
+            100% {
+                background-position: 9% 0%;
+            }
+        }
+
+        @-moz-keyframes fondo {
+            0% {
+                background-position: 9% 0%;
+            }
+
+            50% {
+                background-position: 92% 100%;
+            }
+
+            100% {
+                background-position: 9% 0%;
+            }
+        }
+
+        @-o-keyframes fondo {
+            0% {
+                background-position: 9% 0%;
+            }
+
+            50% {
+                background-position: 92% 100%;
+            }
+
+            100% {
+                background-position: 9% 0%;
+            }
+        }
+
+        @keyframes fondo {
+            0% {
+                background-position: 9% 0%;
+            }
+
+            50% {
+                background-position: 92% 100%;
+            }
+
+            100% {
+                background-position: 9% 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <platinum-sw-register auto-register
+                          skip-waiting
+                          clients-claim
+                          reload-on-install
+                          href="../sw-import.js">
+        <platinum-sw-cache default-cache-strategy="networkFirst">
+        </platinum-sw-cache>
+    </platinum-sw-register>
+    <!-- Configure Firebase app: -->
+    <firebase-app name="pruebapq" auth-domain="peak-key-140102.firebaseapp.com"
+                  database-url="https://peak-key-140102.firebaseio.com/"
+                  api-key="AIzaSyAsk8a-r-xMJQMUyP4cuv75bhMMk3BThl8">
+    </firebase-app>
+    <my-app></my-app>
+    <!-- Built with love using Polymer Starter Kit -->
+</body>
+</html>

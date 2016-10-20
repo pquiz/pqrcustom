@@ -1,0 +1,121 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<!-- shared styles for all views -->
+<dom-module id="shared-styles">
+  <template>
+
+    <style include="iron-flex iron-flex-alignment iron-flex-factors iron-positioning">
+html { -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 16px; }
+
+html, body { margin: 0px; padding: 0px; min-height: 100%; color: #414b58; background-color: #f9fbe7; font-family: 'Lato', sans-serif; font-weight: 400; }
+
+section { padding: 40px 0px; }
+section[hero] { background-color: #eceff1; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: 400; margin: 0px; padding: 0px; line-height: 1em; }
+
+h1, h3, h5 { font-family: 'Lustria', serif; }
+
+h1 { font-size: 50px; margin: 30px 0px; }
+
+h2 { color: #3f8d8d; font-size: 35px; margin: 20px 0px; }
+
+h3 { font-size: 25px; margin: 15px 0px; }
+
+h4 { font-size: 20px; }
+
+a, a:active, a:visited, a:focus { color: #95b649; text-decoration: none; }
+
+a:hover { color: #95b649; text-decoration: underline; }
+
+paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active, paper-toolbar a:visited, paper-toolbar a:focus { color: #ffffff; }
+
+paper-button.primary, paper-button.btn-primary, paper-button[primary] { color: hsl(182, 100%, 22%); }
+paper-button.primary[raised], paper-button.btn-primary[raised], paper-button[primary][raised] { background-color: hsl(182, 100%, 22%); color: #fff; }
+paper-button.secondary, paper-button.btn-secondary, paper-button[secondary] { color: #1f78ff; }
+paper-button.secondary[raised], paper-button.btn-secondary[raised], paper-button[secondary][raised] { background-color: #1f78ff; color: #fff; }
+paper-button.success, paper-button.btn-success, paper-button[success] { color: #4fffb0; }
+paper-button.success[raised], paper-button.btn-success[raised], paper-button[success][raised] { background-color: #4fffb0; color: #184d35; }
+paper-button.info, paper-button.btn-info, paper-button[info] { color: #5a1eb3; }
+paper-button.info[raised], paper-button.btn-info[raised], paper-button[info][raised] { background-color: #5a1eb3; color: #fff; }
+paper-button.warning, paper-button.btn-warning, paper-button[warning] { color: #f5b324; }
+paper-button.warning[raised], paper-button.btn-warning[raised], paper-button[warning][raised] { background-color: #f5b324; color: #fff; }
+paper-button.error, paper-button.btn-error, paper-button[error] { color: #cd3b0e; }
+paper-button.error[raised], paper-button.btn-error[raised], paper-button[error][raised] { background-color: #cd3b0e; color: #fff; }
+paper-button.link, paper-button.btn-link, paper-button[link] { text-decoration: underline; }
+paper-button[raised] { color: #414b58; }
+paper-button[disabled] { color: #274c4c !important; background: #aca0a8 !important; }
+
+paper-icon-button.primary, paper-icon-button.btn-primary, paper-icon-button[primary] { color: hsl(182, 100%, 22%); }
+paper-icon-button.primary:hover, paper-icon-button.btn-primary:hover, paper-icon-button[primary]:hover { background-color: #e2e2d1; background-color: rgba(17, 3, 13, 0.2); border-radius: 50%; }
+paper-icon-button.secondary, paper-icon-button.btn-secondary, paper-icon-button[secondary] { color: #1f78ff; }
+paper-icon-button.secondary:hover, paper-icon-button.btn-secondary:hover, paper-icon-button[secondary]:hover { background-color: #e3eee9; background-color: rgba(31, 120, 255, 0.2); border-radius: 50%; }
+paper-icon-button.success, paper-icon-button.btn-success, paper-icon-button[success] { color: #4fffb0; }
+paper-icon-button.success:hover, paper-icon-button.btn-success:hover, paper-icon-button[success]:hover { background-color: #e8fbe2; background-color: rgba(79, 255, 176, 0.2); border-radius: 50%; }
+paper-icon-button.info, paper-icon-button.btn-info, paper-icon-button[info] { color: #5a1eb3; }
+paper-icon-button.info:hover, paper-icon-button.btn-info:hover, paper-icon-button[info]:hover { background-color: #e9e5e2; background-color: rgba(90, 30, 179, 0.2); border-radius: 50%; }
+paper-icon-button.warning, paper-icon-button.btn-warning, paper-icon-button[warning] { color: #f5b324; }
+paper-icon-button.warning:hover, paper-icon-button.btn-warning:hover, paper-icon-button[warning]:hover { background-color: #f9f4d4; background-color: rgba(245, 179, 36, 0.2); border-radius: 50%; }
+paper-icon-button.error, paper-icon-button.btn-error, paper-icon-button[error] { color: #cd3b0e; }
+paper-icon-button.error:hover, paper-icon-button.btn-error:hover, paper-icon-button[error]:hover { background-color: #f5e8d1; background-color: rgba(205, 59, 14, 0.2); border-radius: 50%; }
+
+paper-checkbox #checkmark.paper-checkbox, paper-checkbox /deep/, paper-checkbox::shadow #checkmark.paper-checkbox { border-color: #fff !important; }
+
+paper-dialog { color: #414b58; background-color: #f9fbe7; font-family: 'Lato', sans-serif; font-weight: 400; }
+paper-dialog h1, paper-dialog h2, paper-dialog h3, paper-dialog h4, paper-dialog h5, paper-dialog h6 { overflow: visible; padding: 0 1em; text-align: center; }
+
+paper-fab { --text-primary-color: white; }
+
+paper-fab { background-color: hsl(182, 100%, 22%); color: #fff; --paper-fab-keyboard-focus-background: #7d1660; }
+paper-fab.primary, paper-fab.btn-primary, paper-fab[primary] { background-color: hsl(182, 100%, 22%); color: #fff; --paper-fab-keyboard-focus-background: #7d1660; }
+paper-fab.secondary, paper-fab.btn-secondary, paper-fab[secondary] { background-color: #1f78ff; color: #fff; --paper-fab-keyboard-focus-background: #003f9f; }
+paper-fab.success, paper-fab.btn-success, paper-fab[success] { background-color: #4fffb0; color: #184d35; --paper-fab-keyboard-focus-background: #00cf72; }
+paper-fab.info, paper-fab.btn-info, paper-fab[info] { background-color: #5a1eb3; color: #fff; --paper-fab-keyboard-focus-background: #230c46; }
+paper-fab.warning, paper-fab.btn-warning, paper-fab[warning] { background-color: #f5b324; color: #fff; --paper-fab-keyboard-focus-background: #936707; }
+paper-fab.error, paper-fab.btn-error, paper-fab[error] { background-color: #cd3b0e; color: #fff; --paper-fab-keyboard-focus-background: #561906; }
+paper-fab[disabled] { color: #274c4c !important; background: #aca0a8 !important; }
+
+section.hero paper-menu, section[hero] paper-menu { --paper-menu-background-color: #eceff1; }
+
+paper-tabs { background-color: hsl(182, 100%, 22%); color: #ffffff; }
+
+
+      .card {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        margin: 24px;
+        border-radius: 5px;
+        background-color: #1c3359;
+        background-color: hsla(0, 0%, 100%, 0.48);
+        color: #757575;
+      }
+      .circle {
+        display: inline-block;
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        background: #ddd;
+        line-height: 64px;
+        font-size: 30px;
+        color: #555;
+        text-align: center;
+      }
+      h1 {
+        font-size: 22px;
+        margin: 16px 0;
+        color: hsl(200, 29%, 24%);
+      }
+    </style>
+  </template>
+</dom-module>

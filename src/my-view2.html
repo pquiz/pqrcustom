@@ -1,0 +1,96 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="my-corusel.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view2">
+
+  <template>
+
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+      my-carusel{
+          width:80vw;
+          height:80vh;
+      }
+    </style>
+
+    <div id="pres2" class="card">
+      <div id="circulo2" class="circle">2</div>
+      <h1>View Two</h1>
+        <template is="dom-repeat" items="{{frames}}">
+            
+               {{item}}
+        </template>
+      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
+      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+    </div>
+      <my-carusel imagenes="{{frames}}"></my-carusel>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'my-view2',
+
+          behaviors: [
+            Polymer.NeonSharedElementAnimatableBehavior
+          ],
+          properties: {
+              sharedElements: {
+  type: Object,
+  value: function() {
+    return {
+      'hero': this.$.pres2,
+      'ripple': this.$.circulo2
+    }
+  }
+},
+  animationConfig: {
+    type: Object,
+    value: function() {
+      return {
+        
+        'exit': [{
+          name: 'ripple-animation',
+          id: 'ripple',
+          fromPage: this
+        }, {
+          name: 'hero-animation',
+          id: 'hero',
+          fromPage: this
+        }]
+      }
+    }
+  }
+
+          },
+          ready: function () {
+              this.frames = ["http://cdn2.thr.com/sites/default/files/2016/06/got609_092415_hs_dsc_84301-h_2016.jpg",
+              "http://fullhdpictures.com/wp-content/uploads/2015/10/HD-Game-of-Thrones-Wallpaper.jpg",
+              "http://image.vanguardia.com.mx/sites/default/files/1428424996-hbz-games-of-thrones-hair-01.jpg",
+              "http://static2.businessinsider.com/image/56d991d5dd08953d0d8b4806-2000-1125/night%20king%20white%20walker%20hardhome%20game%20of%20thrones%20hbo.jpeg.jpg",
+              "http://blogs-images.forbes.com/erikkain/files/2015/06/Jon-Snow.jpg"
+          ];
+          }
+
+    });
+
+  </script>
+
+</dom-module>
+  
