@@ -85,87 +85,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="/bower_components/platinum-sw/platinum-sw-cache.html" />
     <link rel="import" href="/bower_components/platinum-sw/platinum-sw-register.html" />
     <link rel="import" href="/bower_components/polymerfire/firebase-app.html" />
-    <style is="custom-style">
+    <style is="custom-style" include="shared-styles">
         @import url("https://fonts.googleapis.com/css?family=Oxygen:700|Open+Sans");
 
-        html {
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-            font-size: 16px;
-        }
-
-        html, body {
-            margin: 0px;
-            padding: 0px;
-            min-height: 100%;
-            color: #020429;
-            background-color: #dce9e9;
-            font-family: 'Oxygen', sans-serif;
-            font-weight: 400;
-        }
-
-        body {
-            --default-primary-color: hsl(182, 100%, 22%);
-            --dark-primary-color: hsl(182, 100%, 22%);
-            --light-primary-color: #c5cae9;
-            --text-primary-color: #ffffff;
-            --accent-color: #ff4081;
-            --primary-background-color: #ffffff;
-            --primary-text-color: #414b58;
-            --secondary-text-color: #3f8d8d;
-            --disabled-text-color: #274c4c;
-            --divider-color: #e0e0e0;
-            --paper-checkbox-checked-color: #1f78ff;
-            --paper-checkbox-checked-ink-color: hsl(182, 100%, 22%);
-            --paper-checkbox-unchecked-color: hsl(182, 100%, 22%);
-            --paper-checkbox-unchecked-ink-color: #585e62;
-            --paper-checkbox-label-color: #414b58;
-            --paper-fab-background: hsl(182, 100%, 22%);
-            --paper-fab-disabled-background: #aca0a8;
-            --paper-fab-disabled-text: #274c4c;
-            --paper-icon-button-disabled-text: #aca0a8;
-            --paper-input-container-color: #585e62;
-            --paper-input-container-focus-color: hsl(182, 100%, 22%);
-            --paper-input-container-invalid-color: #ff7043;
-            --paper-input-container-input-color: #585e62;
-            --paper-menu-background-color: #eceff1;
-            --paper-menu-color: #414b58;
-            --paper-menu-disabled-color: #aca0a8;
-            --paper-progress-active-color: hsl(182, 100%, 22%);
-            --paper-progress-secondary-color: #1f78ff;
-            --paper-radio-button-checked-color: #1f78ff;
-            --paper-radio-button-checked-ink-color: #e6f1f1;
-            --paper-radio-button-unchecked-color: #414b58;
-            --paper-radio-button-unchecked-ink-color: #585e62;
-            --paper-radio-button-label-color: #414b58;
-            --paper-slider-knob-color: #1f78ff;
-            --paper-slider-active-color: hsl(182, 100%, 22%);
-            --paper-slider-pin-color: #1f78ff;
-            --paper-spinner-layer-1-color: hsl(182, 100%, 22%);
-            --paper-spinner-layer-2-color: hsl(182, 100%, 22%);
-            --paper-spinner-layer-3-color: hsl(182, 100%, 22%);
-            --paper-spinner-layer-4-color: hsl(182, 100%, 22%);
-            --paper-tabs-selection-bar-color: #1f78ff;
-            --paper-tab-ink: #073883;
-            --paper-toggle-button-checked-bar-color: hsl(182, 100%, 22%);
-            --paper-toggle-button-checked-button-color: #1f78ff;
-            --paper-toggle-button-checked-ink-color: #1f78ff;
-            --paper-toggle-button-unchecked-bar-color: #414b58;
-            --paper-toggle-button-unchecked-button-color: white;
-            --paper-toggle-button-unchecked-ink-color: white;
-            --paper-toolbar-background: hsl(182, 100%, 22%);
-            --paper-toolbar-color: #ffffff;
-            margin: 0;
-            font-family: 'Roboto', 'Noto', sans-serif;
-            line-height: 1.5;
-            min-height: 100vh;
-            /*background: linear-gradient(254deg,hsl(183, 95%, 88%), hsl(194, 91%, 92%), hsl(197, 100%, 86%), hsl(236, 99%, 80%), hsl(209, 54%, 85%));
-            background-size: 1000% 1000%;
-            -webkit-animation: fondo 49s ease infinite;
-            -moz-animation: fondo 49s ease infinite;
-            -o-animation: fondo 49s ease infinite;
-            animation: fondo 49s ease infinite;*/
-        }
+        
 
         @-webkit-keyframes fondo {
             0% {

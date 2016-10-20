@@ -10,109 +10,109 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shared-styles.html">
+
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/effects/parallax-background.html">
+<link rel="import" href="../bower_components/app-layout/app-box.html">
+
 <link rel="import" href="../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
 <link rel="import" href="../bower_components/polymerfire/polymerfire.html">
 <link rel="import" href="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <dom-module id="my-view1">
 
-  <template>
+    <template>
 
-    <style include="shared-styles">
-      :host {
-        display: block;
-        padding: 10px;
-      }
-    </style>
-
-      <firebase-query id="query"
-                      app-name="notes"
-                      path="/notes/[[user.uid]]"
-                      data="{{data}}">
-      </firebase-query>
-      <app-indexeddb-mirror session="[[user.uid]]"
-                            key="notes"
-                            data="{{data}}"
-                            persisted-data="{{persistedData}}">
-      </app-indexeddb-mirror>
-      <firebase-document id="document"
-                         app-name="notes"
-                         path="[[editableNoteId]]"
-                         data="{{editableNote}}">
-      </firebase-document>
-
-    <div id="card" class="card">
-      <div id="circle" class="circle">1</div>
-      <h1>View One</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>  <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>  <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-          <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>  <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-            <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>  <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-              <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>  <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-                <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>  <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-                  <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>  <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-                    <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>  <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-                      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>  <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
-                        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-    </div>
-
-  </template>
-
-  <script>
-
-    Polymer({
-
-      is: 'my-view1',
-      behaviors: [
-        Polymer.NeonSharedElementAnimatableBehavior
-      ],
-
-      properties: {
-
-        sharedElements: {
-          type: Object,
-          value: function() {
-            return {
-              'hero': this.$.card,
-              'ripple': this.$.circle
+        <style include="shared-styles">
+            :host {
+                display: block;
+                padding: 10px;
             }
-          }
-        },
+             app-box {
+      height: 100vh;
+    }
 
-        animationConfig: {
-          type: Object,
-          value: function() {
-            return {
-              'entry': [{
-                name: 'ripple-animation',
-                id: 'ripple',
-                toPage: this,
-              }, {
-                name: 'hero-animation',
-                id: 'hero',
-                toPage: this,
-                timing: {
-                  delay: 150
-                }
-              }],
-              'exit': [{
-                name: 'transform-animation',
-                transformFrom: 'none',
-                transformTo: 'translate(0px,-200vh) scale(0.9,1)',
-                node: this.$.card
+        </style>
+
+        <firebase-query id="query"
+                        app-name="pruebapq"
+                        path="/notes/[[user.uid]]"
+                        data="{{data}}">
+        </firebase-query>
+        <app-indexeddb-mirror session="[[user.uid]]"
+                              key="notes"
+                              data="{{data}}"
+                              persisted-data="{{persistedData}}">
+        </app-indexeddb-mirror>
+        <firebase-document id="document"
+                           app-name="pruebapq"
+                           path="[[editableNoteId]]"
+                           data="{{editableNote}}">
+        </firebase-document>
+
+        <!--<div id="card" class="card">
+          <div id="circle" class="circle">1</div>-->
+        <div class="chorizontal cprincipal">
+            <div class="cvertical onecolum primary">
+                <h1>Ingresar los datos</h1>
+
+            </div>
+        </div>
+    </template>
+
+    <script>
+
+        Polymer({
+
+            is: 'my-view1',
+            behaviors: [
+              Polymer.NeonSharedElementAnimatableBehavior
+            ],
+
+            properties: {
+
+                sharedElements: {
+                    type: Object,
+                    value: function () {
+                        return {
+                            'hero': this.$.card,
+                            'ripple': this.$.circle
+                        }
+                    }
+                },
+
+                animationConfig: {
+                    type: Object,
+                    value: function () {
+                        return {
+                            'entry': [{
+                                name: 'ripple-animation',
+                                id: 'ripple',
+                                toPage: this,
+                            }, {
+                                name: 'hero-animation',
+                                id: 'hero',
+                                toPage: this,
+                                timing: {
+                                    delay: 150
+                                }
+                            }],
+                            'exit': [{
+                                name: 'transform-animation',
+                                transformFrom: 'none',
+                                transformTo: 'translate(0px,-200vh) scale(0.9,1)',
+                                node: this.$.card
                             }, {
 
-                              name: 'fade-out-animation',
-                              node: this.$.circle
+                                name: 'fade-out-animation',
+                                node: this.$.circle
 
-              }]
+                            }]
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
 
-    });
+        });
 
-  </script>
+    </script>
 
 </dom-module>
