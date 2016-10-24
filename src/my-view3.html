@@ -10,8 +10,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/iron-scroll-threshold/iron-scroll-threshold.html">
 <link rel="import" href="shared-styles.html">
-
+<link rel="import" href="my-item.html">
 <dom-module id="my-view3">
 
   <template>
@@ -21,49 +22,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 10px;
       }
+      .articulo{
+          width:30vw;
+          height:auto;
+      }
     </style>
+      <iron-scroll-threshold on-lower-threshold="loadMoreData">
+          <div class="cvertical">
+    <my-item id="arti" class="articulo" articulo={{producto}}></my-item>
 
-    <div class="card">
-        <p>El usuario es {{usuario}} y el password es {{password}}</p>
-
-      
-
-        <form is="iron-form" method="get" action="/" id="eventsDemo">
-            
-            <firebase-auth id="auth" user="{{usuario}}" provider="google" on-error="handleError">
-            </firebase-auth>
-            <paper-input-container>
-                <label>Usuario</label>
-                <input is="iron-input" id="user" maxlength="20" bind-value="{{usuario}}">
-            </paper-input-container>
-            <paper-input-container>
-                <label>Password</label>
-                <input is="iron-input" id="pass" type="password"  bind-value="{{password}}">
-            </paper-input-container>
-            <paper-button raised onclick="ingresa();" class="info" id="eventsDemoSubmit">
-                <paper-spinner id="spinner" hidden></paper-spinner>Submit
-            </paper-button>
-
-</form>
-            
-    </div>
+</div></iron-scroll-threshold>
+    
 
   </template>
 
   <script>
-      
+      var articulotemp = null;
     Polymer({
 
-        is: 'my-view3', properties: {
-            usuario: { type: String, notify: true, readOnly: false },
-            password: { type: String, notify: true, readOnly: false }
+        is: 'my-view3',
+        properties: {
+            producto: { type: Object, notify: true, readOnly: false }
         },
         ready: function () {
-            
+            this.producto = { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' }
+            articulotemp = this.$.arti;
         }
-
+        , loadMoreData: function () {
+            articulotemp.animacion();
+        }
     });
-    
+      
 
   </script>
 

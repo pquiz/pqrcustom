@@ -29,7 +29,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
         </style>
         <neon-animated-pages id="pages" class="flex" selected="[[selected]]" 
-                             entry-animation="scale-up-animation" exit-animation="scale-down-animation">
+                             entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
             <template is="dom-repeat" items="{{imagenes}}">
                 <neon-animatable>
                     <iron-image sizing="cover"

@@ -27,8 +27,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
-<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
 <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html" />
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
@@ -56,7 +56,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         body {
           margin: 0;
           font-family: arial;
-          background-color: #eee;
         }
 
         app-header {
@@ -65,17 +64,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           left: 0;
           width: 100%;
           height: 120px;
-          color: hsl(56, 100%, 81%);
-          background-color: hsl(182, 100%, 22%);
 
         }
       
-        app-header a.iron-selected {
-            border-bottom: 4px solid hsl(339, 100%, 48%);
-        }
         
 
-        app-toolbar.tall {
+        paper-toolbar.tall {
           height: 55px;
         }
 
@@ -116,7 +110,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
       
       <!-- Configure Firebase app: -->
-      
+      <app-scrollpos-control selected="{{page}}"></app-scrollpos-control>
+
       <firebase-auth app-name="pruebapq" id="auth" user="{{usuario}}" signed-in="{{signedIn}}" provider="google" on-error="handleError">
       </firebase-auth>
       
@@ -151,19 +146,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <app-header-layout has-scrolling-region>
 
-        <app-header condenses fixed effects="material">
-          <app-toolbar>
-            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+        <app-header condenses reveals effects="material">
+          <paper-toolbar>
+            
             <h4 condensed-title>What is material? &mdash; Environment</h4>
             <paper-icon-button icon="search"></paper-icon-button>
-          </app-toolbar>
-          <app-toolbar class="tall">
-            <paper-tabs class="self-end" selected="0" autoselect autoselect-delay="1000">
+          </paper-toolbar>
+          <paper-toolbar class="tall">
+              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+            <paper-tabs  selected="0" autoselect autoselect-delay="1000">
     <paper-tab>    <a name="view1" href="/view1">View One</a></paper-tab>
     <paper-tab>    <a name="view2" href="/view2">View two</a></paper-tab>
     <paper-tab>    <a name="view3" href="/view3">View three</a></paper-tab>
   </paper-tabs>
-          </app-toolbar>
+          </paper-toolbar>
         </app-header>
         <neon-animated-pages selected="[[page]]" class="flex" attr-for-selected="name" fallback-selection="view404" role="main">
           <my-view1 name="view1"></my-view1>
