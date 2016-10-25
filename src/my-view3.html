@@ -27,13 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           height:auto;
       }
     </style>
-      <iron-scroll-threshold on-lower-threshold="loadMoreData">
-          <div class="cvertical">
-    <my-item id="arti" class="articulo" articulo={{producto}}></my-item>
-
-</div></iron-scroll-threshold>
-    
-
+ 
   </template>
 
   <script>
@@ -42,10 +36,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         is: 'my-view3',
         properties: {
-            producto: { type: Object, notify: true, readOnly: false }
+            productolist: { type: Array, notify: true, readOnly: false }
         },
         ready: function () {
-            this.producto = { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' }
+            this.producto = [{ imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' },
+                { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '000' },
+            { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' },
+            { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' },
+            { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' },
+            { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' }
+            ]
             articulotemp = this.$.arti;
         }
         , loadMoreData: function () {

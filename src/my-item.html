@@ -99,18 +99,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
         },
             articulo: { type: Object, notify: true, readOnly: false }
-        },
-        dibuja: function (hora) {
-            obj.selected = obj.selected === 4 ? 0 : (obj.selected + 1);
-            setTimeout(function () { window.requestAnimationFrame(func); }, 7000);
         }, animacion: function () {
             this.playAnimation('entry');
         },
         ready: function () {
-            func = this.dibuja;
-            this.selected = 0;
-            obj = this;
-            window.requestAnimationFrame(this.dibuja);
 
         }
 
