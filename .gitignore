@@ -243,3 +243,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/Estilos
+/compilerconfig.json.defaults
+/compilerconfig.json

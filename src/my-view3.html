@@ -9,10 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/iron-form/iron-form.html">
-<link rel="import" href="../bower_components/iron-scroll-threshold/iron-scroll-threshold.html">
 <link rel="import" href="shared-styles.html">
-<link rel="import" href="my-item.html">
+<link rel="import" href="my-lista.html">
 <dom-module id="my-view3">
 
   <template>
@@ -22,12 +20,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 10px;
       }
-      .articulo{
-          width:30vw;
+      .lista{
+          width:90vw;
           height:auto;
       }
     </style>
- 
+ <my-lista class="lista" productos={{productolist}}></my-lista>
   </template>
 
   <script>
@@ -39,17 +37,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             productolist: { type: Array, notify: true, readOnly: false }
         },
         ready: function () {
-            this.producto = [{ imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' },
-                { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '000' },
-            { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' },
-            { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' },
-            { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' },
-            { imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' }
+            this.productolist = [{ imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' },
+                { imagen: '../images/tennis1.jpg', titulo: 'Tennis2', precio: '000' },
+            { imagen: '../images/tennis1.jpg', titulo: 'Tennis3', precio: '1000' },
+            { imagen: '../images/tennis1.jpg', titulo: 'Tennis4', precio: '1000' },
+            { imagen: '../images/tennis1.jpg', titulo: 'Tennis5', precio: '1000' },
+            { imagen: '../images/tennis1.jpg', titulo: 'Tennis6', precio: '1000' }
             ]
-            articulotemp = this.$.arti;
-        }
-        , loadMoreData: function () {
-            articulotemp.animacion();
         }
     });
       
