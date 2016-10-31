@@ -246,3 +246,5 @@ ModelManifest.xml
 /Estilos
 /compilerconfig.json.defaults
 /compilerconfig.json
+/.settings
+/.project
