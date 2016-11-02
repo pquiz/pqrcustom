@@ -11,9 +11,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animation-runner-behavior.html" />
 <link rel="import" href="../bower_components/iron-scroll-threshold/iron-scroll-threshold.html" />
+<link rel="import" href="../bower_components/iron-list/iron-list.html" />
+
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html" />
 <link rel="import" href="../bower_components/paper-button/paper-button.html" />
 <link rel="import" href="../bower_components/paper-card/paper-card.html" />
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html" />
 <link rel="import" href="my-item.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="my-lista">
@@ -33,7 +36,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
 
 
-
+              .lista{
+          width:100%;
+          height:auto;
+          min-height:70vh;
+      }
+            my-item {
+                width:45%;
+                height:auto;
+            }
             .precio {
                 color: var(--color-success);
                 margin-bottom: 2vh;
@@ -44,35 +55,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 width: 100%;
             }
 
-            @media screen and (max-width: 767px) {
-                paper-card.titulo {
-                    --paper-card-header-text:;
-
-            {
-                font-size: 24px;
-                font-weight: 800;
-            }
-
-            ;
-            }
-            }
+         
         </style>
-        <iron-list id="list" items="[]" as="producto" scroll-target="html">
-            
-                
-                    <my-item id$="[[iditem]] class="articulo" articulo={{producto}}></my-item>
+        <iron-scroll-threshold id="scrollTheshold" on-lower-threshold="loadMoreData" class="lista">
+            <iron-list id="list" items="[]" as="producto" scroll-target="scrollTheshold">
 
-              
-            
-        </iron-list>
-        <div class="loadingIndicator">
-            <paper-spinner active="{{loadingPeople}}"></paper-spinner> Fetching data
-        </div>
-        <!-- this element will load more data when the user scrolls down and reached the lower threshold -->
-        <iron-scroll-threshold id="scrollTheshold"
-                               lower-threshold="500"
-                               on-lower-threshold="_loadMoreData"
-                               scroll-target="html">
+                <template>
+                    <my-item id$=[[iditem]] class="articulo" articulo={{producto}}></my-item>
+
+
+                    </template>
+</iron-list>
+            <div class="loadingIndicator">
+                <paper-spinner active="{{loadingPeople}}"></paper-spinner> Fetching data
+            </div>
+            <!-- this element will load more data when the user scrolls down and reached the lower threshold -->
+
         </iron-scroll-threshold>
 
             
@@ -86,7 +84,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
         is: 'my-lista',
         properties: {
-            productos: { type: Array, notify: true, readOnly: false },
+            productos: { type: Array },
             iditem: { 
                 type: String,
                 reflectToAttribute: true }
@@ -94,26 +92,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         ready: function () {
             ironlista = this.$.list;
             ironscroll = this.$.scrollTheshold;
-            this.iditem = 'id' + this.contador;
+            this.iditem = 'id' + contador;
         }
         , loadMoreData: function () {
             if (contador < this.productos.length) {
-                ironlista.push('items', productos[contador]);
-                this.iditem = 'id' + this.contador;
-                let ele = document.querySelector('id' + this.contador);
-                ele.animacion();
+                ironlista.push('items', this.productos[contador]);
+               
                 contador = contador + 1;
+                this.iditem = 'id' + contador;
             }
             
             
             if (contador < this.productos.length) {
-                ironlista.push('items', productos[contador]);
-                this.iditem = 'id' + this.contador;
-                let ele = document.querySelector('id' + this.contador);
-                ele.animacion();
+                ironlista.push('items', this.productos[contador]);
+                
                 contador = contador + 1;
+                this.iditem = 'id' + contador;
             }
-            contador = contador + 1;
             // Clear the lower threshold so we can load more data when the user scrolls down again.
             ironscroll.clearTriggers();
 

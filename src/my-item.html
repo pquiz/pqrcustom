@@ -29,14 +29,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     background: #ddd;
   }
             paper-card.titulo{
-                --paper-card-header-text: {
-                color:hsla(55, 9%, 44%, 0.79);
-                
-    font-size: 30px;
-    font-weight: 800;
-                top:0px;
-
-            };
+               
             }
             .precio {
                 color:var(--color-success);
@@ -47,16 +40,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 width: 100%;
             }
 
-            @media  screen and (max-width: 767px) {
-                 paper-card.titulo{
-                --paper-card-header-text: {
-                
-    font-size: 24px;
-    font-weight: 800;
-
-            };
-            }
-            }
+           
         </style>
       <div class="cvertical">
           <paper-card class="titulo" heading="{{articulo.titulo}}" image="{{articulo.imagen}}" alt="{{articulo.titulo}}">

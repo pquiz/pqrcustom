@@ -22,6 +22,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
       .lista{
           width:90vw;
+          margin-left:auto;
+          margin-right:auto;
           height:auto;
       }
     </style>
@@ -34,16 +36,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         is: 'my-view3',
         properties: {
-            productolist: { type: Array, notify: true, readOnly: false }
-        },
-        ready: function () {
-            this.productolist = [{ imagen: '../images/tennis1.jpg', titulo: 'Tennis', precio: '1000' },
-                { imagen: '../images/tennis1.jpg', titulo: 'Tennis2', precio: '000' },
+            productolist: { type: Array, notify: true, readOnly: false, value: function() {
+                return [{
+                    imagen: '../images/tennis1.jpg',
+                    titulo: 'Tennis',
+                    precio: '1000'
+                }, { imagen: '../images/tennis1.jpg', titulo: 'Tennis2', precio: '000' },
             { imagen: '../images/tennis1.jpg', titulo: 'Tennis3', precio: '1000' },
             { imagen: '../images/tennis1.jpg', titulo: 'Tennis4', precio: '1000' },
             { imagen: '../images/tennis1.jpg', titulo: 'Tennis5', precio: '1000' },
             { imagen: '../images/tennis1.jpg', titulo: 'Tennis6', precio: '1000' }
-            ]
+                ];
+            }}
+        },
+        ready: function () {
+            
         }
     });
       
