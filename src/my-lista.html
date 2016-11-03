@@ -34,17 +34,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 height: 20vw;
                 background: #ddd;
             }
-
+            .articulo{
+                width:40%;
+            }
 
               .lista{
-          width:100%;
-          height:auto;
-          min-height:70vh;
+          width: 80vh;
       }
-            my-item {
-                width:45%;
-                height:auto;
-            }
+            
             .precio {
                 color: var(--color-success);
                 margin-bottom: 2vh;
@@ -57,11 +54,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
          
         </style>
-        <iron-scroll-threshold id="scrollTheshold" on-lower-threshold="loadMoreData" class="lista">
-            <iron-list id="list" items="[]" as="producto" scroll-target="scrollTheshold">
+        <iron-scroll-threshold id="scrollTheshold" on-lower-threshold="loadMoreData"  lower-threshold="500" scroll-target="document" >
+            <iron-list id="list" items="[]" as="producto" class="chorizontal" scroll-target="document" grid>
 
                 <template>
-                    <my-item id$=[[iditem]] class="articulo" articulo={{producto}}></my-item>
+                    <my-item id$=[[iditem]]  articulo={{producto}} class="flexchild"></my-item>
 
 
                     </template>

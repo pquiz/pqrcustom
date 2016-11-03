@@ -18,19 +18,53 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
         <style include="shared-styles">
             :host {
-                display: block;
+                display: inline-flex;
                 padding: 10px;
-                width: 100%;
+                position:relative;
+                width: 45vh;
+                max-width:500px;
                 height: 100%;
             }
-            #example-sizing-contain {
-    width: 20vw;
-    height: 20vw;
-    background: #ddd;
-  }
-            paper-card.titulo{
-               
-            }
+
+     .card-size{
+         width :30vw;
+         max-width:500px;
+     }      
+    .card-container {
+      display: inline-block;
+      width: 33.33% !important;
+      color: black;
+      text-decoration: none;
+    }
+
+    paper-card {
+      display: block;
+      margin: 5px;
+
+      --paper-card-header-image: {
+        height: auto;
+      
+      }
+    }
+
+    paper-card h2 {
+      margin: 4px;
+      font-weight: normal;
+    }
+
+    paper-card p {
+      margin: 4px;
+      color: #999;
+    }
+
+    paper-fab {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+
+      --paper-fab-background: #EF5458;
+      --paper-fab-keyboard-focus-background: #DF4448;
+    }
             .precio {
                 color:var(--color-success);
                     margin-bottom: 2vh;
@@ -42,7 +76,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
            
         </style>
-      <div class="cvertical">
+
+      <div class="flexchild card-size">
           <paper-card class="titulo" heading="{{articulo.titulo}}" image="{{articulo.imagen}}" alt="{{articulo.titulo}}">
               <div class="card-content">
                   ${{articulo.precio}}
