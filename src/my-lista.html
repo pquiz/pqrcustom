@@ -23,38 +23,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
         <style include="shared-styles">
             :host {
-                display: block;
+                display:compact;
+                position:page;
                 padding: 10px;
-                width: 100%;
+                width:100vw;
+                height:auto;
             }
 
 
 
-            iron-list {
-                margin-top: 90px;
-                padding-bottom: 16px;
-            }
-
-
-          ¿
      
+
+            .itemContent {
+              display: inline-flex;
+    position: relative !important;
+    flex-basis: initial;
+    width:100%;
+    height:100%;
+    flex: 1 1 auto;
+            }
 
             
         </style>
 
 
-        <iron-list id="list" items={{productos}} as="producto"  scroll-target="document" grid>
-            <div class="cvertical">
+        <iron-list id="list" items={{productos}} as="producto" class="chorizontal" scroll-target="document" grid>
+           
                 <template>
+                   
 
+                        <div class="itemContent " tabindex$="[[tabIndex]]">
+                            <my-item id$=[[iditem]] articulo={{producto}}></my-item>
 
-                    <div class="itemContent " tabindex$="[[tabIndex]]">
-                        <my-item id$=[[iditem]] articulo={{producto}} ></my-item>
-
-                    </div>
-
-                </template>
-            </div>
+                        </div>
+                    
+</template>
+           
         </iron-list>
       
         <!-- this element will load more data when the user scrolls down and reached the lower threshold -->

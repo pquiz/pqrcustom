@@ -18,12 +18,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
         <style include="shared-styles">
             :host {
-                display: block;
-                padding: 10px;
-                position:relative!important;
-                width: 32vw;
+                padding: 0px;
+                width: 20vw;
                 max-width:500px;
-               min-height:250px; height: 40vh;
+               min-height:200px; height: 40vh;
             }
              .precio {
                 color: var(--alert-color);
@@ -75,7 +73,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
            
         </style>
 
-      <div class="card-size">
+      <div class="fit">
           <paper-card class="titulo" heading="{{articulo.titulo}}" image="{{articulo.imagen}}" alt="{{articulo.titulo}}">
               <div class="card-content precio">
                   ${{articulo.precio}}
