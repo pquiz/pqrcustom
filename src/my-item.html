@@ -18,12 +18,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
         <style include="shared-styles">
             :host {
-                display: inline-flex;
+                display: block;
                 padding: 10px;
-                position:relative;
-                width: 45vh;
+                position:relative!important;
+                width: 32vw;
                 max-width:500px;
-                height: 100%;
+               min-height:250px; height: 40vh;
+            }
+             .precio {
+                color: var(--alert-color);
+                margin-bottom: 2vh;
             }
 
      .card-size{
@@ -65,21 +69,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       --paper-fab-background: #EF5458;
       --paper-fab-keyboard-focus-background: #DF4448;
     }
-            .precio {
-                color:var(--color-success);
-                    margin-bottom: 2vh;
-            }
-            neon-animated-pages, neon-animatable, iron-image {
-                height: 100%;
-                width: 100%;
-            }
+           
+       
 
            
         </style>
 
-      <div class="flexchild card-size">
+      <div class="card-size">
           <paper-card class="titulo" heading="{{articulo.titulo}}" image="{{articulo.imagen}}" alt="{{articulo.titulo}}">
-              <div class="card-content">
+              <div class="card-content precio">
                   ${{articulo.precio}}
               </div>
               <div class="card-actions">

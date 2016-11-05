@@ -26,92 +26,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 display: block;
                 padding: 10px;
                 width: 100%;
-                height: 100%;
             }
 
-            #example-sizing-contain {
-                width: 20vw;
-                height: 20vw;
-                background: #ddd;
-            }
-            .articulo{
-                width:40%;
+
+
+            iron-list {
+                margin-top: 90px;
+                padding-bottom: 16px;
             }
 
-              .lista{
-          width: 80vh;
-      }
+
+          ¿
+     
+
             
-            .precio {
-                color: var(--color-success);
-                margin-bottom: 2vh;
-            }
-
-            neon-animated-pages, neon-animatable, iron-image {
-                height: 100%;
-                width: 100%;
-            }
-
-         
         </style>
-        <iron-scroll-threshold id="scrollTheshold" on-lower-threshold="loadMoreData"  lower-threshold="500" scroll-target="document" >
-            <iron-list id="list" items="[]" as="producto" class="chorizontal" scroll-target="document" grid>
 
+
+        <iron-list id="list" items={{productos}} as="producto"  scroll-target="document" grid>
+            <div class="cvertical">
                 <template>
-                    <my-item id$=[[iditem]]  articulo={{producto}} class="flexchild"></my-item>
 
 
-                    </template>
-</iron-list>
-            <div class="loadingIndicator">
-                <paper-spinner active="{{loadingPeople}}"></paper-spinner> Fetching data
+                    <div class="itemContent " tabindex$="[[tabIndex]]">
+                        <my-item id$=[[iditem]] articulo={{producto}} ></my-item>
+
+                    </div>
+
+                </template>
             </div>
-            <!-- this element will load more data when the user scrolls down and reached the lower threshold -->
+        </iron-list>
+      
+        <!-- this element will load more data when the user scrolls down and reached the lower threshold -->
+       
 
-        </iron-scroll-threshold>
-
-            
 
 
     </template>
     <script>
-        var ironscroll = null;
-        var ironlista = null;
-        var contador = 0;
-    Polymer({
-        is: 'my-lista',
-        properties: {
-            productos: { type: Array },
-            iditem: { 
-                type: String,
-                reflectToAttribute: true }
-        },
-        ready: function () {
-            ironlista = this.$.list;
-            ironscroll = this.$.scrollTheshold;
-            this.iditem = 'id' + contador;
-        }
-        , loadMoreData: function () {
-            if (contador < this.productos.length) {
-                ironlista.push('items', this.productos[contador]);
-               
-                contador = contador + 1;
-                this.iditem = 'id' + contador;
-            }
-            
-            
-            if (contador < this.productos.length) {
-                ironlista.push('items', this.productos[contador]);
-                
-                contador = contador + 1;
-                this.iditem = 'id' + contador;
-            }
-            // Clear the lower threshold so we can load more data when the user scrolls down again.
-            ironscroll.clearTriggers();
+        Polymer({
+            is: 'my-lista',
+            properties: {
+                productos: { type: Array },
+                iditem: {
+                    type: String,
+                    reflectToAttribute: true
+                }
+            },
+            ready: function () {
 
-        }
-
-    });
+            }});
 
     </script>
 </dom-module>
