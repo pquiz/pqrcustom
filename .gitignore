@@ -249,3 +249,8 @@ ModelManifest.xml
 /.settings
 /.project
 /WebWorkbench.mswwsettings
+/.bin
+/node.cmd
+/git.cmd
+/bower.cmd
+/packages.config
