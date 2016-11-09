@@ -35,14 +35,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      
 
             .itemContent {
-              display: inline-flex;
+              display: inline-block;
     position: relative !important;
     flex-basis: initial;
-    width:21%;
-    height:100%;
+    width:22%;
+    
     flex: 1 1 auto;
             }
+            @media (max-width: 1100px) {
+                .itemContent {
+              display: inline-block;
+    position: relative !important;
+    flex-basis: initial;
+    width:32%;
+    
+    flex: 1 1 auto;
+            }
+            }
 
+            @media (max-width: 750px) {
+                .itemContent {
+              display: inline-block;
+    position: relative !important;
+    flex-basis: initial;
+    width:48%;
+    
+    flex: 1 1 auto;
+            }
+            }
+                @media (max-width: 450px) {
+                .itemContent {
+              display: inline-block;
+    position: relative !important;
+    flex-basis: initial;
+    width:100%;
+    
+    flex: 1 1 auto;
+            }
+            }
             
         </style>
 

@@ -18,327 +18,81 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <style include="iron-flex iron-flex-alignment iron-flex-factors iron-positioning">
             @import url("https://fonts.googleapis.com/css?family=Open+Sans|Oswald:700");
 
+html { -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 16px; }
 
-            html, body {
-                margin: 0px;
-                padding: 0px;
-                min-height: 100%;
-                color: #5e5e0d;
-                background-color: #4b692f;
-                font-family: 'Source Sans Pro', sans-serif;
-                font-weight: 300;
-            }
+html, body { margin: 0px; padding: 0px; min-height: 100%; color: #fff9c4; background-color: #00273d; font-family: 'Source Sans Pro', sans-serif; font-weight: 300; }
 
-            section {
-                padding: 40px 0px;
-            }
+section { padding: 40px 0px; }
+section[hero] { background-color: #00578a; }
 
-                section[hero] {
-                    background-color: #3899d1;
-                }
+h1, h2, h3, h4, h5, h6 { font-weight: 300; margin: 0px; padding: 0px; line-height: 1em; }
 
-            h1, h2, h3, h4, h5, h6 {
-                font-weight: 300;
-                margin: 0px;
-                padding: 0px;
-                line-height: 1em;
-            }
+h1, h3, h5 { font-family: 'Open Sans', sans-serif; }
 
-            h1, h3, h5 {
-                font-family: 'Open Sans', sans-serif;
-            }
+h1 { font-size: 50px; margin: 30px 0px; }
 
-            h1 {
-                font-size: 50px;
-                margin: 30px 0px;
-            }
+h2 { color: #ffe0b2; font-size: 35px; margin: 20px 0px; }
 
-            h2 {
-                color: #450e4d;
-                font-size: 35px;
-                margin: 20px 0px;
-            }
+h3 { font-size: 25px; margin: 15px 0px; }
 
-            h3 {
-                font-size: 25px;
-                margin: 15px 0px;
-            }
+h4 { font-size: 20px; }
 
-            h4 {
-                font-size: 20px;
-            }
+a, a:active, a:visited, a:focus { color: #c5cae9; text-decoration: none; }
 
-            a, a:active, a:visited, a:focus {
-                color: #61293c;
-                text-decoration: none;
-            }
+a:hover { color: #c5cae9; text-decoration: underline; }
 
-                a:hover {
-                    color: #61293c;
-                    text-decoration: underline;
-                }
+:root { --default-primary-color: #e0c453; --dark-primary-color: #e0c453; --light-primary-color: #c5cae9; --text-primary-color: #ffffff; --accent-color: #ff4081; --primary-background-color: #ffffff; --primary-text-color: #fff9c4; --secondary-text-color: #ffe0b2; --disabled-text-color: black; --divider-color: #e0e0e0; --paper-checkbox-checked-color: #3d2b00; --paper-checkbox-checked-ink-color: #e0c453; --paper-checkbox-unchecked-color: #605e51; --paper-checkbox-unchecked-ink-color: #605e51; --paper-checkbox-label-color: #fff9c4; --paper-fab-background: #e0c453; --paper-fab-disabled-background: #b0ad57; --paper-fab-disabled-text: black; --paper-icon-button-disabled-text: #b0ad57; --paper-input-container-color: #826d18; --paper-input-container-focus-color: #e0c453; --paper-input-container-invalid-color: #e53935; --paper-input-container-input-color: #826d18; --paper-menu-background-color: #00578a; --paper-menu-color: #3d2b00; --paper-menu-disabled-color: #b0ad57; --paper-progress-active-color: #3d2b00; --paper-progress-secondary-color: #00b6fe; --paper-radio-button-checked-color: #3d2b00; --paper-radio-button-checked-ink-color: white; --paper-radio-button-unchecked-color: #3d2b00; --paper-radio-button-unchecked-ink-color: #e0c453; --paper-radio-button-label-color: #fff9c4; --paper-slider-knob-color: #3d2b00; --paper-slider-active-color: #3d2b00; --paper-slider-pin-color: #3d2b00; --paper-spinner-layer-1-color: #3d2b00; --paper-spinner-layer-2-color: #3d2b00; --paper-spinner-layer-3-color: #3d2b00; --paper-spinner-layer-4-color: #3d2b00; --paper-tabs-selection-bar-color: #00b6fe; --paper-tab-ink: #00b6fe; --paper-toggle-button-checked-bar-color: #3d2b00; --paper-toggle-button-checked-button-color: #3d2b00; --paper-toggle-button-checked-ink-color: #3d2b00; --paper-toggle-button-unchecked-bar-color: #3d2b00; --paper-toggle-button-unchecked-button-color: #222222; --paper-toggle-button-unchecked-ink-color: #222222; --paper-toolbar-background: #3d2b00; --paper-toolbar-color: #fff9c4; }
 
-            :root {
-                --default-primary-color: #e0c453;
-                --dark-primary-color: #e0c453;
-                --light-primary-color: #c5cae9;
-                --text-primary-color: #ffffff;
-                --accent-color: #ff4081;
-                --primary-background-color: #ffffff;
-                --primary-text-color: #5e5e0d;
-                --secondary-text-color: #450e4d;
-                --disabled-text-color: black;
-                --divider-color: #e0e0e0;
-                --paper-checkbox-checked-color: #349ef3;
-                --paper-checkbox-checked-ink-color: #e0c453;
-                --paper-checkbox-unchecked-color: #605e51;
-                --paper-checkbox-unchecked-ink-color: #605e51;
-                --paper-checkbox-label-color: #64b5f6;
-                --paper-fab-background: #e0c453;
-                --paper-fab-disabled-background: #7a7957;
-                --paper-fab-disabled-text: black;
-                --paper-icon-button-disabled-text: #7a7957;
-                --paper-input-container-color: #826d18;
-                --paper-input-container-focus-color: #e0c453;
-                --paper-input-container-invalid-color: #e53935;
-                --paper-input-container-input-color: #826d18;
-                --paper-menu-background-color: #3899d1;
-                --paper-menu-color: #64b5f6;
-                --paper-menu-disabled-color: #7a7957;
-                --paper-progress-active-color: #64b5f6;
-                --paper-progress-secondary-color: #ea114f;
-                --paper-radio-button-checked-color: #64b5f6;
-                --paper-radio-button-checked-ink-color: white;
-                --paper-radio-button-unchecked-color: #64b5f6;
-                --paper-radio-button-unchecked-ink-color: #e0c453;
-                --paper-radio-button-label-color: #64b5f6;
-                --paper-slider-knob-color: #64b5f6;
-                --paper-slider-active-color: #64b5f6;
-                --paper-slider-pin-color: #64b5f6;
-                --paper-spinner-layer-1-color: #64b5f6;
-                --paper-spinner-layer-2-color: #64b5f6;
-                --paper-spinner-layer-3-color: #64b5f6;
-                --paper-spinner-layer-4-color: #64b5f6;
-                --paper-tabs-selection-bar-color: #b3f098;
-                --paper-tab-ink: #b3f098;
-                --paper-toggle-button-checked-bar-color: #64b5f6;
-                --paper-toggle-button-checked-button-color: #64b5f6;
-                --paper-toggle-button-checked-ink-color: #64b5f6;
-                --paper-toggle-button-unchecked-bar-color: #64b5f6;
-                --paper-toggle-button-unchecked-button-color: #222222;
-                --paper-toggle-button-unchecked-ink-color: #222222;
-                --paper-toolbar-background: #563196;
-                --paper-toolbar-color: #fff9c4;
-            }
+paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active, paper-toolbar a:visited, paper-toolbar a:focus { color: #fff9c4; }
 
-            paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active, paper-toolbar a:visited, paper-toolbar a:focus {
-                color: #fff9c4;
-            }
+paper-button.primary, paper-button.btn-primary, paper-button[primary] { color: #3d2b00; }
+paper-button.primary[raised], paper-button.btn-primary[raised], paper-button[primary][raised] { background-color: #3d2b00; color: #fff; }
+paper-button.secondary, paper-button.btn-secondary, paper-button[secondary] { color: #00b6fe; }
+paper-button.secondary[raised], paper-button.btn-secondary[raised], paper-button[secondary][raised] { background-color: #00b6fe; color: #fff; }
+paper-button.success, paper-button.btn-success, paper-button[success] { color: #003d35; }
+paper-button.success[raised], paper-button.btn-success[raised], paper-button[success][raised] { background-color: #003d35; color: #fff; }
+paper-button.info, paper-button.btn-info, paper-button[info] { color: #090212; }
+paper-button.info[raised], paper-button.btn-info[raised], paper-button[info][raised] { background-color: #090212; color: #fff; }
+paper-button.warning, paper-button.btn-warning, paper-button[warning] { color: #5a2a00; }
+paper-button.warning[raised], paper-button.btn-warning[raised], paper-button[warning][raised] { background-color: #5a2a00; color: #fff; }
+paper-button.error, paper-button.btn-error, paper-button[error] { color: #3d0100; }
+paper-button.error[raised], paper-button.btn-error[raised], paper-button[error][raised] { background-color: #3d0100; color: #fff; }
+paper-button.link, paper-button.btn-link, paper-button[link] { text-decoration: underline; }
+paper-button[raised] { color: #fff9c4; }
+paper-button[disabled] { color: black !important; background: #b0ad57 !important; }
 
-            paper-button.primary, paper-button.btn-primary, paper-button[primary] {
-                color: #563196;
-            }
+paper-icon-button.primary, paper-icon-button.btn-primary, paper-icon-button[primary] { color: #3d2b00; }
+paper-icon-button.primary:hover, paper-icon-button.btn-primary:hover, paper-icon-button[primary]:hover { background-color: #062737; background-color: rgba(61, 43, 0, 0.2); border-radius: 50%; }
+paper-icon-button.secondary, paper-icon-button.btn-secondary, paper-icon-button[secondary] { color: #00b6fe; }
+paper-icon-button.secondary:hover, paper-icon-button.btn-secondary:hover, paper-icon-button[secondary]:hover { background-color: #003550; background-color: rgba(0, 182, 254, 0.2); border-radius: 50%; }
+paper-icon-button.success, paper-icon-button.btn-success, paper-icon-button[success] { color: #003d35; }
+paper-icon-button.success:hover, paper-icon-button.btn-success:hover, paper-icon-button[success]:hover { background-color: #00293c; background-color: rgba(0, 61, 53, 0.2); border-radius: 50%; }
+paper-icon-button.info, paper-icon-button.btn-info, paper-icon-button[info] { color: #090212; }
+paper-icon-button.info:hover, paper-icon-button.btn-info:hover, paper-icon-button[info]:hover { background-color: #012339; background-color: rgba(9, 2, 18, 0.2); border-radius: 50%; }
+paper-icon-button.warning, paper-icon-button.btn-warning, paper-icon-button[warning] { color: #5a2a00; }
+paper-icon-button.warning:hover, paper-icon-button.btn-warning:hover, paper-icon-button[warning]:hover { background-color: #092737; background-color: rgba(90, 42, 0, 0.2); border-radius: 50%; }
+paper-icon-button.error, paper-icon-button.btn-error, paper-icon-button[error] { color: #3d0100; }
+paper-icon-button.error:hover, paper-icon-button.btn-error:hover, paper-icon-button[error]:hover { background-color: #062337; background-color: rgba(61, 1, 0, 0.2); border-radius: 50%; }
 
-                paper-button.primary[raised], paper-button.btn-primary[raised], paper-button[primary][raised] {
-                    background-color: #563196;
-                    color: #fff;
-                }
+paper-checkbox #checkmark.paper-checkbox, paper-checkbox /deep/, paper-checkbox::shadow #checkmark.paper-checkbox { border-color: #fff !important; }
 
-            paper-button.secondary, paper-button.btn-secondary, paper-button[secondary] {
-                color: #ea114f;
-            }
+paper-dialog { color: #fff9c4; background-color: #00273d; font-family: 'Source Sans Pro', sans-serif; font-weight: 300; }
+paper-dialog h1, paper-dialog h2, paper-dialog h3, paper-dialog h4, paper-dialog h5, paper-dialog h6 { overflow: visible; padding: 0 1em; text-align: center; }
 
-                paper-button.secondary[raised], paper-button.btn-secondary[raised], paper-button[secondary][raised] {
-                    background-color: #ea114f;
-                    color: #fff;
-                }
+paper-fab { --text-primary-color: #222222; }
 
-            paper-button.success, paper-button.btn-success, paper-button[success] {
-                color: #1de9b6;
-            }
+paper-fab { background-color: #3d2b00; color: #fff; --paper-fab-keyboard-focus-background: #bd8500; }
+paper-fab.primary, paper-fab.btn-primary, paper-fab[primary] { background-color: #3d2b00; color: #fff; --paper-fab-keyboard-focus-background: #bd8500; }
+paper-fab.secondary, paper-fab.btn-secondary, paper-fab[secondary] { background-color: #00b6fe; color: #fff; --paper-fab-keyboard-focus-background: #005b7f; }
+paper-fab.success, paper-fab.btn-success, paper-fab[success] { background-color: #003d35; color: #fff; --paper-fab-keyboard-focus-background: #00bda4; }
+paper-fab.info, paper-fab.btn-info, paper-fab[info] { background-color: #090212; color: #fff; --paper-fab-keyboard-focus-background: #420f85; }
+paper-fab.warning, paper-fab.btn-warning, paper-fab[warning] { background-color: #5a2a00; color: #fff; --paper-fab-keyboard-focus-background: #da6600; }
+paper-fab.error, paper-fab.btn-error, paper-fab[error] { background-color: #3d0100; color: #fff; --paper-fab-keyboard-focus-background: #bd0300; }
+paper-fab[disabled] { color: black !important; background: #b0ad57 !important; }
 
-                paper-button.success[raised], paper-button.btn-success[raised], paper-button[success][raised] {
-                    background-color: #1de9b6;
-                    color: #fff;
-                }
+section.hero paper-menu, section[hero] paper-menu { --paper-menu-background-color: #00578a; }
 
-            paper-button.info, paper-button.btn-info, paper-button[info] {
-                color: #40c4ff;
-            }
-
-                paper-button.info[raised], paper-button.btn-info[raised], paper-button[info][raised] {
-                    background-color: #40c4ff;
-                    color: #133b4d;
-                }
-
-            paper-button.warning, paper-button.btn-warning, paper-button[warning] {
-                color: #ffc400;
-            }
-
-                paper-button.warning[raised], paper-button.btn-warning[raised], paper-button[warning][raised] {
-                    background-color: #ffc400;
-                    color: #fff;
-                }
-
-            paper-button.error, paper-button.btn-error, paper-button[error] {
-                color: #ff4081;
-            }
-
-                paper-button.error[raised], paper-button.btn-error[raised], paper-button[error][raised] {
-                    background-color: #ff4081;
-                    color: #4d1327;
-                }
-
-            paper-button.link, paper-button.btn-link, paper-button[link] {
-                text-decoration: underline;
-            }
-
-            paper-button[raised] {
-                color: #5e5e0d;
-            }
-
-            paper-button[disabled] {
-                color: black !important;
-                background: #7a7957 !important;
-            }
-
-            paper-icon-button.primary, paper-icon-button.btn-primary, paper-icon-button[primary] {
-                color: #563196;
-            }
-
-                paper-icon-button.primary:hover, paper-icon-button.btn-primary:hover, paper-icon-button[primary]:hover {
-                    background-color: #99e4b0;
-                    background-color: rgba(86, 49, 150, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-icon-button.secondary, paper-icon-button.btn-secondary, paper-icon-button[secondary] {
-                color: #ea114f;
-            }
-
-                paper-icon-button.secondary:hover, paper-icon-button.btn-secondary:hover, paper-icon-button[secondary]:hover {
-                    background-color: #a7e1a9;
-                    background-color: rgba(234, 17, 79, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-icon-button.success, paper-icon-button.btn-success, paper-icon-button[success] {
-                color: #1de9b6;
-            }
-
-                paper-icon-button.success:hover, paper-icon-button.btn-success:hover, paper-icon-button[success]:hover {
-                    background-color: #93f6b3;
-                    background-color: rgba(29, 233, 182, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-icon-button.info, paper-icon-button.btn-info, paper-icon-button[info] {
-                color: #40c4ff;
-            }
-
-                paper-icon-button.info:hover, paper-icon-button.btn-info:hover, paper-icon-button[info]:hover {
-                    background-color: #96f3bb;
-                    background-color: rgba(64, 196, 255, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-icon-button.warning, paper-icon-button.btn-warning, paper-icon-button[warning] {
-                color: #ffc400;
-            }
-
-                paper-icon-button.warning:hover, paper-icon-button.btn-warning:hover, paper-icon-button[warning]:hover {
-                    background-color: #aaf3a1;
-                    background-color: rgba(255, 196, 0, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-icon-button.error, paper-icon-button.btn-error, paper-icon-button[error] {
-                color: #ff4081;
-            }
-
-                paper-icon-button.error:hover, paper-icon-button.btn-error:hover, paper-icon-button[error]:hover {
-                    background-color: #aae6ae;
-                    background-color: rgba(255, 64, 129, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-checkbox #checkmark.paper-checkbox, paper-checkbox /deep/, paper-checkbox::shadow #checkmark.paper-checkbox {
-                border-color: #fff !important;
-            }
-
-            paper-dialog {
-                color: #5e5e0d;
-                background-color: #4b692f;
-                font-family: 'Source Sans Pro', sans-serif;
-                font-weight: 300;
-            }
-
-                paper-dialog h1, paper-dialog h2, paper-dialog h3, paper-dialog h4, paper-dialog h5, paper-dialog h6 {
-                    overflow: visible;
-                    padding: 0 1em;
-                    text-align: center;
-                }
-
-            paper-fab {
-                --text-primary-color: #222222;
-            }
-
-            paper-fab {
-                background-color: #563196;
-                color: #fff;
-                --paper-fab-keyboard-focus-background: #9775d2;
-            }
-
-                paper-fab.primary, paper-fab.btn-primary, paper-fab[primary] {
-                    background-color: #563196;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #9775d2;
-                }
-
-                paper-fab.secondary, paper-fab.btn-secondary, paper-fab[secondary] {
-                    background-color: #ea114f;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #730827;
-                }
-
-                paper-fab.success, paper-fab.btn-success, paper-fab[success] {
-                    background-color: #1de9b6;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #0c7b5f;
-                }
-
-                paper-fab.info, paper-fab.btn-info, paper-fab[info] {
-                    background-color: #40c4ff;
-                    color: #133b4d;
-                    --paper-fab-keyboard-focus-background: #0084c0;
-                }
-
-                paper-fab.warning, paper-fab.btn-warning, paper-fab[warning] {
-                    background-color: #ffc400;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #806200;
-                }
-
-                paper-fab.error, paper-fab.btn-error, paper-fab[error] {
-                    background-color: #ff4081;
-                    color: #4d1327;
-                    --paper-fab-keyboard-focus-background: #c00041;
-                }
-
-                paper-fab[disabled] {
-                    color: black !important;
-                    background: #7a7957 !important;
-                }
-
-            section.hero paper-menu, section[hero] paper-menu {
-                --paper-menu-background-color: #3899d1;
-            }
-
-            paper-tabs {
-                background-color: #563196;
-                color: #fff9c4;
-            }
-
+paper-tabs { background-color: #3d2b00; color: #fff9c4; }
 
             h1, h3, h5 {
                 text-transform: uppercase;
@@ -347,7 +101,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             .chorizontal {
                 @apply(--layout-horizontal);
                 @apply(--layout-wrap);
-                @apply(--layout-start-justified);
+                @apply(--layout-start-justified)
             }
 
             .cvertical {
@@ -364,7 +118,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             .cprincipal {
                 height: auto;
-                width: 95vw;
+                width: 100vw;
             }
 
             .onecolum {
