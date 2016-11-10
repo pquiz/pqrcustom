@@ -1,0 +1,89 @@
+﻿<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../bower_components/iron-input/iron-input.html">
+
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-input/paper-input-container.html">
+<link rel="import" href="../bower_components/polymerfire/polymerfire.html" />
+<link rel="import" href="my-firebehavior.html">
+<link rel="import" href="shared-styles.html">
+<dom-module id="my-loginform">
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+           
+        </style>
+
+        <firebase-auth app-name="pruebapq" id="auth" user="{{usuario}}" signed-in="{{signedIn}}" provider="google" on-error="handleError">
+        </firebase-auth>
+
+        <!-- Configure Firebase app: -->
+
+        <section hero>
+            <h2>Iniciar sesion</h2>
+            <paper-input-container>
+                <label>Your name</label>
+                <input is="iron-input" id="user" maxlength="20" bind-value="{{usuario}}">
+            </paper-input-container>
+            <paper-button onclick="ingresa()" secondary> Ingresar</paper-button>
+            <paper-button on-tap="lock" secondary> Ingresar</paper-button>
+            {{reslogin}}
+        </section>
+</template>
+    <script>
+        var auth = null;
+        var func = null;
+        var obj = 0;
+    Polymer({
+
+        is: 'my-loginform',
+        properties: {
+            usuario: { type: String, notify: true, readOnly: false, value: "" },
+            signedIn: {
+                type: Boolean,
+                notify: true,
+                value: false,
+                observer: '_loggedin'
+            }, reslogin: { type: String, notify: true, value: "no" }
+        },_loggedin: function (newValue, oldValue) {
+            this.value = "si";
+        },
+         ready: function () {
+             scope = this;
+             auth = this.$.auth;
+
+         }, lock: function () {
+             this.$.auth.signOut();
+         }
+
+
+    });
+    function ingresa() {
+        scope.$.auth.signInWithPopup();
+        
+
+
+    }
+    </script>
+</dom-module>
+
+
+
+
+
+

@@ -29,23 +29,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
 
 <link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
-<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html" />
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
-<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
-<link rel="import" href="../bower_components/paper-input/paper-input.html">
-<link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../bower_components/paper-input/paper-input-container.html">
 <link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
 
-
-<link rel="import" href="../bower_components/polymerfire/polymerfire.html" />
-
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
-<link rel="import" href="../bower_components/iron-input/iron-input.html">
 
-<link rel="import" href="my-icons.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-app">
@@ -112,17 +104,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Configure Firebase app: -->
       <app-scrollpos-control selected="{{page}}"></app-scrollpos-control>
 
-      <firebase-auth app-name="pruebapq" id="auth" user="{{usuario}}" signed-in="{{signedIn}}" provider="google" on-error="handleError">
-      </firebase-auth>
-      
-    <!-- Configure Firebase app: -->
-      
-      <paper-dialog id="dropdownDialog" modal="true" entry-animation="scale-up-animation"
-                    exit-animation="slide-down-animation">
-          <h2>Iniciar sesion</h2>
-          <input is="iron-input" id="user" maxlength="20" bind-value="{{usuario}}">
-          <paper-button onclick="ingresa()" secondary > Ingresar</paper-button>
-      </paper-dialog>
+     
     <app-location route="{{route}}"></app-location>
     <app-route
         route="{{route}}"
@@ -150,7 +132,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <paper-toolbar>
             
             <h4 condensed-title>What is material? &mdash; Environment</h4>
-            <paper-icon-button icon="search"></paper-icon-button>
+            
           </paper-toolbar>
           <paper-toolbar class="tall">
               <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
@@ -159,12 +141,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <paper-tab>    <a name="view2" href="/view2">View two</a></paper-tab>
     <paper-tab>    <a name="view3" href="/view3">View three</a></paper-tab>
   </paper-tabs>
-          </paper-toolbar>
+              <a name="loginform" href="/loginform" tabindex="-1">
+
+                  <paper-icon-button icon="account-box"></paper-icon-button>
+                  </a>
+</paper-toolbar>
         </app-header>
         <neon-animated-pages selected="[[page]]" class="flex" attr-for-selected="name" fallback-selection="view404" role="main">
           <my-view1 name="view1"></my-view1>
           <my-view2 name="view2"></my-view2>
           <my-view3 name="view3"></my-view3>
+          <my-loginform name ="loginform"></my-loginform>
           <my-view404 name="view404"></my-view404>
         </neon-animated-pages>
 
@@ -176,35 +163,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
       var scope = null;
-      var auth = null;
-      var modal = null;
+     
+    
     Polymer({
 
       is: 'my-app',
-
+      behaviors: [
+          Polymer.RegisterBehavior
+      ],
       properties: {
 
         page: {
           type: String,
           reflectToAttribute: true,
           observer: '_pageChanged'
-        }, usuario: { type: String, notify: true, readOnly: false,value:"" },
-        signedIn: {
-            type: Boolean,
-            notify: true,
-            value: false,
-            observer: '_loggedin'
         }
+       
 
       },
 
       observers: [
         '_routePageChanged(routeData.page)'
       ],
-      _loggedin: function (newValue, oldValue) {
-          if(modal!=null)
-          modal.close();
-      },
       _routePageChanged: function(page) {
         this.page = page || 'view1';
       },
@@ -220,19 +200,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       ready: function(){
          // this.$.dropdownDialog.toggle();
-          scope = this;
-          auth = this.$.auth;
+          
           //modal = this.$.dropdownDialog;
       }
 
     });
-    function ingresa() {
-        scope.$.auth.signInWithPopup();
-        this.$.signInWithPopup().
-            then(function (response) { alert('response'); modal.close(); }).catch(function (error) { alert('error'); });
-
-
-    }
+    
   </script>
 
 </dom-module>
