@@ -35,7 +35,7 @@
     "tag": "v1.0.2",
     "commit": "ba6d7c8f85fa83430330e833c5df2b52a74fba5d"
   },
-  "_source": "git://github.com/GoogleWebComponents/google-feeds.git",
+  "_source": "https://github.com/GoogleWebComponents/google-feeds.git",
   "_target": "^1.0.0",
   "_originalSource": "GoogleWebComponents/google-feeds"
 }

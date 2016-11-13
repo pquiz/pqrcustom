@@ -41,7 +41,7 @@
     "tag": "v0.9.2",
     "commit": "c1576c09e9055b4e2130bb3ce741991a0c995623"
   },
-  "_source": "git://github.com/PolymerElements/app-localize-behavior.git",
+  "_source": "https://github.com/PolymerElements/app-localize-behavior.git",
   "_target": "^0.9.0",
   "_originalSource": "PolymerElements/app-localize-behavior"
 }

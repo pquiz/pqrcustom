@@ -30,7 +30,7 @@
     "tag": "v1.0.3",
     "commit": "9c9e254ee82411f2149bc553547bf42fadf20324"
   },
-  "_source": "git://github.com/GoogleWebComponents/google-castable-video.git",
+  "_source": "https://github.com/GoogleWebComponents/google-castable-video.git",
   "_target": "^1.0.0",
   "_originalSource": "GoogleWebComponents/google-castable-video"
 }

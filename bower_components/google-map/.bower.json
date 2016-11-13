@@ -43,7 +43,7 @@
     "tag": "1.1.14",
     "commit": "993d8fd4e376098be9516f40a8846dd75c39941a"
   },
-  "_source": "git://github.com/GoogleWebComponents/google-map.git",
+  "_source": "https://github.com/GoogleWebComponents/google-map.git",
   "_target": "^1.0.0",
   "_originalSource": "GoogleWebComponents/google-map"
 }

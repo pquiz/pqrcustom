@@ -42,7 +42,7 @@
     "tag": "v1.1.2",
     "commit": "3e6cb1232e474d223e59b3144298b9d8f993865b"
   },
-  "_source": "git://github.com/PolymerElements/gold-cc-expiration-input.git",
+  "_source": "https://github.com/PolymerElements/gold-cc-expiration-input.git",
   "_target": "^1.0.0",
   "_originalSource": "PolymerElements/gold-cc-expiration-input"
 }

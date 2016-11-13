@@ -35,7 +35,7 @@
     "tag": "v0.9.0",
     "commit": "af32ca6b41070266c79acea0f89c7d4c2240e8da"
   },
-  "_source": "git://github.com/PolymerElements/app-elements.git",
+  "_source": "https://github.com/PolymerElements/app-elements.git",
   "_target": "^0.9.0",
   "_originalSource": "PolymerElements/app-elements"
 }

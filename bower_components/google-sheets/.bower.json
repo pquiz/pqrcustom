@@ -37,7 +37,7 @@
     "tag": "v1.0.6",
     "commit": "b261dc69326f1c6a21a38a24137bd6d1eb480f95"
   },
-  "_source": "git://github.com/GoogleWebComponents/google-sheets.git",
+  "_source": "https://github.com/GoogleWebComponents/google-sheets.git",
   "_target": "^1.0.1",
   "_originalSource": "GoogleWebComponents/google-sheets"
 }

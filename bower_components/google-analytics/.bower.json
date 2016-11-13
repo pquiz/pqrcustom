@@ -36,7 +36,7 @@
     "tag": "v1.2.3",
     "commit": "0e04845b7da3524f929b4322ff3f16bb171c0c64"
   },
-  "_source": "git://github.com/GoogleWebComponents/google-analytics.git",
+  "_source": "https://github.com/GoogleWebComponents/google-analytics.git",
   "_target": "^1.0.0",
   "_originalSource": "GoogleWebComponents/google-analytics"
 }

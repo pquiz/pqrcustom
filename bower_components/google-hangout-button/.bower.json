@@ -35,7 +35,7 @@
     "tag": "v1.0.2",
     "commit": "02af5aa4c8a3a51ff363faa9d4c3cb2b38f3d077"
   },
-  "_source": "git://github.com/GoogleWebComponents/google-hangout-button.git",
+  "_source": "https://github.com/GoogleWebComponents/google-hangout-button.git",
   "_target": "^1.0.0",
   "_originalSource": "GoogleWebComponents/google-hangout-button"
 }

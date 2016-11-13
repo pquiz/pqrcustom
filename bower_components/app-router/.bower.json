@@ -34,7 +34,7 @@
     "branch": "master",
     "commit": "d9c50a833d6d22923b50ba06b83f855350b67a17"
   },
-  "_source": "git://github.com/blasten/app-router.git",
+  "_source": "https://github.com/blasten/app-router.git",
   "_target": "master",
   "_originalSource": "blasten/app-router"
 }

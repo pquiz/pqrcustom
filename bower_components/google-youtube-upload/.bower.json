@@ -35,7 +35,7 @@
     "tag": "v1.1.2",
     "commit": "6db46812d6146cb6bc4efbf295b2cf2511aba062"
   },
-  "_source": "git://github.com/GoogleWebComponents/google-youtube-upload.git",
+  "_source": "https://github.com/GoogleWebComponents/google-youtube-upload.git",
   "_target": "^1.0.0",
   "_originalSource": "GoogleWebComponents/google-youtube-upload"
 }

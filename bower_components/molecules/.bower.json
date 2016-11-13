@@ -29,7 +29,7 @@
     "tag": "v1.0.0",
     "commit": "7abfe200ee398f9c8d9e04e39da13ac86ea3283f"
   },
-  "_source": "git://github.com/PolymerElements/molecules.git",
+  "_source": "https://github.com/PolymerElements/molecules.git",
   "_target": "^1.0.0",
   "_originalSource": "PolymerElements/molecules"
 }

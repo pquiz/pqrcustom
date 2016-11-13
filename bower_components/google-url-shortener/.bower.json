@@ -33,7 +33,7 @@
     "tag": "v1.0.2",
     "commit": "42c59eab083cb91ade4c7c1d489f69dc757e1c96"
   },
-  "_source": "git://github.com/GoogleWebComponents/google-url-shortener.git",
+  "_source": "https://github.com/GoogleWebComponents/google-url-shortener.git",
   "_target": "^1.0.0",
   "_originalSource": "GoogleWebComponents/google-url-shortener"
 }

@@ -36,7 +36,7 @@
     "tag": "v1.0.4",
     "commit": "6059f7d644cd97b9fe362b78a2742e3cdec6cdf4"
   },
-  "_source": "git://github.com/GoogleWebComponents/google-streetview-pano.git",
+  "_source": "https://github.com/GoogleWebComponents/google-streetview-pano.git",
   "_target": "^1.0.0",
   "_originalSource": "GoogleWebComponents/google-streetview-pano"
 }

@@ -7,7 +7,7 @@
     "branch": "master",
     "commit": "37c97848a239d2bbaccbe4eecb27b6119cc473ff"
   },
-  "_source": "git://github.com/googledrive/cors-upload-sample.git",
+  "_source": "https://github.com/googledrive/cors-upload-sample.git",
   "_target": "master",
   "_originalSource": "googledrive/cors-upload-sample"
 }

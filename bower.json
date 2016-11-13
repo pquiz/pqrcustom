@@ -19,7 +19,8 @@
     "color": "~2.5.0",
     "hydrolysis": "PolymerLabs/hydrolysis#^1.11.0",
     "note-app-elements": "PolymerLabs/note-app-elements",
-    "polymerfire": "firebase/polymerfire#^0.9.5"
+    "polymerfire": "firebase/polymerfire#^0.9.5",
+    "platinum-sw": "PolymerElements/platinum-sw#^1.3.0"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"

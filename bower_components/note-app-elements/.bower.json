@@ -27,7 +27,7 @@
     "branch": "master",
     "commit": "094b0d58f989b1128bfe96a743254c3c0a9154e3"
   },
-  "_source": "git://github.com/PolymerLabs/note-app-elements.git",
+  "_source": "https://github.com/PolymerLabs/note-app-elements.git",
   "_target": "*",
   "_originalSource": "PolymerLabs/note-app-elements"
 }
