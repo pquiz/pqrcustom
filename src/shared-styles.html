@@ -16,23 +16,60 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
 
         <style include="iron-flex iron-flex-alignment iron-flex-factors iron-positioning">
-            html
-            {
-                -ms-text-size-adjust: 100%;
-                -webkit-text-size-adjust: 100%;
-                font-size: 16px;
-            }
+
 
             html, body
             {
                 margin: 0px;
                 padding: 0px;
                 min-height: 100%;
-                color: #4e342e;
-                background-color: #00817c;
-                font-family: 'Arimo', sans-serif;
+                color: #ffebd7;
+
+        background-color: #014b60;
+
+       /* background: linear-gradient(270deg, #00456a, #005a8a, #021925, #15384b, #023c5c, #1b282f);*/
+background-image: url(../images/bubbles.svg) ;
+background-size: 150% 150%;
+-webkit-animation: AnimationName 54s ease infinite;
+-moz-animation: AnimationName 54s ease infinite;
+-o-animation: AnimationName 54s ease infinite;
+animation: AnimationName 54s ease infinite;
+            font-family: 'Arimo', sans-serif;
                 font-weight: 400;
             }
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 0%}
+    10%{background-position:5% 3%}
+    20%{background-position:13% 10%}
+    30%{background-position:48% 0%}
+    50%{background-position:3% 20%}
+    60%{background-position:35% 83%}
+    70%{background-position:13% 13%}
+    80%{background-position:48% 0%}
+    100%{background-position:53% 100%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:48% 0%}
+    50%{background-position:53% 100%}
+    100%{background-position:48% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:48% 0%}
+    50%{background-position:53% 100%}
+    100%{background-position:48% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 0%}
+    10%{background-position:5% 3%}
+    20%{background-position:13% 10%}
+    30%{background-position:48% 0%}
+    50%{background-position:3% 20%}
+    60%{background-position:35% 83%}
+    70%{background-position:13% 13%}
+    80%{background-position:48% 0%}
+    100%{background-position:53% 100%}
+}
 
             section
             {
@@ -41,7 +78,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                 section[hero]
                 {
-                    background-color: #5cfff9;
+                    background-color: #0fabff;
                 }
 
             h1, h2, h3, h4, h5, h6
@@ -65,7 +102,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             h2
             {
-                color: #4e342e;
+                color: #ffebd7;
                 font-size: 35px;
                 margin: 20px 0px;
             }
@@ -83,13 +120,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             a, a:active, a:visited, a:focus
             {
-                color: #6d4c41;
+                color: #d9fdce;
                 text-decoration: none;
             }
 
                 a:hover
                 {
-                    color: #6d4c41;
+                    color: #d9fdce;
                     text-decoration: underline;
                 }
 
@@ -101,15 +138,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 --text-primary-color: #ffffff;
                 --accent-color: #ff4081;
                 --primary-background-color: #ffffff;
-                --primary-text-color: #4e342e;
-                --secondary-text-color: #4e342e;
+                --primary-text-color: #ffebd7;
+                --secondary-text-color: #ffebd7;
                 --disabled-text-color: #7E8D9D;
                 --divider-color: #e0e0e0;
-                --paper-checkbox-checked-color: #0773fd;
+                --paper-checkbox-checked-color: #270095;
                 --paper-checkbox-checked-ink-color: #3ea1e6;
-                --paper-checkbox-unchecked-color: #4e342e;
+                --paper-checkbox-unchecked-color: #ffebd7;
                 --paper-checkbox-unchecked-ink-color: #7E8D9D;
-                --paper-checkbox-label-color: #4e342e;
+                --paper-checkbox-label-color: #ffebd7;
                 --paper-fab-background: #3ea1e6;
                 --paper-fab-disabled-background: #c9c9c9;
                 --paper-fab-disabled-text: #7E8D9D;
@@ -118,92 +155,92 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 --paper-input-container-focus-color: #3ea1e6;
                 --paper-input-container-invalid-color: #db5656;
                 --paper-input-container-input-color: #a8aca5;
-                --paper-menu-background-color: #5cfff9;
-                --paper-menu-color: #4e342e;
+                --paper-menu-background-color: #0fabff;
+                --paper-menu-color: #ffebd7;
                 --paper-menu-disabled-color: #c9c9c9;
-                --paper-progress-active-color: #0773fd;
+                --paper-progress-active-color: #270095;
                 --paper-progress-secondary-color: #78bdee;
-                --paper-radio-button-checked-color: #0773fd;
+                --paper-radio-button-checked-color: #270095;
                 --paper-radio-button-checked-ink-color: white;
-                --paper-radio-button-unchecked-color: #4e342e;
+                --paper-radio-button-unchecked-color: #ffebd7;
                 --paper-radio-button-unchecked-ink-color: #424540;
-                --paper-radio-button-label-color: #4e342e;
-                --paper-slider-knob-color: #0773fd;
-                --paper-slider-active-color: #0773fd;
-                --paper-slider-pin-color: #0773fd;
-                --paper-spinner-layer-1-color: #0773fd;
-                --paper-spinner-layer-2-color: #0773fd;
-                --paper-spinner-layer-3-color: #0773fd;
-                --paper-spinner-layer-4-color: #0773fd;
-                --paper-tabs-selection-bar-color: #ff000d;
-                --paper-tab-ink: #ff000d;
-                --paper-toggle-button-checked-bar-color: #0773fd;
-                --paper-toggle-button-checked-button-color: #0773fd;
-                --paper-toggle-button-checked-ink-color: #0773fd;
-                --paper-toggle-button-unchecked-bar-color: #4e342e;
+                --paper-radio-button-label-color: #ffebd7;
+                --paper-slider-knob-color: #270095;
+                --paper-slider-active-color: #270095;
+                --paper-slider-pin-color: #270095;
+                --paper-spinner-layer-1-color: #270095;
+                --paper-spinner-layer-2-color: #270095;
+                --paper-spinner-layer-3-color: #270095;
+                --paper-spinner-layer-4-color: #270095;
+                --paper-tabs-selection-bar-color: #ff8300;
+                --paper-tab-ink: #ff8300;
+                --paper-toggle-button-checked-bar-color: #270095;
+                --paper-toggle-button-checked-button-color: #270095;
+                --paper-toggle-button-checked-ink-color: #270095;
+                --paper-toggle-button-unchecked-bar-color: #ffebd7;
                 --paper-toggle-button-unchecked-button-color: white;
                 --paper-toggle-button-unchecked-ink-color: white;
-                --paper-toolbar-background: #08418c;
-                --paper-toolbar-color: #fff9c4;
+                --paper-toolbar-background: #1e0073;
+                --paper-toolbar-color: #c3aeff;
             }
 
             paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active, paper-toolbar a:visited, paper-toolbar a:focus
             {
-                color: #fff9c4;
+                color: #c3aeff;
             }
 
             paper-button.primary, paper-button.btn-primary, paper-button[primary]
             {
-                color: #0773fd;
+                color: #270095;
             }
 
                 paper-button.primary[raised], paper-button.btn-primary[raised], paper-button[primary][raised]
                 {
-                    background-color: #0773fd;
+                    background-color: #270095;
                     color: #fff;
                 }
 
             paper-button.secondary, paper-button.btn-secondary, paper-button[secondary]
             {
-                color: #ff000d;
+                color: #ff8300;
             }
 
                 paper-button.secondary[raised], paper-button.btn-secondary[raised], paper-button[secondary][raised]
                 {
-                    background-color: #ff000d;
+                    background-color: #ff8300;
                     color: #fff;
                 }
 
             paper-button.success, paper-button.btn-success, paper-button[success]
             {
-                color: #00b327;
+                color: #3dff00;
             }
 
                 paper-button.success[raised], paper-button.btn-success[raised], paper-button[success][raised]
                 {
-                    background-color: #00b327;
+                    background-color: #3dff00;
                     color: #fff;
                 }
 
             paper-button.info, paper-button.btn-info, paper-button[info]
             {
-                color: #054d15;
+                color: #228e00;
             }
 
                 paper-button.info[raised], paper-button.btn-info[raised], paper-button[info][raised]
                 {
-                    background-color: #054d15;
+                    background-color: #228e00;
                     color: #fff;
                 }
 
             paper-button.warning, paper-button.btn-warning, paper-button[warning]
             {
-                color: #c31300;
+                color: #a75600;
             }
 
                 paper-button.warning[raised], paper-button.btn-warning[raised], paper-button[warning][raised]
                 {
-                    background-color: #c31300;
+                    background-color: #a75600;
                     color: #fff;
                 }
 
@@ -225,7 +262,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             paper-button[raised]
             {
-                color: #4e342e;
+                color: #ffebd7;
             }
 
             paper-button[disabled]
@@ -236,61 +273,61 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             paper-icon-button.primary, paper-icon-button.btn-primary, paper-icon-button[primary]
             {
-                color: #0773fd;
+                color: #270095;
             }
 
                 paper-icon-button.primary:hover, paper-icon-button.btn-primary:hover, paper-icon-button[primary]:hover
                 {
-                    background-color: #018089;
-                    background-color: rgba(7, 115, 253, 0.2);
+                    background-color: #04518b;
+                    background-color: rgba(39, 0, 149, 0.2);
                     border-radius: 50%;
                 }
 
             paper-icon-button.secondary, paper-icon-button.btn-secondary, paper-icon-button[secondary]
             {
-                color: #ff000d;
+                color: #ff8300;
             }
 
                 paper-icon-button.secondary:hover, paper-icon-button.btn-secondary:hover, paper-icon-button[secondary]:hover
                 {
-                    background-color: #197471;
-                    background-color: rgba(255, 0, 13, 0.2);
+                    background-color: #195e7c;
+                    background-color: rgba(255, 131, 0, 0.2);
                     border-radius: 50%;
                 }
 
             paper-icon-button.success, paper-icon-button.btn-success, paper-icon-button[success]
             {
-                color: #00b327;
+                color: #3dff00;
             }
 
                 paper-icon-button.success:hover, paper-icon-button.btn-success:hover, paper-icon-button[success]:hover
                 {
-                    background-color: #008674;
-                    background-color: rgba(0, 179, 39, 0.2);
+                    background-color: #066b7c;
+                    background-color: rgba(61, 255, 0, 0.2);
                     border-radius: 50%;
                 }
 
             paper-icon-button.info, paper-icon-button.btn-info, paper-icon-button[info]
             {
-                color: #054d15;
+                color: #228e00;
             }
 
                 paper-icon-button.info:hover, paper-icon-button.btn-info:hover, paper-icon-button[info]:hover
                 {
-                    background-color: #007c72;
-                    background-color: rgba(5, 77, 21, 0.2);
+                    background-color: #035f7c;
+                    background-color: rgba(34, 142, 0, 0.2);
                     border-radius: 50%;
                 }
 
             paper-icon-button.warning, paper-icon-button.btn-warning, paper-icon-button[warning]
             {
-                color: #c31300;
+                color: #a75600;
             }
 
                 paper-icon-button.warning:hover, paper-icon-button.btn-warning:hover, paper-icon-button[warning]:hover
                 {
-                    background-color: #137670;
-                    background-color: rgba(195, 19, 0, 0.2);
+                    background-color: #115a7c;
+                    background-color: rgba(167, 86, 0, 0.2);
                     border-radius: 50%;
                 }
 
@@ -301,7 +338,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                 paper-icon-button.error:hover, paper-icon-button.btn-error:hover, paper-icon-button[error]:hover
                 {
-                    background-color: #0a7570;
+                    background-color: #0a527c;
                     background-color: rgba(104, 10, 0, 0.2);
                     border-radius: 50%;
                 }
@@ -313,8 +350,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             paper-dialog
             {
-                color: #4e342e;
-                background-color: #00817c;
+                color: #ffebd7;
+                background-color: #005a8a;
                 font-family: 'Arimo', sans-serif;
                 font-weight: 400;
             }
@@ -333,44 +370,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             paper-fab
             {
-                background-color: #0773fd;
+                background-color: #270095;
                 color: #fff;
-                --paper-fab-keyboard-focus-background: #013a83;
+                --paper-fab-keyboard-focus-background: #5316ff;
             }
 
                 paper-fab.primary, paper-fab.btn-primary, paper-fab[primary]
                 {
-                    background-color: #0773fd;
+                    background-color: #270095;
                     color: #fff;
-                    --paper-fab-keyboard-focus-background: #013a83;
+                    --paper-fab-keyboard-focus-background: #5316ff;
                 }
 
                 paper-fab.secondary, paper-fab.btn-secondary, paper-fab[secondary]
                 {
-                    background-color: #ff000d;
+                    background-color: #ff8300;
                     color: #fff;
-                    --paper-fab-keyboard-focus-background: #800006;
+                    --paper-fab-keyboard-focus-background: #804200;
                 }
 
                 paper-fab.success, paper-fab.btn-success, paper-fab[success]
                 {
-                    background-color: #00b327;
+                    background-color: #3dff00;
                     color: #fff;
-                    --paper-fab-keyboard-focus-background: #33ff60;
+                    --paper-fab-keyboard-focus-background: #1e8000;
                 }
 
                 paper-fab.info, paper-fab.btn-info, paper-fab[info]
                 {
-                    background-color: #054d15;
+                    background-color: #228e00;
                     color: #fff;
-                    --paper-fab-keyboard-focus-background: #0dc536;
+                    --paper-fab-keyboard-focus-background: #48ff0f;
                 }
 
                 paper-fab.warning, paper-fab.btn-warning, paper-fab[warning]
                 {
-                    background-color: #c31300;
+                    background-color: #a75600;
                     color: #fff;
-                    --paper-fab-keyboard-focus-background: #ff5643;
+                    --paper-fab-keyboard-focus-background: #ff9627;
                 }
 
                 paper-fab.error, paper-fab.btn-error, paper-fab[error]
@@ -388,15 +425,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             section.hero paper-menu, section[hero] paper-menu
             {
-                --paper-menu-background-color: #5cfff9;
+                --paper-menu-background-color: #0fabff;
             }
 
             paper-tabs
             {
-                background-color: #c6d36c;
-                color: #fff9c4;
+                background-color: #1e0073;
+                color: #c3aeff;
             }
-
 
             h1, h3, h5
             {
@@ -485,198 +521,123 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
             /* CSS - Cascading Style Sheet */
             /* Palette color codes */
-            /* Palette URL: http://paletton.com/#uid=73m0z0ktmOacB+Ngb++oCahrK8g */
+            /* Palette URL: http://paletton.com/#uid=c3t0A2J4g0kwi++bu++hX++++rd++kX */
 
             /* Feel free to copy&paste color codes to your application */
 
 
-            /* As hex codes
+            /* As hex codes */
 
-            .color-primary-0 { color: #16B9D8 }	/* Main Primary color
-            .color-primary-1 { color: #9DEFFE }
-            .color-primary-2 { color: #81EBFF }
-            .color-primary-3 { color: #0D2C32 }
-            .color-primary-4 { color: #062329 }
+            .color-primary-0
+            {
+                color: #0DAAFF;
+            }
+            /* Main Primary color */
+            .color-primary-1
+            {
+                color: #A8E1FF;
+            }
 
-            .color-secondary-1-0 { color: #2D45DF }	/* Main Secondary color (1)
-            .color-secondary-1-1 { color: #A7B3FF }
-            .color-secondary-1-2 { color: #8F9EFF }
-            .color-secondary-1-3 { color: #131838 }
-            .color-secondary-1-4 { color: #0B102D }
+            .color-primary-2
+            {
+                color: #77D0FF;
+            }
 
-            .color-secondary-2-0 { color: #FFBD15 }	/* Main Secondary color (2)
-            .color-secondary-2-1 { color: #FFE39B }
-            .color-secondary-2-2 { color: #FFDB7E }
-            .color-secondary-2-3 { color: #524013 }
-            .color-secondary-2-4 { color: #423209 }
+            .color-primary-3
+            {
+                color: #005A8A;
+            }
 
-            .color-complement-0 { color: #FF8715 }	/* Main Complement color
-            .color-complement-1 { color: #FFCC9B }
-            .color-complement-2 { color: #FFBD7E }
-            .color-complement-3 { color: #523213 }
-            .color-complement-4 { color: #422509 }
+            .color-primary-4
+            {
+                color: #00456A;
+            }
 
+            .color-secondary-1-0
+            {
+                color: #3DFF00;
+            }
+            /* Main Secondary color (1) */
+            .color-secondary-1-1
+            {
+                color: #BAFFA4;
+            }
 
+            .color-secondary-1-2
+            {
+                color: #92FF70;
+            }
 
-            /* As RGBa codes
+            .color-secondary-1-3
+            {
+                color: #2CB800;
+            }
 
-            .rgba-primary-0 { color: rgba( 22,185,216,1) }	/* Main Primary color
-            .rgba-primary-1 { color: rgba(157,239,254,1) }
-            .rgba-primary-2 { color: rgba(129,235,255,1) }
-            .rgba-primary-3 { color: rgba( 13, 44, 50,1) }
-            .rgba-primary-4 { color: rgba(  6, 35, 41,1) }
+            .color-secondary-1-4
+            {
+                color: #228E00;
+            }
 
-            .rgba-secondary-1-0 { color: rgba( 45, 69,223,1) }	/* Main Secondary color (1)
-            .rgba-secondary-1-1 { color: rgba(167,179,255,1) }
-            .rgba-secondary-1-2 { color: rgba(143,158,255,1) }
-            .rgba-secondary-1-3 { color: rgba( 19, 24, 56,1) }
-            .rgba-secondary-1-4 { color: rgba( 11, 16, 45,1) }
+            .color-secondary-2-0
+            {
+                color: #581CFF;
+            }
+            /* Main Secondary color (2) */
+            .color-secondary-2-1
+            {
+                color: #C3AEFF;
+            }
 
-            .rgba-secondary-2-0 { color: rgba(255,189, 21,1) }	/* Main Secondary color (2)
-            .rgba-secondary-2-1 { color: rgba(255,227,155,1) }
-            .rgba-secondary-2-2 { color: rgba(255,219,126,1) }
-            .rgba-secondary-2-3 { color: rgba( 82, 64, 19,1) }
-            .rgba-secondary-2-4 { color: rgba( 66, 50,  9,1) }
+            .color-secondary-2-2
+            {
+                color: #A180FF;
+            }
 
-            .rgba-complement-0 { color: rgba(255,135, 21,1) }	/* Main Complement color
-            .rgba-complement-1 { color: rgba(255,204,155,1) }
-            .rgba-complement-2 { color: rgba(255,189,126,1) }
-            .rgba-complement-3 { color: rgba( 82, 50, 19,1) }
-            .rgba-complement-4 { color: rgba( 66, 37,  9,1) }
+            .color-secondary-2-3
+            {
+                color: #270095;
+            }
 
-            .color-primary-0 { color: #2232FF }	/* Main Primary color
-            .color-primary-1 { color: #1A1D41 }
-            .color-primary-2 { color: #1A1D41 }
-            .color-primary-3 { color: #878FFF }
-            .color-primary-4 { color: #878FFF }
+            .color-secondary-2-4
+            {
+                color: #1E0073;
+            }
 
-            .color-secondary-1-0 { color: #8E12FF }	/* Main Secondary color (1)
-            .color-secondary-1-1 { color: #2C173F }
-            .color-secondary-1-2 { color: #2C173F }
-            .color-secondary-1-3 { color: #C17DFF }
-            .color-secondary-1-4 { color: #C17DFF }
+            .color-complement-0
+            {
+                color: #FF8300;
+            }
+            /* Main Complement color */
+            .color-complement-1
+            {
+                color: #FFD2A4;
+            }
 
-            .color-secondary-2-0 { color: #03EAFF }	/* Main Secondary color (2)
-            .color-secondary-2-1 { color: #878FFF }
-            .color-secondary-2-2 { color: #878FFF }
-            .color-secondary-2-3 { color: #75F3FF }
-            .color-secondary-2-4 { color: #75F3FF }
+            .color-complement-2
+            {
+                color: #FFB970;
+            }
 
+            .color-complement-3
+            {
+                color: #D96F00;
+            }
 
-
-            /* As RGBa codes
-
-            .rgba-primary-0 { color: rgba( 34, 50,255,1) }	/* Main Primary color
-            .rgba-primary-1 { color: rgba( 26, 29, 65,1) }
-            .rgba-primary-2 { color: rgba( 26, 29, 65,1) }
-            .rgba-primary-3 { color: rgba(135,143,255,1) }
-            .rgba-primary-4 { color: rgba(135,143,255,1) }
-
-            .rgba-secondary-1-0 { color: rgba(142, 18,255,1) }	/* Main Secondary color (1)
-            .rgba-secondary-1-1 { color: rgba( 44, 23, 63,1) }
-            .rgba-secondary-1-2 { color: rgba( 44, 23, 63,1) }
-            .rgba-secondary-1-3 { color: rgba(193,125,255,1) }
-            .rgba-secondary-1-4 { color: rgba(193,125,255,1) }
-
-            .rgba-secondary-2-0 { color: rgba(  3,234,255,1) }	/* Main Secondary color (2)
-            .rgba-secondary-2-1 { color: rgba( 18, 54, 57,1) }
-            .rgba-secondary-2-2 { color: rgba( 18, 54, 57,1) }
-            .rgba-secondary-2-3 { color: rgba(117,243,255,1) }
-            .rgba-secondary-2-4 { color: rgba(117,243,255,1) }
-
-
-
-            .color-primary-0 { color: #2D57A4 }	/* Main Primary color
-            .color-primary-1 { color: #172744 }
-            .color-primary-2 { color: #21427E }
-            .color-primary-3 { color: #90AAD9 }
-            .color-primary-4 { color: #FFFFFF }
-
-            .color-complement-0 { color: #F6B131 }	/* Main Complement color
-            .color-complement-1 { color: #664C1B }
-            .color-complement-2 { color: #BE8723 }
-            .color-complement-3 { color: #FFDD9F }
-            .color-complement-4 { color: #FFFFFF }
+            .color-complement-4
+            {
+                color: #A75600;
+            }
 
 
 
-            /* As RGBa codes
-
-            .rgba-primary-0 { color: rgba( 45, 87,164,1) }	/* Main Primary color
-            .rgba-primary-1 { color: rgba( 23, 39, 68,1) }
-            .rgba-primary-2 { color: rgba( 33, 66,126,1) }
-            .rgba-primary-3 { color: rgba(144,170,217,1) }
-            .rgba-primary-4 { color: rgba(255,255,255,1) }
-
-            .rgba-complement-0 { color: rgba(246,177, 49,1) }	/* Main Complement color
-            .rgba-complement-1 { color: rgba(102, 76, 27,1) }
-            .rgba-complement-2 { color: rgba(190,135, 35,1) }
-            .rgba-complement-3 { color: rgba(255,221,159,1) }
-            .rgba-complement-4 { color: rgba(255,255,255,1) }
-
-
-            .color-primary-0 { color: #16B9D8 }	/* Main Primary color
-            .color-primary-1 { color: #9DEFFE }
-            .color-primary-2 { color: #81EBFF }
-            .color-primary-3 { color: #0D2C32 }
-            .color-primary-4 { color: #062329 }
-
-            .color-secondary-1-0 { color: #2D45DF }	/* Main Secondary color (1)
-            .color-secondary-1-1 { color: #A7B3FF }
-            .color-secondary-1-2 { color: #8F9EFF }
-            .color-secondary-1-3 { color: #131838 }
-            .color-secondary-1-4 { color: #0B102D }
-
-            .color-secondary-2-0 { color: #FFBD15 }	/* Main Secondary color (2)
-            .color-secondary-2-1 { color: #FFE39B }
-            .color-secondary-2-2 { color: #FFDB7E }
-            .color-secondary-2-3 { color: #524013 }
-            .color-secondary-2-4 { color: #423209 }
-
-            .color-complement-0 { color: #FF8715 }	/* Main Complement color
-            .color-complement-1 { color: #FFCC9B }
-            .color-complement-2 { color: #FFBD7E }
-            .color-complement-3 { color: #523213 }
-            .color-complement-4 { color: #422509 }
-
-
-
-            /* As RGBa codes
-
-            .rgba-primary-0 { color: rgba( 22,185,216,1) }	/* Main Primary color
-            .rgba-primary-1 { color: rgba(157,239,254,1) }
-            .rgba-primary-2 { color: rgba(129,235,255,1) }
-            .rgba-primary-3 { color: rgba( 13, 44, 50,1) }
-            .rgba-primary-4 { color: rgba(  6, 35, 41,1) }
-
-            .rgba-secondary-1-0 { color: rgba( 45, 69,223,1) }	/* Main Secondary color (1)
-            .rgba-secondary-1-1 { color: rgba(167,179,255,1) }
-            .rgba-secondary-1-2 { color: rgba(143,158,255,1) }
-            .rgba-secondary-1-3 { color: rgba( 19, 24, 56,1) }
-            .rgba-secondary-1-4 { color: rgba( 11, 16, 45,1) }
-
-            .rgba-secondary-2-0 { color: rgba(255,189, 21,1) }	/* Main Secondary color (2)
-            .rgba-secondary-2-1 { color: rgba(255,227,155,1) }
-            .rgba-secondary-2-2 { color: rgba(255,219,126,1) }
-            .rgba-secondary-2-3 { color: rgba( 82, 64, 19,1) }
-            .rgba-secondary-2-4 { color: rgba( 66, 50,  9,1) }
-
-            .rgba-complement-0 { color: rgba(255,135, 21,1) }	/* Main Complement color
-            .rgba-complement-1 { color: rgba(255,204,155,1) }
-            .rgba-complement-2 { color: rgba(255,189,126,1) }
-            .rgba-complement-3 { color: rgba( 82, 50, 19,1) }
-            .rgba-complement-4 { color: rgba( 66, 37,  9,1) }
-
-
-
-             Generated by Paletton.com © 2002-2014 */
+            /* Generated by Paletton.com © 2002-2014 */
             /* http://paletton.com */
 
             section[hero]
-                {
-                    margin:4vw;
-                    padding:4vw;
-                }
+            {
+                margin: 4vw;
+                padding: 4vw;
+            }
         </style>
     </template>
 </dom-module>
