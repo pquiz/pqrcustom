@@ -7,7 +7,12 @@
     "src/my-view3.html",
     "src/my-carusel.html",
     "src/my-loginform.html",
-    "src/my-view404.html"
+    "src/my-view404.html",
+    "src/my-home.html",
+    "src/my-item.html",
+    "src/my-lista.html",
+    "src/my-banner.html"
+
   ],
   "sourceGlobs": [
    "src/**/*",

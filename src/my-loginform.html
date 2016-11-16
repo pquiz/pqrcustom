@@ -58,8 +58,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             signedin: {
                 type: Boolean,
                 notify: true,
-                value: false
-            }, reslogin: { type: String, notify: true, value: "no" }
+                value: false, observer: '_aprobado'
+            }, reslogin: { type: String, notify: true, value: "no" }, pagina: { type: String, notify: true}
+        }, _aprobado: function (newValue, oldValue) {
+            if (newValue) this.pagina = "home";
         },
          ready: function () {
              scope = this;
@@ -71,6 +73,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
              this.lock();
              this.$.auth.signInWithPopup().then(function (response) {
                  this.signedin = true;
+                 this.pagina = "home";
              }
              );
              }

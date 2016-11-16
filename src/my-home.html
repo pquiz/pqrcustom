@@ -27,7 +27,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 width: 100%;
             }
         </style>
-
+        <firebase-document id="document"
+                           app-name="pruebapq"
+                           path="[[editableNoteId]]"
+                           data="{{editableNote}}">
+        </firebase-document>
 
     </template>
     <script>
@@ -36,17 +40,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
 
         is: 'my-home', properties: {
-            imagenes: { type: Array, notify: true, readOnly: false }
+            registerid: { type: String, notify: true, readOnly: false }
         },
-        dibuja: function (hora) {
-            obj.selected = obj.selected === 4 ? 0 : (obj.selected + 1);
-            setTimeout(function () { window.requestAnimationFrame(func); }, 7000);
-        }, ready: function () {
-            func = this.dibuja;
-            this.selected = 0;
-            obj = this;
+         ready: function () {
 
-            window.requestAnimationFrame(this.dibuja);
 
         }
 
