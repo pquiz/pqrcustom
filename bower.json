@@ -5,7 +5,7 @@
   ],
   "private": true,
   "dependencies": {
-    "app-elements": "PolymerElements/app-elements#^0.9.0",
+    "app-elements": "v0.10.1",
     "iron-elements": "PolymerElements/iron-elements#^1.0.0",
     "paper-elements": "PolymerElements/paper-elements#^1.0.0",
     "gold-elements": "PolymerElements/gold-elements#^1.0.0",
@@ -16,18 +16,28 @@
     "polymer": "Polymer/polymer#^1.0.0",
     "app-router": "blasten/app-router#master",
     "pushstate-anchor": "~0.3.0",
-    "color": "~2.5.0",
-    "hydrolysis": "PolymerLabs/hydrolysis#^1.11.0",
+    "color": "v3.0.4",
+    "hydrolysis": "v2.0.0-alpha.18",
     "note-app-elements": "PolymerLabs/note-app-elements",
     "polymerfire": "firebase/polymerfire#^0.9.5",
     "platinum-sw": "PolymerElements/platinum-sw#^1.3.0",
-    "vaadin-core-elements": "^1.2.0"
+    "vaadin-core-elements": "^1.2.0",
+    "app-layout": "v0.10.6",
+    "iron-iconset-svg": "v1.1.0",
+    "google-youtube-upload": "v2.0.0"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
   },
   "resolutions": {
-    "app-layout": "^0.10.0",
-    "firebase": "^3.0"
+    "app-layout": "v0.10.6",
+    "firebase": "^3.0",
+    "app-localize-behavior": "^0.10.0",
+    "color": "v3.0.4",
+    "iron-iconset-svg": "v1.1.0",
+    "app-elements": "v0.10.1",
+    "google-youtube-upload": "v2.0.0",
+    "hydrolysis": "v2.0.0-alpha.18",
+    "ga-api-utils": "0.6.0"
   }
 }

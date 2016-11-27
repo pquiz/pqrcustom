@@ -15,7 +15,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-input/paper-input-container.html">
-<link rel="import" href="my-firebehavior.html">
+<link rel="import" href="my-home.html">
+<link rel="import" href="my-grid.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="my-loginform">
     <template>
@@ -25,25 +26,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 width: 100%;
                 height: 100%;
             }
-
+            section{
+                min-height:50vh;
+            }
 
         </style>
 
 
         <!-- Configure Firebase app: -->
 
-        <section hero>
-            <h2>Iniciar sesion</h2>
+        <section  hidden$="[[signedin]]">
+            <h2>Iniciar sesion con Google</h2>
             <firebase-auth app-name="pruebapq" id="auth" user="{{usuario}}" signed-in="{{signedin}}" provider="google" on-error="handleError">
             </firebase-auth>
-            <paper-input-container>
-                <label>Your name</label>
-                <input is="iron-input" id="user" maxlength="20" bind-value="{{usuario}}">
-            </paper-input-container>
+
             <paper-button on-tap="ingresa" secondary> Ingresar</paper-button>
-            <paper-button on-tap="lock" secondary> Ingresar</paper-button>
-            {{reslogin}}
+
         </section>
+        <section hero hidden$="[[!signedin]]">
+
+            <h1>Deja comentario comentarios</h1>
+            <my-home  userloged="{{usuario}}"></my-home>
+        </section>
+        <section hero hidden$="[[!signedin]]">
+
+            <h1>Lista de comentarios</h1>
+            <my-grid user="{{usuario}}"></my-grid>
+        </section>
+
 </template>
     <script>
         var auth = null;
@@ -58,10 +68,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             signedin: {
                 type: Boolean,
                 notify: true,
-                value: false, observer: '_aprobado'
-            }, reslogin: { type: String, notify: true, value: "no" }, pagina: { type: String, notify: true}
-        }, _aprobado: function (newValue, oldValue) {
-            if (newValue) this.pagina = "home";
+                value: false
+            }, reslogin: { type: String, notify: true, value: "no" }
         },
          ready: function () {
              scope = this;
@@ -73,7 +81,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
              this.lock();
              this.$.auth.signInWithPopup().then(function (response) {
                  this.signedin = true;
-                 this.pagina = "home";
+
              }
              );
              }

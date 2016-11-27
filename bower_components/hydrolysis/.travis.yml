@@ -1,10 +1,6 @@
 language: node_js
 node_js:
-  - "0.10"
-  - "0.12"
   - "4"
-sudo: false
-before_script:
-  - npm run init
+  - "6"
 script:
-  - npm run testNode
+- npm test && npm run benchmark

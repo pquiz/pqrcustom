@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-input-container.html">
 <link rel="import" href="../bower_components/polymerfire/polymerfire.html" />
 <link rel="import" href="shared-styles.html">
 <dom-module id="my-diario">
@@ -27,7 +29,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				width: 100%;
 			}
 		</style>
+		<div>
+			<h1>Diario</h1>
+			<paper-input-container>
+				<label>Comentario</label>
+				<input is="iron-input" id="user" maxlength="20" bind-value="{{comentario}}">
+			</paper-input-container>
 
+		</div>
 
 	</template>
 	<script>
@@ -36,7 +45,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	Polymer({
 
 		is: 'my-diario', properties: {
-			registerid: { type: String, notify: true, readOnly: false }
+		    comentario: { type: String, notify: true, readOnly: false, reflectToAttribute: true }
 		},
 		 ready: function () {
 

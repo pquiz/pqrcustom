@@ -10,44 +10,77 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <link rel="import" href="../bower_components/polymerfire/polymerfire.html" />
+<link rel="import" href="my-diario.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html" />
 <link rel="import" href="shared-styles.html">
+
 <dom-module id="my-home">
     <template>
         <style include="shared-styles">
-            :host
-            {
+            :host {
                 display: block;
                 width: 100%;
                 height: 100%;
             }
 
-            iron-image
-            {
+            iron-image {
                 height: 100%;
                 width: 100%;
             }
         </style>
         <firebase-document id="document"
                            app-name="pruebapq"
-                           path="[[editableNoteId]]"
-                           data="{{editableNote}}">
+                           path="[[diario.diarioId]]"
+                           data="{{diario}}">
         </firebase-document>
-
+        <div id="diariodocumento" class="chorizontal">
+            <my-diario comentario={{diario.comentario}}></my-diario>
+            <paper-button on-tap="limpia" primary> Nuevo</paper-button>
+            <paper-button on-tap="guardadiario" secondary> Guardar</paper-button>
+        </div>
     </template>
     <script>
         var func = null;
         var obj = 0;
-    Polymer({
+        Polymer({
 
-        is: 'my-home', properties: {
-            registerid: { type: String, notify: true, readOnly: false }
-        },
-         ready: function () {
+            is: 'my-home', properties: {
+                registerid: { type: String, notify: true, readOnly: false },
+                diario: {
+                    type: Object, notify: true, readOnly: false
+                }, userloged: { type: Object, notify: true, readOnly: false }
+            },
+            ready: function () {
+                this.nuevodiario();
 
 
-        }
 
-    });
+            }, get diarioPath() {
+                return '';
+            }, guardadiario: function (event) {
+                this.guarda(this.diario);
+
+            }, nuevodiario: function () {
+                this.diario = { diarioId: null, comentario: '' };
+
+            }, guarda(dato) {
+                if (this.diario.comentario && this.diario.comentario != undefined) {
+                    return this.$.document.save(this.toEditableId(dato.path)).then(function () {
+                        this.$.document.reset();
+                    }.bind(this));
+
+                }
+                return Promise.resolve();
+
+            }, get registerPath() {
+                return '/registros/' + this.userloged.uid;
+            },
+
+            toEditableId: function (registroId) {
+                return this.registerPath + '/';
+            },
+
+        });
 
     </script>
 </dom-module>

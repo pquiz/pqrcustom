@@ -1,6 +1,6 @@
 {
   "name": "javascript-api-utils",
-  "version": "0.2.0",
+  "version": "0.6.0",
   "description": "A collection of utility modules built on top of the gapi client library.",
   "scripts": {
     "test": "make"
@@ -16,18 +16,19 @@
     "google"
   ],
   "author": "philipwalton",
-  "license": "Apache2",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/googleanalytics/javascript-api-utils/issues"
   },
   "homepage": "https://github.com/googleanalytics/javascript-api-utils",
   "devDependencies": {
-    "browserify": "^6.0.3",
-    "jshint": "^2.5.6",
-    "mocha": "^1.21.4",
+    "browserify": "^9.0.8",
+    "jshint": "^2.7.0",
+    "lodash": "^3.7.0",
+    "mocha": "^2.2.4",
     "mout": "^0.11.0",
-    "native-promise-only": "^0.7.6-a",
-    "sinon": "^1.10.3",
-    "uglify-js": "^2.4.15"
+    "native-promise-only": "^0.7.8-a",
+    "sinon": "^1.14.1",
+    "uglify-js": "^2.4.20"
   }
 }

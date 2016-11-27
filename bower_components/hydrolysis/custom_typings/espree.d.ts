@@ -27,7 +27,8 @@ declare module 'espree' {
       modules: boolean;
       jsx: boolean;
       globalReturn: boolean;
-    }
+    };
+    sourceType: 'script' | 'module';
   }
-  export function parse(text: string, opts?: ParseOpts):estree.Program;
+  export function parse(text: string, opts?: ParseOpts): estree.Program;
 }

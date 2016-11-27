@@ -1,38 +1,49 @@
-[![NPM version](http://img.shields.io/npm/v/hydrolysis.svg)](https://npmjs.org/package/hydrolysis)
-[![Build Status](https://travis-ci.org/Polymer/hydrolysis.svg?branch=master)](https://travis-ci.org/Polymer/hydrolysis)
-# hydrolysis
+[![NPM version](http://img.shields.io/npm/v/polymer-analyzer.svg)](https://npmjs.org/package/polymer-analyzer)
+[![Build Status](https://travis-ci.org/Polymer/polymer-analyzer.svg?branch=master)](https://travis-ci.org/Polymer/polymer-analyzer)
+# Polymer Analyzer
 
-Static analysis utilities for polymer.
+A static analysis framework for Web Components.
 
 ## Install
 ```
-npm install hydrolysis
+npm install polymer-analyzer
 ```
 
 ## Usage
 ```js
-var hyd = require('hydrolysis');
+const Analyzer = require('polymer-analyzer').Analyzer;
+const FSUrlLoader = require('polymer-analyzer/lib/url-loader/fs-url-loader').FSUrlLoader;
+const PackageUrlResolver = require('polymer-analyzer/lib/url-loader/package-url-resolver').PackageUrlResolver;
 
-hyd.Analyzer.analyze('path-to-polymer-element.html')
-    .then(function(analyzer) {
-      console.log(analyzer.elementsByTagName['my-element'])
-    });
+let analyzer = new Analyzer({
+  urlLoader: new FSUrlLoader(pathToPackageRoot),
+  urlResolver: new PackageUrlResolver(),
+});
+
+analyzer.analyze('/path-to-polymer-element.html')
+  .then((document) => {
+    console.log(document.getFeatures());
+  });
 ```
-
-For more detail, see the [API Docs](API.md).
-
 
 ## Developing
-You need [wct](https://github.com/Polymer/web-component-tester) to run the tests.
 
-Run a one-off build of the project:
-
-```sh
-npm run build
-```
-
-Or watch the source for changes, and rebuild each time a file is modified:
+Polymer Analyzer is supported on Node LTS (4.4) and stable (6.3). It is written
+in TypeScript 2.0. All development dependencies are installed via npm.
 
 ```sh
-npm run watch
+npm install
+npm test
 ```
+
+Or watch the source for changes, and run tests each time a file is modified:
+
+```sh
+npm run test:watch
+```
+## Looking for Hydrolysis?
+
+Hydrolysis has been renamed to Polymer Analyzer for version 2. You can find the
+hydrolysis source on the
+[`hydrolysis-1.x`](https://github.com/Polymer/polymer-analyzer/tree/hydrolysis-1.x)
+branch.

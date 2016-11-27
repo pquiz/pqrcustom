@@ -16,689 +16,401 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
 
         <style include="iron-flex iron-flex-alignment iron-flex-factors iron-positioning">
+                        /*
+                        html, body
+                        {
+                            margin: 0px;
+                            padding: 0px;
+                            min-height: 100%;
+                            color: #ffebd7;
 
+                    background-color:hsl(219, 96%, 19%);
+             background: linear-gradient(270deg, #00456a, #005a8a, #021925, #15384b, #023c5c, #1b282f);
+            background-image: url(../images/bubbles.svg) ;
+            background-repeat: repeat;
+            -webkit-animation: AnimationName 100s ease infinite;
+            -moz-animation: AnimationName 100s ease infinite;
+            -o-animation: AnimationName 100s ease infinite;
+            animation: AnimationName 100s ease infinite;
+                        font-family: 'Arimo', sans-serif;
+                            font-weight: 400;
+                        }
 
-            html, body
-            {
-                margin: 0px;
-                padding: 0px;
-                min-height: 100%;
-                color: #ffebd7;
+            @-webkit-keyframes AnimationName {
+                0%{background-position:0% 0%}
 
-        background-color:hsl(219, 96%, 19%);
+                20%{background-position:13% 10%}
 
-       /* background: linear-gradient(270deg, #00456a, #005a8a, #021925, #15384b, #023c5c, #1b282f);
-background-image: url(../images/bubbles.svg) ;
-background-repeat: repeat;
--webkit-animation: AnimationName 100s ease infinite;
--moz-animation: AnimationName 100s ease infinite;
--o-animation: AnimationName 100s ease infinite;
-animation: AnimationName 100s ease infinite;*/
-            font-family: 'Arimo', sans-serif;
-                font-weight: 400;
+                50%{background-position:23% 20%}
+
+                70%{background-position:43% 13%}
+
+                100%{background-position:0% 10%}
             }
+            @-moz-keyframes AnimationName {
+                   0%{background-position:0% 0%}
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 0%}
+                20%{background-position:13% 10%}
 
-    20%{background-position:13% 10%}
+                50%{background-position:23% 20%}
 
-    50%{background-position:23% 20%}
+                70%{background-position:43% 13%}
 
-    70%{background-position:43% 13%}
-
-    100%{background-position:0% 10%}
-}
-@-moz-keyframes AnimationName {
-       0%{background-position:0% 0%}
-
-    20%{background-position:13% 10%}
-
-    50%{background-position:23% 20%}
-
-    70%{background-position:43% 13%}
-
-    100%{background-position:0% 10%}
-}
-@-o-keyframes AnimationName {
-    0%{background-position:0% 0%}
-
-    20%{background-position:13% 10%}
-
-    50%{background-position:23% 20%}
-
-    70%{background-position:43% 13%}
-
-    100%{background-position:0% 10%}
-}
-@keyframes AnimationName {
-     0%{background-position:0% 0%}
-
-    20%{background-position:13% 10%}
-
-    50%{background-position:23% 20%}
-
-    70%{background-position:43% 13%}
-
-    100%{background-position:0% 10%}
-}
-
-            section
-            {
-                padding: 40px 0px;
+                100%{background-position:0% 10%}
             }
+            @-o-keyframes AnimationName {
+                0%{background-position:0% 0%}
 
-                section[hero]
-                {
-                    background-color: #0fabff;
-                }
+                20%{background-position:13% 10%}
 
-            h1, h2, h3, h4, h5, h6
-            {
-                font-weight: 400;
-                margin: 0px;
-                padding: 0px;
-                line-height: 1em;
+                50%{background-position:23% 20%}
+
+                70%{background-position:43% 13%}
+
+                100%{background-position:0% 10%}
             }
+            @keyframes AnimationName {
+                 0%{background-position:0% 0%}
 
-            h1, h3, h5
-            {
-                font-family: 'Arimo', sans-serif;
+                20%{background-position:13% 10%}
+
+                50%{background-position:23% 20%}
+
+                70%{background-position:43% 13%}
+
+                100%{background-position:0% 10%}
             }
+                       */
 
-            h1
-            {
-                font-size: 50px;
-                margin: 30px 0px;
-            }
+section { padding: 40px 0px; }
+section[hero] { background-color: #63d6ed; }
 
-            h2
-            {
-                color: #ffebd7;
-                font-size: 35px;
-                margin: 20px 0px;
-            }
+h1, h2, h3, h4, h5, h6 { font-weight: 400; margin: 0px; padding: 0px; line-height: 1em; }
 
-            h3
-            {
-                font-size: 25px;
-                margin: 15px 0px;
-            }
+h1, h3, h5 { font-family: 'Raleway', sans-serif; }
 
-            h4
-            {
-                font-size: 20px;
-            }
+h1 { font-size: 50px; margin: 30px 0px; }
 
-            a, a:active, a:visited, a:focus
-            {
-                color: #d9fdce;
-                text-decoration: none;
-            }
+h2 { color: #4f392e; font-size: 35px; margin: 20px 0px; }
 
-                a:hover
-                {
-                    color: #d9fdce;
-                    text-decoration: underline;
-                }
+h3 { font-size: 25px; margin: 15px 0px; }
 
-            :root
-            {
-                --default-primary-color: #3ea1e6;
-                --dark-primary-color: #7ec0ee;
-                --light-primary-color: #c5cae9;
-                --text-primary-color: #ffffff;
-                --accent-color: #ff4081;
-                --primary-background-color: #ffffff;
-                --primary-text-color: #ffebd7;
-                --secondary-text-color: #ffebd7;
-                --disabled-text-color: #7E8D9D;
-                --divider-color: #e0e0e0;
-                --paper-checkbox-checked-color: #270095;
-                --paper-checkbox-checked-ink-color: #3ea1e6;
-                --paper-checkbox-unchecked-color: #ffebd7;
-                --paper-checkbox-unchecked-ink-color: #7E8D9D;
-                --paper-checkbox-label-color: #ffebd7;
-                --paper-fab-background: #3ea1e6;
-                --paper-fab-disabled-background: #c9c9c9;
-                --paper-fab-disabled-text: #7E8D9D;
-                --paper-icon-button-disabled-text: #c9c9c9;
-                --paper-input-container-color: #a8aca5;
-                --paper-input-container-focus-color: #3ea1e6;
-                --paper-input-container-invalid-color: #db5656;
-                --paper-input-container-input-color: #a8aca5;
-                --paper-menu-background-color: #0fabff;
-                --paper-menu-color: #ffebd7;
-                --paper-menu-disabled-color: #c9c9c9;
-                --paper-progress-active-color: #270095;
-                --paper-progress-secondary-color: #78bdee;
-                --paper-radio-button-checked-color: #270095;
-                --paper-radio-button-checked-ink-color: white;
-                --paper-radio-button-unchecked-color: #ffebd7;
-                --paper-radio-button-unchecked-ink-color: #424540;
-                --paper-radio-button-label-color: #ffebd7;
-                --paper-slider-knob-color: #270095;
-                --paper-slider-active-color: #270095;
-                --paper-slider-pin-color: #270095;
-                --paper-spinner-layer-1-color: #270095;
-                --paper-spinner-layer-2-color: #270095;
-                --paper-spinner-layer-3-color: #270095;
-                --paper-spinner-layer-4-color: #270095;
-                --paper-tabs-selection-bar-color: #ff8300;
-                --paper-tab-ink: #ff8300;
-                --paper-toggle-button-checked-bar-color: #270095;
-                --paper-toggle-button-checked-button-color: #270095;
-                --paper-toggle-button-checked-ink-color: #270095;
-                --paper-toggle-button-unchecked-bar-color: #ffebd7;
-                --paper-toggle-button-unchecked-button-color: white;
-                --paper-toggle-button-unchecked-ink-color: white;
-                --paper-toolbar-background: #1e0073;
-                --paper-toolbar-color: #c3aeff;
-            }
+h4 { font-size: 20px; }
 
-            paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active, paper-toolbar a:visited, paper-toolbar a:focus
-            {
-                color: #c3aeff;
-            }
+a, a:active, a:visited, a:focus { color: #2e2e4f; text-decoration: none; }
 
-            paper-button.primary, paper-button.btn-primary, paper-button[primary]
-            {
-                color: #270095;
-            }
+a:hover { color: #2e2e4f; text-decoration: underline; }
 
-                paper-button.primary[raised], paper-button.btn-primary[raised], paper-button[primary][raised]
-                {
-                    background-color: #270095;
-                    color: #fff;
-                }
+:root { --default-primary-color: #fb8c00; --dark-primary-color: #fb8c00; --light-primary-color: #c5cae9; --text-primary-color: #ffffff; --accent-color: #ff4081; --primary-background-color: #ffffff; --primary-text-color: #114a1b; --secondary-text-color: #4f392e; --disabled-text-color: #656565; --divider-color: #e0e0e0; --paper-checkbox-checked-color: #12849b; --paper-checkbox-checked-ink-color: #fb8c00; --paper-checkbox-unchecked-color: #ec5b13; --paper-checkbox-unchecked-ink-color: #424242; --paper-checkbox-label-color: #114a1b; --paper-fab-background: #fb8c00; --paper-fab-disabled-background: #9393b3; --paper-fab-disabled-text: #656565; --paper-icon-button-disabled-text: #9393b3; --paper-input-container-color: #424242; --paper-input-container-focus-color: #fb8c00; --paper-input-container-invalid-color: #f44336; --paper-input-container-input-color: #424242; --paper-menu-background-color: #63d6ed; --paper-menu-color: #4e412d; --paper-menu-disabled-color: #b39d93; --paper-progress-active-color: #12849b; --paper-progress-secondary-color: #959595; --paper-radio-button-checked-color: #12849b; --paper-radio-button-checked-ink-color: white; --paper-radio-button-unchecked-color: #ec5b13; --paper-radio-button-unchecked-ink-color: #424242; --paper-radio-button-label-color: #114a1b; --paper-slider-knob-color: #12849b; --paper-slider-active-color: #12849b; --paper-slider-pin-color: #12849b; --paper-spinner-layer-1-color: #12849b; --paper-spinner-layer-2-color: #12849b; --paper-spinner-layer-3-color: #12849b; --paper-spinner-layer-4-color: #12849b; --paper-tabs-selection-bar-color: #ec5b13; --paper-tab-ink: #ec5b13; --paper-toggle-button-checked-bar-color: #12849b; --paper-toggle-button-checked-button-color: #12849b; --paper-toggle-button-checked-ink-color: #12849b; --paper-toggle-button-unchecked-bar-color: #ec5b13; --paper-toggle-button-unchecked-button-color: white; --paper-toggle-button-unchecked-ink-color: white; --paper-toolbar-background: #13c8ec; --paper-toolbar-color: #f5f5f5; }
 
-            paper-button.secondary, paper-button.btn-secondary, paper-button[secondary]
-            {
-                color: #ff8300;
-            }
+paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active, paper-toolbar a:visited, paper-toolbar a:focus { color: #f5f5f5; }
 
-                paper-button.secondary[raised], paper-button.btn-secondary[raised], paper-button[secondary][raised]
-                {
-                    background-color: #ff8300;
-                    color: #fff;
-                }
+paper-button.primary, paper-button.btn-primary, paper-button[primary] { color: #12849b; }
+paper-button.primary[raised], paper-button.btn-primary[raised], paper-button[primary][raised] { background-color: #12849b; color: #fff; }
+paper-button.secondary, paper-button.btn-secondary, paper-button[secondary] { color: #ec5b13; }
+paper-button.secondary[raised], paper-button.btn-secondary[raised], paper-button[secondary][raised] { background-color: #ec5b13; color: #fff; }
+paper-button.success, paper-button.btn-success, paper-button[success] { color: #129b29; }
+paper-button.success[raised], paper-button.btn-success[raised], paper-button[success][raised] { background-color: #129b29; color: #fff; }
+paper-button.info, paper-button.btn-info, paper-button[info] { color: #12129b; }
+paper-button.info[raised], paper-button.btn-info[raised], paper-button[info][raised] { background-color: #12129b; color: #fff; }
+paper-button.warning, paper-button.btn-warning, paper-button[warning] { color: #9b4012; }
+paper-button.warning[raised], paper-button.btn-warning[raised], paper-button[warning][raised] { background-color: #9b4012; color: #fff; }
+paper-button.error, paper-button.btn-error, paper-button[error] { color: #4a2511; }
+paper-button.error[raised], paper-button.btn-error[raised], paper-button[error][raised] { background-color: #4a2511; color: #fff; }
+paper-button.link, paper-button.btn-link, paper-button[link] { text-decoration: underline; }
+paper-button[raised] { color: #114a1b; }
+paper-button[disabled] { color: #656565 !important; background: #9393b3 !important; }
 
-            paper-button.success, paper-button.btn-success, paper-button[success]
-            {
-                color: #3dff00;
-            }
+paper-icon-button.primary, paper-icon-button.btn-primary, paper-icon-button[primary] { color: #12849b; }
+paper-icon-button.primary:hover, paper-icon-button.btn-primary:hover, paper-icon-button[primary]:hover { background-color: #a4afe6; background-color: rgba(18, 132, 155, 0.2); border-radius: 50%; }
+paper-icon-button.secondary, paper-icon-button.btn-secondary, paper-icon-button[secondary] { color: #ec5b13; }
+paper-icon-button.secondary:hover, paper-icon-button.btn-secondary:hover, paper-icon-button[secondary]:hover { background-color: #baabd8; background-color: rgba(236, 91, 19, 0.2); border-radius: 50%; }
+paper-icon-button.success, paper-icon-button.btn-success, paper-icon-button[success] { color: #129b29; }
+paper-icon-button.success:hover, paper-icon-button.btn-success:hover, paper-icon-button[success]:hover { background-color: #a4b2da; background-color: rgba(18, 155, 41, 0.2); border-radius: 50%; }
+paper-icon-button.info, paper-icon-button.btn-info, paper-icon-button[info] { color: #12129b; }
+paper-icon-button.info:hover, paper-icon-button.btn-info:hover, paper-icon-button[info]:hover { background-color: #a4a4e6; background-color: rgba(18, 18, 155, 0.2); border-radius: 50%; }
+paper-icon-button.warning, paper-icon-button.btn-warning, paper-icon-button[warning] { color: #9b4012; }
+paper-icon-button.warning:hover, paper-icon-button.btn-warning:hover, paper-icon-button[warning]:hover { background-color: #b2a8d8; background-color: rgba(155, 64, 18, 0.2); border-radius: 50%; }
+paper-icon-button.error, paper-icon-button.btn-error, paper-icon-button[error] { color: #4a2511; }
+paper-icon-button.error:hover, paper-icon-button.btn-error:hover, paper-icon-button[error]:hover { background-color: #a9a6d8; background-color: rgba(74, 37, 17, 0.2); border-radius: 50%; }
 
-                paper-button.success[raised], paper-button.btn-success[raised], paper-button[success][raised]
-                {
-                    background-color: #3dff00;
-                    color: #fff;
-                }
+paper-checkbox #checkmark.paper-checkbox, paper-checkbox /deep/, paper-checkbox::shadow #checkmark.paper-checkbox { border-color: #fff !important; }
 
-            paper-button.info, paper-button.btn-info, paper-button[info]
-            {
-                color: #228e00;
-            }
+paper-dialog { color: #114a1b; background-color: #b4b4ee; font-family: 'Roboto', sans-serif; font-weight: 400; }
+paper-dialog h1, paper-dialog h2, paper-dialog h3, paper-dialog h4, paper-dialog h5, paper-dialog h6 { overflow: visible; padding: 0 1em; text-align: center; }
 
-                paper-button.info[raised], paper-button.btn-info[raised], paper-button[info][raised]
-                {
-                    background-color: #228e00;
-                    color: #fff;
-                }
+paper-fab { --text-primary-color: white; }
 
-            paper-button.warning, paper-button.btn-warning, paper-button[warning]
-            {
-                color: #a75600;
-            }
+paper-fab { background-color: #12849b; color: #fff; --paper-fab-keyboard-focus-background: #43cde9; }
+paper-fab.primary, paper-fab.btn-primary, paper-fab[primary] { background-color: #12849b; color: #fff; --paper-fab-keyboard-focus-background: #43cde9; }
+paper-fab.secondary, paper-fab.btn-secondary, paper-fab[secondary] { background-color: #ec5b13; color: #fff; --paper-fab-keyboard-focus-background: #762e09; }
+paper-fab.success, paper-fab.btn-success, paper-fab[success] { background-color: #129b29; color: #fff; --paper-fab-keyboard-focus-background: #43e95f; }
+paper-fab.info, paper-fab.btn-info, paper-fab[info] { background-color: #12129b; color: #fff; --paper-fab-keyboard-focus-background: #4343e9; }
+paper-fab.warning, paper-fab.btn-warning, paper-fab[warning] { background-color: #9b4012; color: #fff; --paper-fab-keyboard-focus-background: #e97b43; }
+paper-fab.error, paper-fab.btn-error, paper-fab[error] { background-color: #4a2511; color: #fff; --paper-fab-keyboard-focus-background: #b25929; }
+paper-fab[disabled] { color: #656565 !important; background: #9393b3 !important; }
 
-                paper-button.warning[raised], paper-button.btn-warning[raised], paper-button[warning][raised]
-                {
-                    background-color: #a75600;
-                    color: #fff;
-                }
+section.hero paper-menu, section[hero] paper-menu { --paper-menu-background-color: #63d6ed; }
 
-            paper-button.error, paper-button.btn-error, paper-button[error]
-            {
-                color: #680a00;
-            }
+paper-tabs { background-color: #13c8ec; color: #ffffff; }
 
-                paper-button.error[raised], paper-button.btn-error[raised], paper-button[error][raised]
-                {
-                    background-color: #680a00;
-                    color: #fff;
-                }
 
-            paper-button.link, paper-button.btn-link, paper-button[link]
-            {
-                text-decoration: underline;
-            }
+                        .chorizontal
+                        {
+                            @apply(--layout-horizontal);
+                            @apply(--layout-wrap);
+                            @apply(--layout-start-justified);
+                        }
 
-            paper-button[raised]
-            {
-                color: #ffebd7;
-            }
+                        .cvertical
+                        {
+                            @apply(--layout-vertical);
+                            @apply(--layout-wrap);
+                            display: inline-flex;
+                            @apply(--layout-around-justified);
+                        }
 
-            paper-button[disabled]
-            {
-                color: #7E8D9D !important;
-                background: #c9c9c9 !important;
-            }
+                        .flexchild
+                        {
+                            @apply(--layout-flex-auto);
+                            position: relative !important;
+                        }
 
-            paper-icon-button.primary, paper-icon-button.btn-primary, paper-icon-button[primary]
-            {
-                color: #270095;
-            }
+                        .cprincipal
+                        {
+                            height: auto;
+                            width: 100vw;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
 
-                paper-icon-button.primary:hover, paper-icon-button.btn-primary:hover, paper-icon-button[primary]:hover
-                {
-                    background-color: #04518b;
-                    background-color: rgba(39, 0, 149, 0.2);
-                    border-radius: 50%;
-                }
+                        .onecolum
+                        {
+                            height: auto;
+                            width: 70vw;
+                        }
 
-            paper-icon-button.secondary, paper-icon-button.btn-secondary, paper-icon-button[secondary]
-            {
-                color: #ff8300;
-            }
+                        .cseccion
+                        {
+                            width: 100%;
+                            height: 100%;
+                        }
 
-                paper-icon-button.secondary:hover, paper-icon-button.btn-secondary:hover, paper-icon-button[secondary]:hover
-                {
-                    background-color: #195e7c;
-                    background-color: rgba(255, 131, 0, 0.2);
-                    border-radius: 50%;
-                }
+                        .ccover
+                        {
+                            height: 100vh;
+                            width: 100vw;
+                        }
 
-            paper-icon-button.success, paper-icon-button.btn-success, paper-icon-button[success]
-            {
-                color: #3dff00;
-            }
+                        .centro
+                        {
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
 
-                paper-icon-button.success:hover, paper-icon-button.btn-success:hover, paper-icon-button[success]:hover
-                {
-                    background-color: #066b7c;
-                    background-color: rgba(61, 255, 0, 0.2);
-                    border-radius: 50%;
-                }
+                        .card
+                        {
+                            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+                            padding: 16px;
+                            margin: 24px;
+                            border-radius: 5px;
+                            background-color: #eeeedd;
+                            color: #757575;
+                        }
 
-            paper-icon-button.info, paper-icon-button.btn-info, paper-icon-button[info]
-            {
-                color: #228e00;
-            }
+                        .circle
+                        {
+                            display: inline-block;
+                            height: 70px;
+                            width: 70px;
+                            border-radius: 50%;
+                            background: #ddd;
+                            line-height: 64px;
+                            font-size: 30px;
+                            color: #555;
+                            text-align: center;
+                        }
 
-                paper-icon-button.info:hover, paper-icon-button.btn-info:hover, paper-icon-button[info]:hover
-                {
-                    background-color: #035f7c;
-                    background-color: rgba(34, 142, 0, 0.2);
-                    border-radius: 50%;
-                }
+                        h1
+                        {
+                            font-size: 22px;
+                            margin: 16px 0;
+                            color: hsl(200, 29%, 24%);
+                        }
+                        /* CSS - Cascading Style Sheet */
+                        /* Palette color codes */
+                        /* Palette URL: http://paletton.com/#uid=c3t0A2J4g0kwi++bu++hX++++rd++kX */
 
-            paper-icon-button.warning, paper-icon-button.btn-warning, paper-icon-button[warning]
-            {
-                color: #a75600;
-            }
+                        /* Feel free to copy&paste color codes to your application */
 
-                paper-icon-button.warning:hover, paper-icon-button.btn-warning:hover, paper-icon-button[warning]:hover
-                {
-                    background-color: #115a7c;
-                    background-color: rgba(167, 86, 0, 0.2);
-                    border-radius: 50%;
-                }
 
-            paper-icon-button.error, paper-icon-button.btn-error, paper-icon-button[error]
-            {
-                color: #680a00;
-            }
+                        /* As hex codes */
 
-                paper-icon-button.error:hover, paper-icon-button.btn-error:hover, paper-icon-button[error]:hover
-                {
-                    background-color: #0a527c;
-                    background-color: rgba(104, 10, 0, 0.2);
-                    border-radius: 50%;
-                }
+                        .color-primary-0
+                        {
+                            color: #0DAAFF;
+                        }
+                        /* Main Primary color */
+                        .color-primary-1
+                        {
+                            color: #A8E1FF;
+                        }
 
-            paper-checkbox #checkmark.paper-checkbox, paper-checkbox /deep/, paper-checkbox::shadow #checkmark.paper-checkbox
-            {
-                border-color: #fff !important;
-            }
+                        .color-primary-2
+                        {
+                            color: #77D0FF;
+                        }
 
-            paper-dialog
-            {
-                color: #ffebd7;
-                background-color: #005a8a;
-                font-family: 'Arimo', sans-serif;
-                font-weight: 400;
-            }
+                        .color-primary-3
+                        {
+                            color: #005A8A;
+                        }
 
-                paper-dialog h1, paper-dialog h2, paper-dialog h3, paper-dialog h4, paper-dialog h5, paper-dialog h6
-                {
-                    overflow: visible;
-                    padding: 0 1em;
-                    text-align: center;
-                }
+                        .color-primary-4
+                        {
+                            color: #00456A;
+                        }
 
-            paper-fab
-            {
-                --text-primary-color: #ffffff;
-            }
+                        .color-secondary-1-0
+                        {
+                            color: #3DFF00;
+                        }
+                        /* Main Secondary color (1) */
+                        .color-secondary-1-1
+                        {
+                            color: #BAFFA4;
+                        }
 
-            paper-fab
-            {
-                background-color: #270095;
-                color: #fff;
-                --paper-fab-keyboard-focus-background: #5316ff;
-            }
+                        .color-secondary-1-2
+                        {
+                            color: #92FF70;
+                        }
 
-                paper-fab.primary, paper-fab.btn-primary, paper-fab[primary]
-                {
-                    background-color: #270095;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #5316ff;
-                }
+                        .color-secondary-1-3
+                        {
+                            color: #2CB800;
+                        }
 
-                paper-fab.secondary, paper-fab.btn-secondary, paper-fab[secondary]
-                {
-                    background-color: #ff8300;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #804200;
-                }
+                        .color-secondary-1-4
+                        {
+                            color: #228E00;
+                        }
 
-                paper-fab.success, paper-fab.btn-success, paper-fab[success]
-                {
-                    background-color: #3dff00;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #1e8000;
-                }
+                        .color-secondary-2-0
+                        {
+                            color: #581CFF;
+                        }
+                        /* Main Secondary color (2) */
+                        .color-secondary-2-1
+                        {
+                            color: #C3AEFF;
+                        }
 
-                paper-fab.info, paper-fab.btn-info, paper-fab[info]
-                {
-                    background-color: #228e00;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #48ff0f;
-                }
+                        .color-secondary-2-2
+                        {
+                            color: #A180FF;
+                        }
 
-                paper-fab.warning, paper-fab.btn-warning, paper-fab[warning]
-                {
-                    background-color: #a75600;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #ff9627;
-                }
+                        .color-secondary-2-3
+                        {
+                            color: #270095;
+                        }
 
-                paper-fab.error, paper-fab.btn-error, paper-fab[error]
-                {
-                    background-color: #680a00;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #e81600;
-                }
+                        .color-secondary-2-4
+                        {
+                            color: #1E0073;
+                        }
 
-                paper-fab[disabled]
-                {
-                    color: #7E8D9D !important;
-                    background: #c9c9c9 !important;
-                }
+                        .color-complement-0
+                        {
+                            color: #FF8300;
+                        }
+                        /* Main Complement color */
+                        .color-complement-1
+                        {
+                            color: #FFD2A4;
+                        }
 
-            section.hero paper-menu, section[hero] paper-menu
-            {
-                --paper-menu-background-color: #0fabff;
-            }
+                        .color-complement-2
+                        {
+                            color: #FFB970;
+                        }
 
-            paper-tabs
-            {
-                background-color: #1e0073;
-                color: #c3aeff;
-            }
+                        .color-complement-3
+                        {
+                            color: #D96F00;
+                        }
 
-            h1, h3, h5
-            {
-                text-transform: uppercase;
-            }
+                        .color-complement-4
+                        {
+                            color: #A75600;
+                        }
 
-            .chorizontal
-            {
-                @apply(--layout-horizontal);
-                @apply(--layout-wrap);
-                @apply(--layout-start-justified);
-            }
+                        /*
 
-            .cvertical
-            {
-                @apply(--layout-vertical);
-                @apply(--layout-wrap);
-                display: inline-flex;
-                @apply(--layout-around-justified);
-            }
+            .color-primary-1 { color: #B2F4D1 }
+            .color-primary-2 { color: #7FE5AE }
+            .color-primary-3 { color: #37BF76 }
+            .color-primary-4 { color: #1AAC5E }
 
-            .flexchild
-            {
-                @apply(--layout-flex-auto);
-                position: relative !important;
-            }
+            .color-secondary-1-0 { color: #05E0FF }
+            .color-secondary-1-1 { color: #A5F4FF }
+            .color-secondary-1-2 { color: #73EEFF }
+            .color-secondary-1-3 { color: #007485 }
+            .color-secondary-1-4 { color: #005A66 }
 
-            .cprincipal
-            {
-                height: auto;
-                width: 100vw;
-            }
+            .color-secondary-2-0 { color: #5E9732 }
+            .color-secondary-2-1 { color: #B8E297 }
+            .color-secondary-2-2 { color: #87BC5E }
+            .color-secondary-2-3 { color: #3C7113 }
+            .color-secondary-2-4 { color: #214B00 }
 
-            .onecolum
-            {
-                height: auto;
-                width: 70vw;
-            }
+            .color-complement-0 { color: #B87109 }
+            .color-complement-1 { color: #ECAC4E }
+            .color-complement-2 { color: #E4921B }
+            .color-complement-3 { color: #985A00 }
+            .color-complement-4 { color: #704300 }
 
-            .cseccion
-            {
+            .color-primary-0 { color: #50BFB0 }
+            .color-primary-1 { color: #ADEEE5 }
+            .color-primary-2 { color: #79D8CB }
+            .color-primary-3 { color: #30A393 }
+            .color-primary-4 { color: #179281 }
+
+            .color-secondary-1-0 { color: #8D2F5D }
+            .color-secondary-1-1 { color: #D38DAF }
+            .color-secondary-1-2 { color: #B05883 }
+            .color-secondary-1-3 { color: #6A123D }
+            .color-secondary-1-4 { color: #460023 }
+
+            .color-secondary-2-0 { color: #FFE900 }
+            .color-secondary-2-1 { color: #FFF7A4 }
+            .color-secondary-2-2 { color: #FFF370 }
+            .color-secondary-2-3 { color: #D9C600 }
+            .color-secondary-2-4 { color: #A79900 }
+
+            .color-complement-0 { color: #4F2C73 }
+            .color-complement-1 { color: #9177AC }
+            .color-complement-2 { color: #6E4D8F }
+            .color-complement-3 { color: #351456 }
+            .color-complement-4 { color: #1F0439 }
+
+            */
+
+
+                        /* Generated by Paletton.com © 2002-2014 */
+                        /* http://paletton.com */
+
+            section[hero] {
+                margin-top: 4vh;
+                margin-left:auto;
+                margin-right:auto;
+                padding: 4vw;
+                display: flex;
+                flex-direction:row;
+                position: relative;
                 width: 100%;
                 height: 100%;
-            }
-
-            .ccover
-            {
-                height: 100vh;
-                width: 100vw;
-            }
-
-            .centro
-            {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .card
-            {
-                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-                padding: 16px;
-                margin: 24px;
-                border-radius: 5px;
-                background-color: #eeeedd;
-                color: #757575;
-            }
-
-            .circle
-            {
-                display: inline-block;
-                height: 70px;
-                width: 70px;
-                border-radius: 50%;
-                background: #ddd;
-                line-height: 64px;
-                font-size: 30px;
-                color: #555;
-                text-align: center;
-            }
-
-            h1
-            {
-                font-size: 22px;
-                margin: 16px 0;
-                color: hsl(200, 29%, 24%);
-            }
-            /* CSS - Cascading Style Sheet */
-            /* Palette color codes */
-            /* Palette URL: http://paletton.com/#uid=c3t0A2J4g0kwi++bu++hX++++rd++kX */
-
-            /* Feel free to copy&paste color codes to your application */
-
-
-            /* As hex codes */
-
-            .color-primary-0
-            {
-                color: #0DAAFF;
-            }
-            /* Main Primary color */
-            .color-primary-1
-            {
-                color: #A8E1FF;
-            }
-
-            .color-primary-2
-            {
-                color: #77D0FF;
-            }
-
-            .color-primary-3
-            {
-                color: #005A8A;
-            }
-
-            .color-primary-4
-            {
-                color: #00456A;
-            }
-
-            .color-secondary-1-0
-            {
-                color: #3DFF00;
-            }
-            /* Main Secondary color (1) */
-            .color-secondary-1-1
-            {
-                color: #BAFFA4;
-            }
-
-            .color-secondary-1-2
-            {
-                color: #92FF70;
-            }
-
-            .color-secondary-1-3
-            {
-                color: #2CB800;
-            }
-
-            .color-secondary-1-4
-            {
-                color: #228E00;
-            }
-
-            .color-secondary-2-0
-            {
-                color: #581CFF;
-            }
-            /* Main Secondary color (2) */
-            .color-secondary-2-1
-            {
-                color: #C3AEFF;
-            }
-
-            .color-secondary-2-2
-            {
-                color: #A180FF;
-            }
-
-            .color-secondary-2-3
-            {
-                color: #270095;
-            }
-
-            .color-secondary-2-4
-            {
-                color: #1E0073;
-            }
-
-            .color-complement-0
-            {
-                color: #FF8300;
-            }
-            /* Main Complement color */
-            .color-complement-1
-            {
-                color: #FFD2A4;
-            }
-
-            .color-complement-2
-            {
-                color: #FFB970;
-            }
-
-            .color-complement-3
-            {
-                color: #D96F00;
-            }
-
-            .color-complement-4
-            {
-                color: #A75600;
-            }
-
-/*
-
-.color-primary-1 { color: #B2F4D1 }
-.color-primary-2 { color: #7FE5AE }
-.color-primary-3 { color: #37BF76 }
-.color-primary-4 { color: #1AAC5E }
-
-.color-secondary-1-0 { color: #05E0FF }
-.color-secondary-1-1 { color: #A5F4FF }
-.color-secondary-1-2 { color: #73EEFF }
-.color-secondary-1-3 { color: #007485 }
-.color-secondary-1-4 { color: #005A66 }
-
-.color-secondary-2-0 { color: #5E9732 }
-.color-secondary-2-1 { color: #B8E297 }
-.color-secondary-2-2 { color: #87BC5E }
-.color-secondary-2-3 { color: #3C7113 }
-.color-secondary-2-4 { color: #214B00 }
-
-.color-complement-0 { color: #B87109 }
-.color-complement-1 { color: #ECAC4E }
-.color-complement-2 { color: #E4921B }
-.color-complement-3 { color: #985A00 }
-.color-complement-4 { color: #704300 }
-
-.color-primary-0 { color: #50BFB0 }
-.color-primary-1 { color: #ADEEE5 }
-.color-primary-2 { color: #79D8CB }
-.color-primary-3 { color: #30A393 }
-.color-primary-4 { color: #179281 }
-
-.color-secondary-1-0 { color: #8D2F5D }
-.color-secondary-1-1 { color: #D38DAF }
-.color-secondary-1-2 { color: #B05883 }
-.color-secondary-1-3 { color: #6A123D }
-.color-secondary-1-4 { color: #460023 }
-
-.color-secondary-2-0 { color: #FFE900 }
-.color-secondary-2-1 { color: #FFF7A4 }
-.color-secondary-2-2 { color: #FFF370 }
-.color-secondary-2-3 { color: #D9C600 }
-.color-secondary-2-4 { color: #A79900 }
-
-.color-complement-0 { color: #4F2C73 }
-.color-complement-1 { color: #9177AC }
-.color-complement-2 { color: #6E4D8F }
-.color-complement-3 { color: #351456 }
-.color-complement-4 { color: #1F0439 }
-
-*/
-
-
-            /* Generated by Paletton.com © 2002-2014 */
-            /* http://paletton.com */
-
-            section[hero]
-            {
-                margin: 4vw;
-                padding: 4vw;
             }
         </style>
     </template>

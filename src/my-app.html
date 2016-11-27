@@ -156,7 +156,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <my-view2 name="view2"></my-view2>
           <my-view3 name="view3"></my-view3>
           <my-loginform name ="loginform" signedin={{userlogged}} pagina={{page}}></my-loginform>
-            <my-home name="home"></my-home>
           <my-view404 name="view404"></my-view404>
         </neon-animated-pages>
 
@@ -183,7 +182,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           reflectToAttribute: true,
           observer: '_pageChanged'
         },
-        userlogged: { type: Boolean, reflectToAttribute: true, readOnly: false,notify: true }
+        userlogged: { type: Boolean, reflectToAttribute: true, readOnly: false,notify: true,value:false }
 
 
 
