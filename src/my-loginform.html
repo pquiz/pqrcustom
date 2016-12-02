@@ -35,14 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Configure Firebase app: -->
 
-        <section  hidden$="[[signedin]]">
-            <h2>Iniciar sesion con Google</h2>
-            <firebase-auth app-name="pruebapq" id="auth" user="{{usuario}}" signed-in="{{signedin}}" provider="google" on-error="handleError">
-            </firebase-auth>
-
-            <paper-button on-tap="ingresa" secondary> Ingresar</paper-button>
-
-        </section>
+       
         <section hero hidden$="[[!signedin]]">
 
             <h1>Deja comentario comentarios</h1>
@@ -51,7 +44,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <section hero hidden$="[[!signedin]]">
 
             <h1>Lista de comentarios</h1>
-            <my-grid user="{{usuario}}"></my-grid>
+            <my-grid user="{{usuario}}" persisted={{data}}></my-grid>
         </section>
 
 </template>
@@ -65,6 +58,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         is: 'my-loginform',
         properties: {
             usuario: { type: String, notify: true, readOnly: false, value: "" },
+            data: { type: Array, notify: true, readOnly: false },
             signedin: {
                 type: Boolean,
                 notify: true,
@@ -79,11 +73,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
              this.$.auth.signOut();
          }, ingresa: function () {
              this.lock();
-             this.$.auth.signInWithPopup().then(function (response) {
-                 this.signedin = true;
-
-             }
-             );
+         
              }
 
 

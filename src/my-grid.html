@@ -9,7 +9,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<link rel="import" href="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 
 <link rel="import" href="../bower_components/polymerfire/polymerfire.html" />
 <link rel="import" href="../bower_components/vaadin-grid/vaadin-grid.html">
@@ -35,16 +34,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
         <!-- Configure Firebase app: -->
-        <firebase-query id="query"
-                        app-name="pruebapq"
-                        path="/registros/[[user.uid]]"
-                        data="{{data}}">
-        </firebase-query>
-        <app-indexeddb-mirror session="[[user.uid]]"
-                              key="registros"
-                              data="{{data}}"
-                              persisted-data="{{persistedData}}">
-        </app-indexeddb-mirror>
+
      
             <vaadin-grid  id="vgrid" demo>
                 <table>
@@ -63,7 +53,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         properties: {
             user: { type: Array, notify: true, readOnly: false },
             data: { type: Array, notify: true, readOnly: false },
-            persistedData: { type: Array, notify: true, readOnly: false, observer:'_cambiodatos' }
+            persisted: { type: Array, notify: true, readOnly: false, observer: '_cambiodatos' }
 
         }, _cambiodatos: function (newValue, oldValue) {
             if (oldValue && oldValue != null && oldValue != undefined && oldValue.length > 0) {
@@ -83,7 +73,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
         },
         ready: function () {
-            this._cambiodato(this.persistedData);
+            this._cambiodato(this.persisted);
          }
 
 

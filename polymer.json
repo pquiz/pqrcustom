@@ -15,9 +15,14 @@
 
   ],
   "sourceGlobs": [
-   "src/**/*",
-   "images/**/*",
-   "bower.json"
+    "src/**/*",
+    "images/**/*",
+    "bower.json",
+    "sw-import.js",
+    "bower_components/platinum-sw/service-worker.js",
+    "bower_components/platinum-sw/bootstrap/sw-toolbox-setup.js",
+    "service-worker.js",
+    "bower_components/platinum-sw/sw-toolbox/sw-toolbox.js"
   ],
   "includeDependencies": [
     "bower_components/webcomponentsjs/webcomponents-lite.min.js"

@@ -1,24 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.25920.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "pqrcustom", ".", "{D4F9309E-496C-47EA-809E-2D7FADC2F88A}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_17121"
 		Debug.AspNetCompiler.PhysicalPath = "..\pqrcustom\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_17121\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.FixedNames = "true"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_17121"
 		Release.AspNetCompiler.PhysicalPath = "..\pqrcustom\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_17121\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.FixedNames = "true"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "17121"
 		SlnRelativePath = "..\pqrcustom\"
