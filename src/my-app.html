@@ -26,14 +26,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
 
-<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
-
+<link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
 <link rel="import" href="../bower_components/polymerfire/polymerfire.html" />
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/places-icons.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 
@@ -48,216 +49,250 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="my-app">
 
-  <template>
+    <template>
 
-    <style include="shared-styles">
-        body {
-          margin: 0;
-          font-family: arial;
-        }
-
-        app-header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 120px;
-
-        }
-
-
-
-        paper-toolbar.tall {
-          height: 55px;
-        }
-
-        sample-content {
-          padding-top: 212px;
-        }
-
-        [title] {
-          font-weight: lighter;
-          margin-left: 108px;
-        }
-
-        [condensed-title] {
-          font-weight: lighter;
-          margin-right: 20px;
-          margin-left: 30px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-
-        [condensed-title] i {
-          font-weight: 100;
-          font-style: normal;
-        }
-
-        @media (max-width: 639px) {
-          [title] {
-            margin-left: 50px;
-            font-size: 30px;
-          }
-          [condensed-title] {
-            font-size: 15px;
-          }
-        }
-        paper-tabs{
-          margin-left: 25px;
-        }
-    </style>
-
-      <!-- Configure Firebase app: -->
-      <app-scrollpos-control selected="{{page}}"></app-scrollpos-control>
-
-
-    <app-location route="{{route}}"></app-location>
-    <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
-
-      <platinum-sw-register auto-register
-                            skip-waiting
-                            clients-claim
-                            reload-on-install href="../sw-import.js">
-
-          <platinum-sw-cache default-cache-strategy="networkOnly">
-          </platinum-sw-cache>
-      </platinum-sw-register>
-      <!-- Configure Firebase app: -->
-      <firebase-app name="pruebapq" auth-domain="peak-key-140102.firebaseapp.com"
-                    database-url="https://peak-key-140102.firebaseio.com/"
-                    api-key="AIzaSyAsk8a-r-xMJQMUyP4cuv75bhMMk3BThl8">
-      </firebase-app>
-      <firebase-document id="document"
-                         app-name="pruebapq"
-                         path="[[diario.diarioId]]"
-                         data="{{diario}}">
-      </firebase-document>
-      <firebase-query id="query"
-                      app-name="pruebapq"
-                      path="/registros/[[usuario.uid]]"
-                      data="{{data}}">
-      </firebase-query>
-      <app-indexeddb-mirror session="[[usuario.uid]]"
-                            key="registros"
-                            data="{{data}}"
-                            persisted-data="{{persisted}}">
-      </app-indexeddb-mirror>
-      <firebase-auth app-name="pruebapq" id="auth" user="{{usuario}}" signed-in="{{userlogged}}" provider="google" on-error="handleError">
-      </firebase-auth>
-      <section hidden$="[[userlogged]]">
-          <h2>Iniciar sesion con Google</h2>
-          
-          <paper-button on-tap="ingresa" secondary> Ingresar</paper-button>
-      </section>
-    <app-drawer-layout force-narrow fullbleed>
-
-      <!-- Drawer content -->
-      <app-drawer >
-        <app-toolbar>Menu</app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="/view1">View One</a>
-          <a name="view2" href="/view2">View Two</a>
-          <a name="view3" href="/view3">View Three</a>
-        </iron-selector>
-      </app-drawer>
-
-      <!-- Main content -->
-
-      <app-header-layout has-scrolling-region>
-
-        <app-header condenses reveals effects="material">
-          <paper-toolbar class="medium-tall">
+        <style include="shared-styles">
+            body
+            {
+                margin: 0;
+                font-family: arial;
+            }
 
           
-              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-              <h4 class="title">Pedro Quiz Ramos</h4>
-             
+
+            .drawer-content
+            {
+                margin-top: 80px;
+                height: calc(100% - 80px);
+                overflow: auto;
+            }
 
 
-            <paper-tabs class="bottom " selected="0" autoselect autoselect-delay="1000">
-    <paper-tab>    <a name="view1" href="/view1">View One</a></paper-tab>
-    <paper-tab>    <a name="view2" href="/view2">View two</a></paper-tab>
-    <paper-tab>    <a name="view3" href="/view3">View three</a></paper-tab>
-  </paper-tabs>
-              <a name="loginform" href="/loginform" tabindex="-1" hidden$="[[!userlogged]]">
-                  <paper-icon-button icon="cloud" ></paper-icon-button>
-                  </a>
-                  <paper-icon-button icon="cloud-off" hidden$="[[userlogged]]"></paper-icon-button>
-                  <a name="loginform" href="/loginform" tabindex="-1" hidden$="[[userlogged]]">
+          
+          
 
-                      <paper-icon-button icon="account-box" alt="Log in"></paper-icon-button>
-                  </a>
-</paper-toolbar>
-        </app-header>
-        <neon-animated-pages selected="[[page]]" class="flex" attr-for-selected="name" fallback-selection="view404" role="main">
-          <my-view1 name="view1"></my-view1>
-          <my-view2 name="view2"></my-view2>
-          <my-view3 name="view3"></my-view3>
-          <my-loginform name ="loginform" signedin={{userlogged}} data={{persisted}} usuario="{{usuario}}" pagina={{page}}></my-loginform>
-          <my-view404 name="view404"></my-view404>
-        </neon-animated-pages>
+            app-drawer-layout
+            {
+                --app-drawer-layout-content-transition: margin 0.2s;
+            }
 
-      </app-header-layout>
+            [title]
+            {
+                font-weight: lighter;
+                margin-left: 108px;
+            }
 
-    </app-drawer-layout>
+            [condensed-title]
+            {
+                font-weight: lighter;
+                margin-right: 20px;
+                margin-left: 30px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
 
-  </template>
+                [condensed-title] i
+                {
+                    font-weight: 100;
+                    font-style: normal;
+                }
 
-  <script>
-      var scope = null;
+            @media (max-width: 639px)
+            {
+                [title]
+                {
+                    margin-left: 50px;
+                    font-size: 30px;
+                }
+
+                [condensed-title]
+                {
+                    font-size: 15px;
+                }
+            }
+
+            paper-tabs
+            {
+                margin-left: 25px;
+            }
+        </style>
+
+        <!-- Configure Firebase app: -->
+        <app-scrollpos-control selected="{{page}}"></app-scrollpos-control>
 
 
-    Polymer({
+        <app-location route="{{route}}"></app-location>
+        <app-route route="{{route}}"
+                   pattern="/:page"
+                   data="{{routeData}}"
+                   tail="{{subroute}}"></app-route>
 
-      is: 'my-app',
-      behaviors: [
-          Polymer.RegisterBehavior
-      ],
-      properties: {
+        <platinum-sw-register auto-register
+                              skip-waiting
+                              clients-claim
+                              reload-on-install href="../sw-import.js">
 
-        page: {
-          type: String,
-          reflectToAttribute: true,
-          observer: '_pageChanged'
-        },
-        userlogged: { type: Boolean, reflectToAttribute: true, readOnly: false, notify: true, value: false }, usuario: { type: String, notify: true, readOnly: false, value: "" }
+            <platinum-sw-cache default-cache-strategy="networkOnly">
+            </platinum-sw-cache>
+        </platinum-sw-register>
+        <!-- Configure Firebase app: -->
+        <firebase-app name="pruebapq" auth-domain="peak-key-140102.firebaseapp.com"
+                      database-url="https://peak-key-140102.firebaseio.com/"
+                      api-key="AIzaSyAsk8a-r-xMJQMUyP4cuv75bhMMk3BThl8">
+        </firebase-app>
+        <firebase-document id="document"
+                           app-name="pruebapq"
+                           path="[[diario.diarioId]]"
+                           data="{{diario}}">
+        </firebase-document>
+        <firebase-query id="query"
+                        app-name="pruebapq"
+                        path="/registros/[[usuario.uid]]"
+                        data="{{data}}">
+        </firebase-query>
+        <app-indexeddb-mirror session="[[usuario.uid]]"
+                              key="registros"
+                              data="{{data}}"
+                              persisted-data="{{persisted}}">
+        </app-indexeddb-mirror>
+        <firebase-auth app-name="pruebapq" id="auth" user="{{usuario}}" signed-in="{{userlogged}}" provider="google" on-error="handleError">
+        </firebase-auth>
+        <section hidden$="[[userlogged]]">
+            <h2>Iniciar sesion con Google</h2>
+
+            <paper-button on-tap="ingresa" secondary> Ingresar</paper-button>
+        </section>
+
+        <!-- Main content -->
+
+        <app-header-layout has-scrolling-region>
+
+            <app-header fixed effects="waterfall">
+                <app-toolbar>
+
+
+                    <paper-icon-button id="toggle" icon="menu" drawer-toggle></paper-icon-button>
+                    <h4 main-title>Pedro Quiz Ramos</h4>
 
 
 
-      },
+                    <!---  <paper-tabs class="bottom " selected="0" autoselect autoselect-delay="1000">
+                      <paper-tab>    <a name="view1" href="/view1">View One</a></paper-tab>
+                      <paper-tab>    <a name="view2" href="/view2">View two</a></paper-tab>
+                      <paper-tab>    <a name="view3" href="/view3">View three</a></paper-tab>
+                    </paper-tabs>-->
+                    <a name="loginform" href="/loginform" tabindex="-1" hidden$="[[!userlogged]]">
+                        <paper-icon-button icon="cloud"></paper-icon-button>
+                    </a>
+                    <paper-icon-button icon="cloud-off" hidden$="[[userlogged]]"></paper-icon-button>
+                    <a name="loginform" href="/loginform" tabindex="-1" hidden$="[[userlogged]]">
 
-      observers: [
-        '_routePageChanged(routeData.page)'
-      ],
-      _routePageChanged: function(page) {
-        this.page = page || 'view1';
-      },
+                        <paper-icon-button icon="account-box" alt="Log in"></paper-icon-button>
+                    </a>
+                </app-toolbar>
+            </app-header>
+            <app-drawer-layout id="drawerLayout">
 
-      _pageChanged: function(page) {
-        // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
-        this.importHref(resolvedPageUrl, null, this._showPage404, true);
-      },
+                <!-- Drawer content -->
+                <app-drawer >
+                    <div class="drawer-content">
+                        <app-toolbar>Menu</app-toolbar>
+                        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+                            <a name="view1" href="/view1" tabindex="-1">
+                                <paper-icon-item><iron-icon icon="places:spa" item-icon></iron-icon>Relajate</paper-icon-item>
+                            </a>
+                            <a name="view2" href="/view2" tabindex="-1">
+                                <paper-icon-item>
+                                    <iron-icon icon="places:fitness-center" item-icon></iron-icon>Actividades
+                                </paper-icon-item>
+                            </a>
+                            <a name="view3" href="/view3" tabindex="-1">
+                                <paper-icon-item>
+                                    <iron-icon icon="icons:list" item-icon></iron-icon>Suplementos
+                                </paper-icon-item>
+                            </a>
+                            <a name="loginform" href="/loginform" tabindex="-1">
+                                <paper-icon-item>
+                                    <iron-icon icon="icons:home" item-icon></iron-icon>Home
+                                </paper-icon-item>
+                            </a>
+                        </iron-selector>
+                    </div>
+                </app-drawer>
 
-      _showPage404: function() {
-        this.page = 'view404';
-      },
-      ready: function(){
-         // this.$.dropdownDialog.toggle();
-          this.$.auth.signInWithPopup().then(function (response) {
-              this.userlogged = true;
+                <neon-animated-pages selected="[[page]]" class="flex" attr-for-selected="name" fallback-selection="view404" role="main">
+                    <my-view1 name="view1"></my-view1>
+                    <my-view2 name="view2"></my-view2>
+                    <my-view3 name="view3"></my-view3>
+                    <my-loginform name="loginform" signedin={{userlogged}} data={{persisted}} usuario="{{usuario}}" pagina={{page}}></my-loginform>
+                    <my-view404 name="view404"></my-view404>
+                </neon-animated-pages>
+            </app-drawer-layout>
+        </app-header-layout>
 
-          }
-         );
-          //modal = this.$.dropdownDialog;
-      }
 
-    });
 
-  </script>
+    </template>
+
+    <script>
+        var scope = null;
+
+       
+        Polymer({
+
+            is: 'my-app',
+            behaviors: [
+                Polymer.RegisterBehavior
+            ],
+            properties: {
+
+                page: {
+                    type: String,
+                    reflectToAttribute: true,
+                    observer: '_pageChanged'
+                },
+                userlogged: { type: Boolean, reflectToAttribute: true, readOnly: false, notify: true, value: false }, usuario: { type: String, notify: true, readOnly: false, value: "" }
+
+
+
+            },
+
+            observers: [
+              '_routePageChanged(routeData.page)'
+            ],
+            _routePageChanged: function (page) {
+                this.page = page || 'view1';
+            },
+
+            _pageChanged: function (page) {
+                // Load page import on demand. Show 404 page if fails
+                var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
+                this.importHref(resolvedPageUrl, null, this._showPage404, true);
+            },
+
+            _showPage404: function () {
+                this.page = 'view404';
+            },
+            ready: function () {
+                // this.$.dropdownDialog.toggle();
+                var drawerLayout = this.$.drawerLayout;
+                this.$.toggle.addEventListener('tap', function () {
+                    if (drawerLayout.forceNarrow || !drawerLayout.narrow) {
+                        drawerLayout.forceNarrow = !drawerLayout.forceNarrow;
+                    } else {
+                        drawerLayout.drawer.toggle();
+                    }
+                });
+                this.$.auth.signInWithPopup().then(function (response) {
+                    this.userlogged = true;
+
+                }
+               );
+                //modal = this.$.dropdownDialog;
+            }
+
+        });
+
+    </script>
 
 </dom-module>
