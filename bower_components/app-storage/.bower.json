@@ -13,7 +13,7 @@
   ],
   "moduleType": [],
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/PolymerElements/app-storage",
+  "homepage": "https://github.com/polymerelements/app-storage",
   "private": true,
   "dependencies": {
     "promise-polyfill": "polymerlabs/promise-polyfill#^1.0.0",
@@ -39,7 +39,7 @@
     "tag": "v0.9.7",
     "commit": "3a2284d09f6abb40832b8f8c4847ec27456e056b"
   },
-  "_source": "https://github.com/PolymerElements/app-storage.git",
+  "_source": "git://github.com/polymerelements/app-storage.git",
   "_target": "^0.9.0",
-  "_originalSource": "PolymerElements/app-storage"
+  "_originalSource": "polymerelements/app-storage"
 }

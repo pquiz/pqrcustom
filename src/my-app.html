@@ -13,7 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/neon-animation/neon-animatable.html">
 <link rel="import" href="../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
-
+<link rel="import" href="../bower_components/google-signin/google-signin.html" />
 
 
 
@@ -64,6 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             {
                 margin-top: 80px;
                 height: calc(100% - 80px);
+               width:calc(100%-250px);
                 overflow: auto;
             }
 
@@ -157,11 +158,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </app-indexeddb-mirror>
         <firebase-auth app-name="pruebapq" id="auth" user="{{usuario}}" signed-in="{{userlogged}}" provider="google" on-error="handleError">
         </firebase-auth>
-        <section hidden$="[[userlogged]]">
-            <h2>Iniciar sesion con Google</h2>
-
-            <paper-button on-tap="ingresa" secondary> Ingresar</paper-button>
-        </section>
+       
 
         <!-- Main content -->
 
@@ -181,6 +178,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-tab>    <a name="view2" href="/view2">View two</a></paper-tab>
                       <paper-tab>    <a name="view3" href="/view3">View three</a></paper-tab>
                     </paper-tabs>-->
+               
+                        <google-signin clientId="11567564581-2aq66au6un93j78f4pct8821bbk64r49.apps.googleusercontent.com" brand="google" height="standard"></google-signin>
+                    
                     <a name="loginform" href="/loginform" tabindex="-1" hidden$="[[!userlogged]]">
                         <paper-icon-button icon="cloud"></paper-icon-button>
                     </a>
