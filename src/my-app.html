@@ -133,7 +133,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                               clients-claim
                               reload-on-install href="../sw-import.js">
 
-            <platinum-sw-cache default-cache-strategy="networkOnly">
+            <platinum-sw-cache default-cache-strategy="networkFirst">
             </platinum-sw-cache>
         </platinum-sw-register>
         <!-- Configure Firebase app: -->
@@ -179,7 +179,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-tab>    <a name="view3" href="/view3">View three</a></paper-tab>
                     </paper-tabs>-->
                
-                        <google-signin clientId="11567564581-2aq66au6un93j78f4pct8821bbk64r49.apps.googleusercontent.com" brand="google" height="standard"></google-signin>
+                        <google-signin clientId="11567564581-2aq66au6un93j78f4pct8821bbk64r49.apps.googleusercontent.com" brand="google" height="standard" scopes="https://spreadsheets.google.com/feeds"></google-signin>
                     
                     <a name="loginform" href="/loginform" tabindex="-1" hidden$="[[!userlogged]]">
                         <paper-icon-button icon="cloud"></paper-icon-button>

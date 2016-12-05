@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../bower_components/google-youtube/google-youtube.html" />
 <link rel="import" href="my-corusel.html">
 <link rel="import" href="shared-styles.html">
 
@@ -25,7 +27,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           height:80vh;
       }
     </style>
-
+      <google-youtube id="googleYouTube" fluid
+                      video-id="mjtfyuTTQFY"
+                      autoplay="1" chromeless>
+                      
+      </google-youtube>
     <div id="pres2" >
        </div>
       <my-carusel id="carrusel" imagenes="{{frames}}"></my-carusel>
