@@ -14,7 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 <link rel="import" href="../bower_components/google-signin/google-signin.html" />
-
+<link rel="import" href="../bower_components/vaadin-icons/vaadin-icons.html" />
 
 
 <link rel="import" href="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
@@ -37,7 +37,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-icons/places-icons.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
-
+<link rel="import" href="../bower_components/facebook-button/dist/facebook-button.html" />
 <link rel="import" href="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <link rel="import" href="/bower_components/platinum-sw/platinum-sw-cache.html" />
 <link rel="import" href="/bower_components/platinum-sw/platinum-sw-register.html" />
@@ -180,7 +180,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </paper-tabs>-->
                
                         <google-signin clientId="11567564581-2aq66au6un93j78f4pct8821bbk64r49.apps.googleusercontent.com" brand="google" height="standard" scopes="https://spreadsheets.google.com/feeds"></google-signin>
-                    
+                    <facebook-button layout="standard" showfaces="true" href=[[route]]></facebook-button>
                     <a name="loginform" href="/loginform" tabindex="-1" hidden$="[[!userlogged]]">
                         <paper-icon-button icon="cloud"></paper-icon-button>
                     </a>
@@ -208,7 +208,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </a>
                             <a name="view3" href="/view3" tabindex="-1">
                                 <paper-icon-item>
-                                    <iron-icon icon="icons:list" item-icon></iron-icon>Suplementos
+                                    <iron-icon icon="vaadin-icons:pills" item-icon></iron-icon>Suplementos
                                 </paper-icon-item>
                             </a>
                             <a name="loginform" href="/loginform" tabindex="-1">
