@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/google-signin/google-signin.html" />
 <link rel="import" href="../bower_components/vaadin-icons/vaadin-icons.html" />
 
-
+<link rel="import" href="../bower_components/google-sheets/google-sheets.html" />
 <link rel="import" href="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <link rel="import" href="../bower_components/app-route/app-location.html">
 <link rel="import" href="../bower_components/app-route/app-route.html">
@@ -37,7 +37,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-icons/places-icons.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
-<link rel="import" href="../bower_components/facebook-button/dist/facebook-button.html" />
 <link rel="import" href="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <link rel="import" href="/bower_components/platinum-sw/platinum-sw-cache.html" />
 <link rel="import" href="/bower_components/platinum-sw/platinum-sw-register.html" />
@@ -179,8 +178,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                       <paper-tab>    <a name="view3" href="/view3">View three</a></paper-tab>
                     </paper-tabs>-->
                
-                        <google-signin clientId="11567564581-2aq66au6un93j78f4pct8821bbk64r49.apps.googleusercontent.com" brand="google" height="standard" scopes="https://spreadsheets.google.com/feeds"></google-signin>
-                    <facebook-button layout="standard" showfaces="true" href=[[route]]></facebook-button>
+                        <google-signin client-id="11567564581-6agut0425d3c86etnt2cs341tb1npb76.apps.googleusercontent.com" brand="google" height="standard" scopes="https://spreadsheets.google.com/feeds"
+                                        on-google-signin-success="_handleSignedIn"
+                       on-google-signed-out="_handleSignedOut">
+                                       ></google-signin>
+                    <google-sheets id="sheets"
+                                   client-id="11567564581-6agut0425d3c86etnt2cs341tb1npb76.apps.googleusercontent.com">
+                    </google-sheets>
                     <a name="loginform" href="/loginform" tabindex="-1" hidden$="[[!userlogged]]">
                         <paper-icon-button icon="cloud"></paper-icon-button>
                     </a>
@@ -235,9 +239,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </template>
 
     <script>
-        var scope = null;
-
-       
+     
         Polymer({
 
             is: 'my-app',
@@ -262,6 +264,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             ],
             _routePageChanged: function (page) {
                 this.page = page || 'view1';
+            }, _handleSignedIn: function (googleUser) {
+
+                var credential = firebase.auth.GoogleAuthProvider.credential(
+          gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token);
+                var sheet = this.$.sheets;
+
+                sheet.addEventListener('google-sheet-data', function (e) {
+                    var documentos = this.spreadsheets;// this.spreadsheets - list of the user's spreadsheets
+                    // this.tab - information on the tab that was fetched
+                    // this.rows - cell row information for the tab that was fetched
+                });
+                // this.$.auth.signInWithCredential(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token).then(function (response) {
+                this.$.auth.signInWithCredential(credential).then(function (response) {
+                    this.userlogged = true;
+
+                }
+             );
+                
+            },
+
+            _handleSignedOut: function () {
+             
             },
 
             _pageChanged: function (page) {
@@ -283,11 +307,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         drawerLayout.drawer.toggle();
                     }
                 });
-                this.$.auth.signInWithPopup().then(function (response) {
-                    this.userlogged = true;
-
-                }
-               );
+              
                 //modal = this.$.dropdownDialog;
             }
 

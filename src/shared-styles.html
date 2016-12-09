@@ -16,610 +16,693 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
 
         <style include="iron-flex iron-flex-alignment iron-flex-factors iron-positioning">
-            /*
-                        html, body
+                        /*
+                                    html, body
+                                    {
+                                        margin: 0px;
+                                        padding: 0px;
+                                        min-height: 100%;
+                                        color: #ffebd7;
+
+                                background-color:hsl(219, 96%, 19%);
+                         background: linear-gradient(270deg, #00456a, #005a8a, #021925, #15384b, #023c5c, #1b282f);
+                        background-image: url(../images/bubbles.svg) ;
+                        background-repeat: repeat;
+                        -webkit-animation: AnimationName 100s ease infinite;
+                        -moz-animation: AnimationName 100s ease infinite;
+                        -o-animation: AnimationName 100s ease infinite;
+                        animation: AnimationName 100s ease infinite;
+                                    font-family: 'Arimo', sans-serif;
+                                        font-weight: 400;
+                                    }
+
+                        @-webkit-keyframes AnimationName {
+                            0%{background-position:0% 0%}
+
+                            20%{background-position:13% 10%}
+
+                            50%{background-position:23% 20%}
+
+                            70%{background-position:43% 13%}
+
+                            100%{background-position:0% 10%}
+                        }
+                        @-moz-keyframes AnimationName {
+                               0%{background-position:0% 0%}
+
+                            20%{background-position:13% 10%}
+
+                            50%{background-position:23% 20%}
+
+                            70%{background-position:43% 13%}
+
+                            100%{background-position:0% 10%}
+                        }
+                        @-o-keyframes AnimationName {
+                            0%{background-position:0% 0%}
+
+                            20%{background-position:13% 10%}
+
+                            50%{background-position:23% 20%}
+
+                            70%{background-position:43% 13%}
+
+                            100%{background-position:0% 10%}
+                        }
+                        @keyframes AnimationName {
+                             0%{background-position:0% 0%}
+
+                            20%{background-position:13% 10%}
+
+                            50%{background-position:23% 20%}
+
+                            70%{background-position:43% 13%}
+
+                            100%{background-position:0% 10%}
+                        }
+            */
+                        section
                         {
+                            padding: 40px 0px;
+                        }
+
+                            section[hero]
+                            {
+                                background-color: #c8f4f9;
+                            }
+
+                        h1, h2, h3, h4, h5, h6
+                        {
+                            font-weight: 400;
                             margin: 0px;
                             padding: 0px;
-                            min-height: 100%;
-                            color: #ffebd7;
+                            line-height: 1em;
+                        }
 
-                    background-color:hsl(219, 96%, 19%);
-             background: linear-gradient(270deg, #00456a, #005a8a, #021925, #15384b, #023c5c, #1b282f);
-            background-image: url(../images/bubbles.svg) ;
-            background-repeat: repeat;
-            -webkit-animation: AnimationName 100s ease infinite;
-            -moz-animation: AnimationName 100s ease infinite;
-            -o-animation: AnimationName 100s ease infinite;
-            animation: AnimationName 100s ease infinite;
-                        font-family: 'Arimo', sans-serif;
+                        h1, h3, h5
+                        {
+                            font-family: 'Bitter', serif;
+                        }
+
+                        h1
+                        {
+                            font-size: 50px;
+                            margin: 30px 0px;
+                        }
+
+                        h2
+                        {
+                            color: #a54d0d;
+                            font-size: 35px;
+                            margin: 20px 0px;
+                        }
+
+                        h3
+                        {
+                            font-size: 25px;
+                            margin: 15px 0px;
+                        }
+
+                        h4
+                        {
+                            font-size: 20px;
+                        }
+
+                        a, a:active, a:visited, a:focus
+                        {
+                            color: #13446c;
+                            text-decoration: none;
+                        }
+
+                            a:hover
+                            {
+                                color: #13446c;
+                                text-decoration: underline;
+                            }
+
+                        :root
+                        {
+                            --default-primary-color: #1bb5e1;
+                            --dark-primary-color: #1bb5e1;
+                            --light-primary-color: #c5cae9;
+                            --text-primary-color: #ffffff;
+                            --accent-color: #eac609;
+                            --primary-background-color: #ffffff;
+                            --primary-text-color: #16485a;
+                            --secondary-text-color: #a54d0d;
+                            --disabled-text-color: #2f2b16;
+                            --divider-color: #e0e0e0;
+                            --paper-checkbox-checked-color: #eac609;
+                            --paper-checkbox-checked-ink-color: #1bb5e1;
+                            --paper-checkbox-unchecked-color: #16485a;
+                            --paper-checkbox-unchecked-ink-color: #636363;
+                            --paper-checkbox-label-color: #16485a;
+                            --paper-fab-background: #1bb5e1;
+                            --paper-fab-disabled-background: #c5b97f;
+                            --paper-fab-disabled-text: #2f2b16;
+                            --paper-icon-button-disabled-text: #c5b97f;
+                            --paper-input-container-color: #636363;
+                            --paper-input-container-focus-color: #1bb5e1;
+                            --paper-input-container-invalid-color: #d500f9;
+                            --paper-input-container-input-color: #636363;
+                            --paper-menu-background-color: #c8f4f9;
+                            --paper-menu-color: #16485a;
+                            --paper-menu-disabled-color: #c5b97f;
+                            --paper-progress-active-color: #1bb5e1;
+                            --paper-progress-secondary-color: #eac609;
+                            --paper-radio-button-checked-color: #eac609;
+                            --paper-radio-button-checked-ink-color: white;
+                            --paper-radio-button-unchecked-color: #16485a;
+                            --paper-radio-button-unchecked-ink-color: #636363;
+                            --paper-radio-button-label-color: #16485a;
+                            --paper-slider-knob-color: #eac609;
+                            --paper-slider-active-color: #eac609;
+                            --paper-slider-pin-color: #eac609;
+                            --paper-spinner-layer-1-color: #1bb5e1;
+                            --paper-spinner-layer-2-color: #1bb5e1;
+                            --paper-spinner-layer-3-color: #1bb5e1;
+                            --paper-spinner-layer-4-color: #1bb5e1;
+                            --paper-tabs-selection-bar-color: #fabe28;
+                            --paper-tab-ink: #fabe28;
+                            --paper-toggle-button-checked-bar-color: #eac609;
+                            --paper-toggle-button-checked-button-color: #eac609;
+                            --paper-toggle-button-checked-ink-color: #eac609;
+                            --paper-toggle-button-unchecked-bar-color: #16485a;
+                            --paper-toggle-button-unchecked-button-color: #fff9c4;
+                            --paper-toggle-button-unchecked-ink-color: #fff9c4;
+                            --paper-toolbar-background: #dbeef0;
+                            --paper-toolbar-color: #8f6d56;
+                        }
+
+                        paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active, paper-toolbar a:visited, paper-toolbar a:focus
+                        {
+                            color: #8f6d56;
+                        }
+
+                        paper-button.primary, paper-button.btn-primary, paper-button[primary]
+                        {
+                            color: #1bb5e1;
+                        }
+
+                            paper-button.primary[raised], paper-button.btn-primary[raised], paper-button[primary][raised]
+                            {
+                                background-color: #1bb5e1;
+                                color: #fff;
+                            }
+
+                        paper-button.secondary, paper-button.btn-secondary, paper-button[secondary]
+                        {
+                            color: #eac609;
+                        }
+
+                            paper-button.secondary[raised], paper-button.btn-secondary[raised], paper-button[secondary][raised]
+                            {
+                                background-color: #eac609;
+                                color: #fff;
+                            }
+
+                        paper-button.success, paper-button.btn-success, paper-button[success]
+                        {
+                            color: #6fe31d;
+                        }
+
+                            paper-button.success[raised], paper-button.btn-success[raised], paper-button[success][raised]
+                            {
+                                background-color: #6fe31d;
+                                color: #fff;
+                            }
+
+                        paper-button.info, paper-button.btn-info, paper-button[info]
+                        {
+                            color: #1ec2db;
+                        }
+
+                            paper-button.info[raised], paper-button.btn-info[raised], paper-button[info][raised]
+                            {
+                                background-color: #1ec2db;
+                                color: #fff;
+                            }
+
+                        paper-button.warning, paper-button.btn-warning, paper-button[warning]
+                        {
+                            color: #dd8532;
+                        }
+
+                            paper-button.warning[raised], paper-button.btn-warning[raised], paper-button[warning][raised]
+                            {
+                                background-color: #dd8532;
+                                color: #fff;
+                            }
+
+                        paper-button.error, paper-button.btn-error, paper-button[error]
+                        {
+                            color: #db2b49;
+                        }
+
+                            paper-button.error[raised], paper-button.btn-error[raised], paper-button[error][raised]
+                            {
+                                background-color: #db2b49;
+                                color: #fff;
+                            }
+
+                        paper-button.link, paper-button.btn-link, paper-button[link]
+                        {
+                            text-decoration: underline;
+                        }
+
+                        paper-button[raised]
+                        {
+                            color: #16485a;
+                        }
+
+                        paper-button[disabled]
+                        {
+                            color: #2f2b16 !important;
+                            background: #c5b97f !important;
+                        }
+
+                        paper-icon-button.primary, paper-icon-button.btn-primary, paper-icon-button[primary]
+                        {
+                            color: #1bb5e1;
+                        }
+
+                            paper-icon-button.primary:hover, paper-icon-button.btn-primary:hover, paper-icon-button[primary]:hover
+                            {
+                                background-color: #e6ecd6;
+                                background-color: rgba(27, 181, 225, 0.2);
+                                border-radius: 50%;
+                            }
+
+                        paper-icon-button.secondary, paper-icon-button.btn-secondary, paper-icon-button[secondary]
+                        {
+                            color: #eac609;
+                        }
+
+                            paper-icon-button.secondary:hover, paper-icon-button.btn-secondary:hover, paper-icon-button[secondary]:hover
+                            {
+                                background-color: #faeec1;
+                                background-color: rgba(234, 198, 9, 0.2);
+                                border-radius: 50%;
+                            }
+
+                        paper-icon-button.success, paper-icon-button.btn-success, paper-icon-button[success]
+                        {
+                            color: #6fe31d;
+                        }
+
+                            paper-icon-button.success:hover, paper-icon-button.btn-success:hover, paper-icon-button[success]:hover
+                            {
+                                background-color: #eef1c3;
+                                background-color: rgba(111, 227, 29, 0.2);
+                                border-radius: 50%;
+                            }
+
+                        paper-icon-button.info, paper-icon-button.btn-info, paper-icon-button[info]
+                        {
+                            color: #1ec2db;
+                        }
+
+                            paper-icon-button.info:hover, paper-icon-button.btn-info:hover, paper-icon-button[info]:hover
+                            {
+                                background-color: #e6edd6;
+                                background-color: rgba(30, 194, 219, 0.2);
+                                border-radius: 50%;
+                            }
+
+                        paper-icon-button.warning, paper-icon-button.btn-warning, paper-icon-button[warning]
+                        {
+                            color: #dd8532;
+                        }
+
+                            paper-icon-button.warning:hover, paper-icon-button.btn-warning:hover, paper-icon-button[warning]:hover
+                            {
+                                background-color: #f9e7c5;
+                                background-color: rgba(221, 133, 50, 0.2);
+                                border-radius: 50%;
+                            }
+
+                        paper-icon-button.error, paper-icon-button.btn-error, paper-icon-button[error]
+                        {
+                            color: #db2b49;
+                        }
+
+                            paper-icon-button.error:hover, paper-icon-button.btn-error:hover, paper-icon-button[error]:hover
+                            {
+                                background-color: #f9dec7;
+                                background-color: rgba(219, 43, 73, 0.2);
+                                border-radius: 50%;
+                            }
+
+                        paper-checkbox #checkmark.paper-checkbox, paper-checkbox /deep/, paper-checkbox::shadow #checkmark.paper-checkbox
+                        {
+                            border-color: #fff !important;
+                        }
+
+                        paper-dialog
+                        {
+                            color: #16485a;
+                            background-color: #fcf2d5;
+                            font-family: 'Raleway', sans-serif;
                             font-weight: 400;
                         }
 
-            @-webkit-keyframes AnimationName {
-                0%{background-position:0% 0%}
-
-                20%{background-position:13% 10%}
-
-                50%{background-position:23% 20%}
-
-                70%{background-position:43% 13%}
-
-                100%{background-position:0% 10%}
-            }
-            @-moz-keyframes AnimationName {
-                   0%{background-position:0% 0%}
-
-                20%{background-position:13% 10%}
-
-                50%{background-position:23% 20%}
-
-                70%{background-position:43% 13%}
-
-                100%{background-position:0% 10%}
-            }
-            @-o-keyframes AnimationName {
-                0%{background-position:0% 0%}
-
-                20%{background-position:13% 10%}
-
-                50%{background-position:23% 20%}
-
-                70%{background-position:43% 13%}
-
-                100%{background-position:0% 10%}
-            }
-            @keyframes AnimationName {
-                 0%{background-position:0% 0%}
-
-                20%{background-position:13% 10%}
-
-                50%{background-position:23% 20%}
-
-                70%{background-position:43% 13%}
-
-                100%{background-position:0% 10%}
-            }
-                       */
-
-
-            section {
-                padding: 40px 0px;
-            }
-
-                section[hero] {
-                    background-color: #b3dae6;
-                }
-
-            h1, h2, h3, h4, h5, h6 {
-                font-weight: 400;
-                margin: 0px;
-                padding: 0px;
-                line-height: 1em;
-            }
-
-            h1, h3, h5 {
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            h1 {
-                font-size: 50px;
-                margin: 30px 0px;
-            }
-
-            h2 {
-                color: #8a6700;
-                font-size: 35px;
-                margin: 20px 0px;
-            }
-
-            h3 {
-                font-size: 25px;
-                margin: 15px 0px;
-            }
-
-            h4 {
-                font-size: 20px;
-            }
-
-            a, a:active, a:visited, a:focus {
-                color: #08165f;
-                text-decoration: none;
-            }
-
-                a:hover {
-                    color: #08165f;
-                    text-decoration: underline;
-                }
-
-            :root {
-                --default-primary-color: #446e9b;
-                --dark-primary-color: #e7e7e7;
-                --light-primary-color: #c5cae9;
-                --text-primary-color: #ffffff;
-                --accent-color: #ff4081;
-                --primary-background-color: #ffffff;
-                --primary-text-color: #294d56;
-                --secondary-text-color: #8a6700;
-                --disabled-text-color: #313238;
-                --divider-color: #e0e0e0;
-                --paper-checkbox-checked-color: #14ccff;
-                --paper-checkbox-checked-ink-color: #446e9b;
-                --paper-checkbox-unchecked-color: #08165f;
-                --paper-checkbox-unchecked-ink-color: #777777;
-                --paper-checkbox-label-color: #294d56;
-                --paper-fab-background: #446e9b;
-                --paper-fab-disabled-background: #cad289;
-                --paper-fab-disabled-text: #313238;
-                --paper-icon-button-disabled-text: #cad289;
-                --paper-input-container-color: #7a7a7a;
-                --paper-input-container-focus-color: #446e9b;
-                --paper-input-container-invalid-color: #ff6e40;
-                --paper-input-container-input-color: #7a7a7a;
-                --paper-menu-background-color: #b3dae6;
-                --paper-menu-color: #294d56;
-                --paper-menu-disabled-color: #d2c2b0;
-                --paper-progress-active-color: #14ccff;
-                --paper-progress-secondary-color: #ff8100;
-                --paper-radio-button-checked-color: #14ccff;
-                --paper-radio-button-checked-ink-color: white;
-                --paper-radio-button-unchecked-color: #294d56;
-                --paper-radio-button-unchecked-ink-color: #2d2d2d;
-                --paper-radio-button-label-color: #294d56;
-                --paper-slider-knob-color: #14ccff;
-                --paper-slider-active-color: #14ccff;
-                --paper-slider-pin-color: #14ccff;
-                --paper-spinner-layer-1-color: #14ccff;
-                --paper-spinner-layer-2-color: #14ccff;
-                --paper-spinner-layer-3-color: #14ccff;
-                --paper-spinner-layer-4-color: #14ccff;
-                --paper-tabs-selection-bar-color: #ff8100;
-                --paper-tab-ink: #ff8100;
-                --paper-toggle-button-checked-bar-color: #14ccff;
-                --paper-toggle-button-checked-button-color: #14ccff;
-                --paper-toggle-button-checked-ink-color: #14ccff;
-                --paper-toggle-button-unchecked-bar-color: #08165f;
-                --paper-toggle-button-unchecked-button-color: white;
-                --paper-toggle-button-unchecked-ink-color: white;
-                --paper-toolbar-background: #c9edf7;
-                --paper-toolbar-color: #08165f;
-            }
-
-            paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active, paper-toolbar a:visited, paper-toolbar a:focus {
-                color: #08165f;
-            }
-
-            paper-button.primary, paper-button.btn-primary, paper-button[primary] {
-                color: #14ccff;
-            }
-
-                paper-button.primary[raised], paper-button.btn-primary[raised], paper-button[primary][raised] {
-                    background-color: #14ccff;
-                    color: #fff;
-                }
-
-            paper-button.secondary, paper-button.btn-secondary, paper-button[secondary] {
-                color: #ff8100;
-            }
-
-                paper-button.secondary[raised], paper-button.btn-secondary[raised], paper-button[secondary][raised] {
-                    background-color: #ff8100;
-                    color: #fff;
-                }
-
-            paper-button.success, paper-button.btn-success, paper-button[success] {
-                color: #9dc56e;
-            }
-
-                paper-button.success[raised], paper-button.btn-success[raised], paper-button[success][raised] {
-                    background-color: #9dc56e;
-                    color: #2f3b21;
-                }
-
-            paper-button.info, paper-button.btn-info, paper-button[info] {
-                color: #ffb74d;
-            }
-
-                paper-button.info[raised], paper-button.btn-info[raised], paper-button[info][raised] {
-                    background-color: #ffb74d;
-                    color: #4d3717;
-                }
-
-            paper-button.warning, paper-button.btn-warning, paper-button[warning] {
-                color: #fadd60;
-            }
-
-                paper-button.warning[raised], paper-button.btn-warning[raised], paper-button[warning][raised] {
-                    background-color: #fadd60;
-                    color: #4b421d;
-                }
-
-            paper-button.error, paper-button.btn-error, paper-button[error] {
-                color: #ff6e40;
-            }
-
-                paper-button.error[raised], paper-button.btn-error[raised], paper-button[error][raised] {
-                    background-color: #ff6e40;
-                    color: #4d2113;
-                }
-
-            paper-button.link, paper-button.btn-link, paper-button[link] {
-                text-decoration: underline;
-            }
-
-            paper-button[raised] {
-                color: #294d56;
-            }
-
-            paper-button[disabled] {
-                color: #313238 !important;
-                background: #cad289 !important;
-            }
-
-            paper-icon-button.primary, paper-icon-button.btn-primary, paper-icon-button[primary] {
-                color: #14ccff;
-            }
-
-                paper-icon-button.primary:hover, paper-icon-button.btn-primary:hover, paper-icon-button[primary]:hover {
-                    background-color: #cfeff8;
-                    background-color: rgba(20, 204, 255, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-icon-button.secondary, paper-icon-button.btn-secondary, paper-icon-button[secondary] {
-                color: #ff8100;
-            }
-
-                paper-icon-button.secondary:hover, paper-icon-button.btn-secondary:hover, paper-icon-button[secondary]:hover {
-                    background-color: #e7e8de;
-                    background-color: rgba(255, 129, 0, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-icon-button.success, paper-icon-button.btn-success, paper-icon-button[success] {
-                color: #9dc56e;
-            }
-
-                paper-icon-button.success:hover, paper-icon-button.btn-success:hover, paper-icon-button[success]:hover {
-                    background-color: #ddeee9;
-                    background-color: rgba(157, 197, 110, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-icon-button.info, paper-icon-button.btn-info, paper-icon-button[info] {
-                color: #ffb74d;
-            }
-
-                paper-icon-button.info:hover, paper-icon-button.btn-info:hover, paper-icon-button[info]:hover {
-                    background-color: #e7ede6;
-                    background-color: rgba(255, 183, 77, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-icon-button.warning, paper-icon-button.btn-warning, paper-icon-button[warning] {
-                color: #fadd60;
-            }
-
-                paper-icon-button.warning:hover, paper-icon-button.btn-warning:hover, paper-icon-button[warning]:hover {
-                    background-color: #e6f1e8;
-                    background-color: rgba(250, 221, 96, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-icon-button.error, paper-icon-button.btn-error, paper-icon-button[error] {
-                color: #ff6e40;
-            }
-
-                paper-icon-button.error:hover, paper-icon-button.btn-error:hover, paper-icon-button[error]:hover {
-                    background-color: #e7e6e5;
-                    background-color: rgba(255, 110, 64, 0.2);
-                    border-radius: 50%;
-                }
-
-            paper-checkbox #checkmark.paper-checkbox, paper-checkbox /deep/, paper-checkbox::shadow #checkmark.paper-checkbox {
-                border-color: #fff !important;
-            }
-
-            paper-dialog {
-                color: #294d56;
-                background-color: #e4f3f7;
-                font-family: 'Oxygen', sans-serif;
-                font-weight: 400;
-            }
-
-                paper-dialog h1, paper-dialog h2, paper-dialog h3, paper-dialog h4, paper-dialog h5, paper-dialog h6 {
-                    overflow: visible;
-                    padding: 0 1em;
-                    text-align: center;
-                }
-
-            paper-fab {
-                --text-primary-color: white;
-            }
-
-            paper-fab {
-                background-color: #14ccff;
-                color: #fff;
-                --paper-fab-keyboard-focus-background: #007393;
-            }
-
-                paper-fab.primary, paper-fab.btn-primary, paper-fab[primary] {
-                    background-color: #14ccff;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #007393;
-                }
-
-                paper-fab.secondary, paper-fab.btn-secondary, paper-fab[secondary] {
-                    background-color: #ff8100;
-                    color: #fff;
-                    --paper-fab-keyboard-focus-background: #804100;
-                }
-
-                paper-fab.success, paper-fab.btn-success, paper-fab[success] {
-                    background-color: #9dc56e;
-                    color: #2f3b21;
-                    --paper-fab-keyboard-focus-background: #5d8033;
-                }
-
-                paper-fab.info, paper-fab.btn-info, paper-fab[info] {
-                    background-color: #ffb74d;
-                    color: #4d3717;
-                    --paper-fab-keyboard-focus-background: #cd7a00;
-                }
-
-                paper-fab.warning, paper-fab.btn-warning, paper-fab[warning] {
-                    background-color: #fadd60;
-                    color: #4b421d;
-                    --paper-fab-keyboard-focus-background: #d4ad07;
-                }
-
-                paper-fab.error, paper-fab.btn-error, paper-fab[error] {
-                    background-color: #ff6e40;
-                    color: #4d2113;
-                    --paper-fab-keyboard-focus-background: #c02e00;
-                }
-
-                paper-fab[disabled] {
-                    color: #313238 !important;
-                    background: #cad289 !important;
-                }
-
-            section.hero paper-menu, section[hero] paper-menu {
-                --paper-menu-background-color: #b3dae6;
-            }
-
-            paper-tabs {
-                background-color: #c9edf7;
-                color: #08165f;
-            }
-
-            .chorizontal {
-                @apply(--layout-horizontal);
-                @apply(--layout-wrap);
-                @apply(--layout-start-justified);
-            }
-
-            .cvertical {
-                @apply(--layout-vertical);
-                @apply(--layout-wrap);
-                display: inline-flex;
-                @apply(--layout-around-justified);
-            }
-
-            .flexchild {
-                @apply(--layout-flex-auto);
-                position: relative !important;
-            }
-
-            .cprincipal {
-                height: auto;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .onecolum {
-                height: auto;
-                width: 70vw;
-            }
-
-            .cseccion {
-                width: 100%;
-                height: 100%;
-            }
-
-            .ccover {
-                height: 100vh;
-                width: 100vw;
-            }
-
-            .centro {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .card {
-                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-                padding: 16px;
-                margin: 24px;
-                border-radius: 5px;
-                background-color: #eeeedd;
-                color: #757575;
-            }
-
-            .circle {
-                display: inline-block;
-                height: 70px;
-                width: 70px;
-                border-radius: 50%;
-                background: #ddd;
-                line-height: 64px;
-                font-size: 30px;
-                color: #555;
-                text-align: center;
-            }
-
-            h1 {
-                font-size: 22px;
-                margin: 16px 0;
-                color: hsl(200, 29%, 24%);
-            }
-            /* CSS - Cascading Style Sheet */
-            /* Palette color codes */
-            /* Palette URL: http://paletton.com/#uid=c3t0A2J4g0kwi++bu++hX++++rd++kX */
-
-            /* Feel free to copy&paste color codes to your application */
-
-
-            /* As hex codes */
-
-            .color-primary-0 {
-                color: #0DAAFF;
-            }
-            /* Main Primary color */
-            .color-primary-1 {
-                color: #A8E1FF;
-            }
-
-            .color-primary-2 {
-                color: #77D0FF;
-            }
-
-            .color-primary-3 {
-                color: #005A8A;
-            }
-
-            .color-primary-4 {
-                color: #00456A;
-            }
-
-            .color-secondary-1-0 {
-                color: #3DFF00;
-            }
-            /* Main Secondary color (1) */
-            .color-secondary-1-1 {
-                color: #BAFFA4;
-            }
-
-            .color-secondary-1-2 {
-                color: #92FF70;
-            }
-
-            .color-secondary-1-3 {
-                color: #2CB800;
-            }
-
-            .color-secondary-1-4 {
-                color: #228E00;
-            }
-
-            .color-secondary-2-0 {
-                color: #581CFF;
-            }
-            /* Main Secondary color (2) */
-            .color-secondary-2-1 {
-                color: #C3AEFF;
-            }
-
-            .color-secondary-2-2 {
-                color: #A180FF;
-            }
-
-            .color-secondary-2-3 {
-                color: #270095;
-            }
-
-            .color-secondary-2-4 {
-                color: #1E0073;
-            }
-
-            .color-complement-0 {
-                color: #FF8300;
-            }
-            /* Main Complement color */
-            .color-complement-1 {
-                color: #FFD2A4;
-            }
-
-            .color-complement-2 {
-                color: #FFB970;
-            }
-
-            .color-complement-3 {
-                color: #D96F00;
-            }
-
-            .color-complement-4 {
-                color: #A75600;
-            }
-
-            /*
-
-            .color-primary-1 { color: #B2F4D1 }
-            .color-primary-2 { color: #7FE5AE }
-            .color-primary-3 { color: #37BF76 }
-            .color-primary-4 { color: #1AAC5E }
-
-            .color-secondary-1-0 { color: #05E0FF }
-            .color-secondary-1-1 { color: #A5F4FF }
-            .color-secondary-1-2 { color: #73EEFF }
-            .color-secondary-1-3 { color: #007485 }
-            .color-secondary-1-4 { color: #005A66 }
-
-            .color-secondary-2-0 { color: #5E9732 }
-            .color-secondary-2-1 { color: #B8E297 }
-            .color-secondary-2-2 { color: #87BC5E }
-            .color-secondary-2-3 { color: #3C7113 }
-            .color-secondary-2-4 { color: #214B00 }
-
-            .color-complement-0 { color: #B87109 }
-            .color-complement-1 { color: #ECAC4E }
-            .color-complement-2 { color: #E4921B }
-            .color-complement-3 { color: #985A00 }
-            .color-complement-4 { color: #704300 }
-
-            .color-primary-0 { color: #50BFB0 }
-            .color-primary-1 { color: #ADEEE5 }
-            .color-primary-2 { color: #79D8CB }
-            .color-primary-3 { color: #30A393 }
-            .color-primary-4 { color: #179281 }
-
-            .color-secondary-1-0 { color: #8D2F5D }
-            .color-secondary-1-1 { color: #D38DAF }
-            .color-secondary-1-2 { color: #B05883 }
-            .color-secondary-1-3 { color: #6A123D }
-            .color-secondary-1-4 { color: #460023 }
-
-            .color-secondary-2-0 { color: #FFE900 }
-            .color-secondary-2-1 { color: #FFF7A4 }
-            .color-secondary-2-2 { color: #FFF370 }
-            .color-secondary-2-3 { color: #D9C600 }
-            .color-secondary-2-4 { color: #A79900 }
-
-            .color-complement-0 { color: #4F2C73 }
-            .color-complement-1 { color: #9177AC }
-            .color-complement-2 { color: #6E4D8F }
-            .color-complement-3 { color: #351456 }
-            .color-complement-4 { color: #1F0439 }
-
-            */
-
-
-            /* Generated by Paletton.com © 2002-2014 */
-            /* http://paletton.com */
-
-            section[hero] {
-                margin-top: 4vh;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 4vh;
-                padding: 4vw;
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                width: 80%;
-                height: 100%;
-            }
+                            paper-dialog h1, paper-dialog h2, paper-dialog h3, paper-dialog h4, paper-dialog h5, paper-dialog h6
+                            {
+                                overflow: visible;
+                                padding: 0 1em;
+                                text-align: center;
+                            }
+
+                        paper-fab
+                        {
+                            --text-primary-color: #ffffff;
+                        }
+
+                        paper-fab
+                        {
+                            background-color: #1bb5e1;
+                            color: #fff;
+                            --paper-fab-keyboard-focus-background: #0d596f;
+                        }
+
+                            paper-fab.primary, paper-fab.btn-primary, paper-fab[primary]
+                            {
+                                background-color: #1bb5e1;
+                                color: #fff;
+                                --paper-fab-keyboard-focus-background: #0d596f;
+                            }
+
+                            paper-fab.secondary, paper-fab.btn-secondary, paper-fab[secondary]
+                            {
+                                background-color: #eac609;
+                                color: #fff;
+                                --paper-fab-keyboard-focus-background: #6f5e04;
+                            }
+
+                            paper-fab.success, paper-fab.btn-success, paper-fab[success]
+                            {
+                                background-color: #6fe31d;
+                                color: #fff;
+                                --paper-fab-keyboard-focus-background: #38720e;
+                            }
+
+                            paper-fab.info, paper-fab.btn-info, paper-fab[info]
+                            {
+                                background-color: #1ec2db;
+                                color: #fff;
+                                --paper-fab-keyboard-focus-background: #0f5f6b;
+                            }
+
+                            paper-fab.warning, paper-fab.btn-warning, paper-fab[warning]
+                            {
+                                background-color: #dd8532;
+                                color: #fff;
+                                --paper-fab-keyboard-focus-background: #7b4614;
+                            }
+
+                            paper-fab.error, paper-fab.btn-error, paper-fab[error]
+                            {
+                                background-color: #db2b49;
+                                color: #fff;
+                                --paper-fab-keyboard-focus-background: #731424;
+                            }
+
+                            paper-fab[disabled]
+                            {
+                                color: #2f2b16 !important;
+                                background: #c5b97f !important;
+                            }
+
+                        section.hero paper-menu, section[hero] paper-menu
+                        {
+                            --paper-menu-background-color: #c8f4f9;
+                        }
+
+                        paper-tabs
+                        {
+                            background-color: #dbeef0;
+                            color: #8f6d56;
+                        }
+
+                        .chorizontal
+                        {
+                            @apply(--layout-horizontal);
+                            @apply(--layout-wrap);
+                            @apply(--layout-start-justified);
+                        }
+
+                        .cvertical
+                        {
+                            @apply(--layout-vertical);
+                            @apply(--layout-wrap);
+                            display: inline-flex;
+                            @apply(--layout-around-justified);
+                        }
+
+                        .flexchild
+                        {
+                            @apply(--layout-flex-auto);
+                            position: relative !important;
+                        }
+
+                        .cprincipal
+                        {
+                            height: auto;
+                            width: 100%;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        .onecolum
+                        {
+                            height: auto;
+                            width: 70vw;
+                        }
+
+                        .cseccion
+                        {
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .ccover
+                        {
+                            height: 100vh;
+                            width: 100vw;
+                        }
+
+                        .centro
+                        {
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        .card
+                        {
+                            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+                            padding: 16px;
+                            margin: 24px;
+                            border-radius: 5px;
+                            background-color: #eeeedd;
+                            color: #757575;
+                        }
+
+                        .circle
+                        {
+                            display: inline-block;
+                            height: 70px;
+                            width: 70px;
+                            border-radius: 50%;
+                            background: #ddd;
+                            line-height: 64px;
+                            font-size: 30px;
+                            color: #555;
+                            text-align: center;
+                        }
+
+                        h1
+                        {
+                            font-size: 22px;
+                            margin: 16px 0;
+                            color: hsl(200, 29%, 24%);
+                        }
+                        /* CSS - Cascading Style Sheet */
+                        /* Palette color codes */
+                        /* Palette URL: http://paletton.com/#uid=c3t0A2J4g0kwi++bu++hX++++rd++kX */
+
+                        /* Feel free to copy&paste color codes to your application */
+
+
+                        /* As hex codes */
+
+                        .color-primary-0
+                        {
+                            color: #0DAAFF;
+                        }
+                        /* Main Primary color */
+                        .color-primary-1
+                        {
+                            color: #A8E1FF;
+                        }
+
+                        .color-primary-2
+                        {
+                            color: #77D0FF;
+                        }
+
+                        .color-primary-3
+                        {
+                            color: #005A8A;
+                        }
+
+                        .color-primary-4
+                        {
+                            color: #00456A;
+                        }
+
+                        .color-secondary-1-0
+                        {
+                            color: #3DFF00;
+                        }
+                        /* Main Secondary color (1) */
+                        .color-secondary-1-1
+                        {
+                            color: #BAFFA4;
+                        }
+
+                        .color-secondary-1-2
+                        {
+                            color: #92FF70;
+                        }
+
+                        .color-secondary-1-3
+                        {
+                            color: #2CB800;
+                        }
+
+                        .color-secondary-1-4
+                        {
+                            color: #228E00;
+                        }
+
+                        .color-secondary-2-0
+                        {
+                            color: #581CFF;
+                        }
+                        /* Main Secondary color (2) */
+                        .color-secondary-2-1
+                        {
+                            color: #C3AEFF;
+                        }
+
+                        .color-secondary-2-2
+                        {
+                            color: #A180FF;
+                        }
+
+                        .color-secondary-2-3
+                        {
+                            color: #270095;
+                        }
+
+                        .color-secondary-2-4
+                        {
+                            color: #1E0073;
+                        }
+
+                        .color-complement-0
+                        {
+                            color: #FF8300;
+                        }
+                        /* Main Complement color */
+                        .color-complement-1
+                        {
+                            color: #FFD2A4;
+                        }
+
+                        .color-complement-2
+                        {
+                            color: #FFB970;
+                        }
+
+                        .color-complement-3
+                        {
+                            color: #D96F00;
+                        }
+
+                        .color-complement-4
+                        {
+                            color: #A75600;
+                        }
+
+                        /*
+
+                        .color-primary-1 { color: #B2F4D1 }
+                        .color-primary-2 { color: #7FE5AE }
+                        .color-primary-3 { color: #37BF76 }
+                        .color-primary-4 { color: #1AAC5E }
+
+                        .color-secondary-1-0 { color: #05E0FF }
+                        .color-secondary-1-1 { color: #A5F4FF }
+                        .color-secondary-1-2 { color: #73EEFF }
+                        .color-secondary-1-3 { color: #007485 }
+                        .color-secondary-1-4 { color: #005A66 }
+
+                        .color-secondary-2-0 { color: #5E9732 }
+                        .color-secondary-2-1 { color: #B8E297 }
+                        .color-secondary-2-2 { color: #87BC5E }
+                        .color-secondary-2-3 { color: #3C7113 }
+                        .color-secondary-2-4 { color: #214B00 }
+
+                        .color-complement-0 { color: #B87109 }
+                        .color-complement-1 { color: #ECAC4E }
+                        .color-complement-2 { color: #E4921B }
+                        .color-complement-3 { color: #985A00 }
+                        .color-complement-4 { color: #704300 }
+
+                        .color-primary-0 { color: #50BFB0 }
+                        .color-primary-1 { color: #ADEEE5 }
+                        .color-primary-2 { color: #79D8CB }
+                        .color-primary-3 { color: #30A393 }
+                        .color-primary-4 { color: #179281 }
+
+                        .color-secondary-1-0 { color: #8D2F5D }
+                        .color-secondary-1-1 { color: #D38DAF }
+                        .color-secondary-1-2 { color: #B05883 }
+                        .color-secondary-1-3 { color: #6A123D }
+                        .color-secondary-1-4 { color: #460023 }
+
+                        .color-secondary-2-0 { color: #FFE900 }
+                        .color-secondary-2-1 { color: #FFF7A4 }
+                        .color-secondary-2-2 { color: #FFF370 }
+                        .color-secondary-2-3 { color: #D9C600 }
+                        .color-secondary-2-4 { color: #A79900 }
+
+                        .color-complement-0 { color: #4F2C73 }
+                        .color-complement-1 { color: #9177AC }
+                        .color-complement-2 { color: #6E4D8F }
+                        .color-complement-3 { color: #351456 }
+                        .color-complement-4 { color: #1F0439 }
+
+                        */
+
+
+                        /* Generated by Paletton.com © 2002-2014 */
+                        /* http://paletton.com */
+
+                        section[hero]
+                        {
+                            margin-top: 4vh;
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-bottom: 4vh;
+                            padding: 4vw;
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                            width: 80%;
+                            height: 100%;
+                        }
         </style>
     </template>
 </dom-module>

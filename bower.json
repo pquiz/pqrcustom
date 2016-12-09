@@ -3,7 +3,7 @@
   "authors": [
     "The Polymer Authors"
   ],
-  "private": true,
+  "license": "https://polymer.github.io/LICENSE.txt",
   "dependencies": {
     "app-elements": "v0.10.1",
     "iron-elements": "PolymerElements/iron-elements#^1.0.0",
@@ -24,8 +24,7 @@
     "vaadin-core-elements": "^1.2.0",
     "app-layout": "v0.10.6",
     "iron-iconset-svg": "v1.1.0",
-    "google-youtube-upload": "v2.0.0",
-    "facebook-button": "^0.2.1"
+    "google-youtube-upload": "v2.0.0"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
@@ -41,5 +40,6 @@
     "hydrolysis": "v2.0.0-alpha.18",
     "ga-api-utils": "0.6.0",
     "polymer": "^1.2.1"
-  }
+  },
+  "private": true
 }

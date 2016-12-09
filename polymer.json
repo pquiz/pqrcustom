@@ -25,6 +25,7 @@
     "bower_components/platinum-sw/sw-toolbox/sw-toolbox.js"
   ],
   "includeDependencies": [
+    "manifest.json",
     "bower_components/webcomponentsjs/webcomponents-lite.min.js"
   ]
 }
